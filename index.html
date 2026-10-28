@@ -58,7 +58,7 @@
             background: linear-gradient(145deg, #ffffff 0%, var(--bg-inset) 100%);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 3rem 2.5rem 2.5rem;
+            padding: 2.5rem 2.25rem 2.25rem;
             box-shadow: var(--shadow-md);
             margin-bottom: 2rem;
             position: relative;
@@ -75,18 +75,26 @@
             background: linear-gradient(90deg, var(--amber-warm), var(--gold-accent));
         }
 
+        /* Header Top Row (Badges + Language Switcher) */
+        .header-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
         .badges-row {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1.25rem;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
-            padding: 0.3rem 0.75rem;
+            padding: 0.35rem 0.8rem;
             border-radius: 9999px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -107,6 +115,46 @@
         .badge-gold {
             background-color: var(--gold-light);
             color: #92400e;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: inline-flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            padding: 3px;
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 0.35rem 0.85rem;
+            min-height: 36px;
+            min-width: 44px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: var(--amber-warm);
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(200, 90, 23, 0.35);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--amber-warm);
+            background-color: var(--amber-light);
         }
 
         h1 {
@@ -171,7 +219,7 @@
             margin-top: 0.25rem;
         }
 
-        /* Layout */
+        /* Two Column Layout */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -262,6 +310,12 @@
         .ing-name {
             color: var(--text-muted);
             flex: 1;
+        }
+
+        .ing-title {
+            color: var(--text-main);
+            font-weight: 500;
+            display: block;
         }
 
         .ing-note {
@@ -435,6 +489,17 @@
             margin-top: 2rem;
         }
 
+        @media (max-width: 640px) {
+            .header-top-row {
+                flex-direction: column-reverse;
+                align-items: flex-end;
+                gap: 0.75rem;
+            }
+            .badges-row {
+                width: 100%;
+            }
+        }
+
         /* Print styles */
         @media print {
             body {
@@ -445,7 +510,7 @@
                 box-shadow: none !important;
                 border: 1px solid #ccc !important;
             }
-            .action-row, footer {
+            .lang-switch, .action-row, footer {
                 display: none !important;
             }
             .content-grid {
@@ -460,41 +525,47 @@
 
     <!-- HERO HEADER -->
     <header class="hero">
-        <div class="badges-row">
-            <span class="badge badge-amber">⚡ 64g Protein / Serving</span>
-            <span class="badge badge-green">🌿 Sensitive Gut & IBD Friendly</span>
-            <span class="badge badge-gold">❄️ Freeze-Thaw Stable</span>
+        <div class="header-top-row">
+            <div class="badges-row">
+                <span class="badge badge-amber" data-i18n="badge_protein">⚡ 64g Protein / Serving</span>
+                <span class="badge badge-green" data-i18n="badge_gut">🌿 Sensitive Gut & IBD Friendly</span>
+                <span class="badge badge-gold" data-i18n="badge_freeze">❄️ Freeze-Thaw Stable</span>
+            </div>
+            <div class="lang-switch" role="group" aria-label="Language selection">
+                <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')" aria-pressed="true">EN</button>
+                <button type="button" class="lang-btn" id="btn-pl" onclick="setLanguage('pl')" aria-pressed="false">PL</button>
+            </div>
         </div>
 
-        <h1>The "Golden Silk" Turkey Cottage Pie</h1>
-        <span class="polish-subtitle">Zapiekanka Pasterska — High-Protein Artisan Edition</span>
+        <h1 data-i18n="hero_title">The "Golden Silk" Turkey Cottage Pie</h1>
+        <span class="polish-subtitle" data-i18n="hero_subtitle">Zapiekanka Pasterska — High-Protein Artisan Edition</span>
 
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n-html="hero_desc">
             Traditional beef cottage pie delivers heavy saturated fats and turns into a watery sponge when frozen. 
             This high-volume formula pairs <strong>1,200 g of lean turkey breast mince</strong> with a rich bone-broth ragù under an anti-syneresis <strong>potato-carrot silk mash</strong> and blistered gratin crust. Engineered for large-batch freezing, effortless reheating, and gentle digestion.
         </p>
 
-        <!-- Stats Grid (6 Giant Servings) -->
+        <!-- Stats Grid (6 Generous Servings) -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-val">6</div>
-                <div class="stat-lbl">Generous Portions</div>
+                <div class="stat-val" data-i18n="stat_portions_val">6</div>
+                <div class="stat-lbl" data-i18n="stat_portions_lbl">Generous Portions</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val">~620</div>
-                <div class="stat-lbl">Calories / Serving</div>
+                <div class="stat-val" data-i18n="stat_cals_val">~620</div>
+                <div class="stat-lbl" data-i18n="stat_cals_lbl">Calories / Serving</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val">64.0 g</div>
-                <div class="stat-lbl">Protein / Serving</div>
+                <div class="stat-val" data-i18n="stat_protein_val">64.0 g</div>
+                <div class="stat-lbl" data-i18n="stat_protein_lbl">Protein / Serving</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val">~700 g</div>
-                <div class="stat-lbl">Plate Mass (Volume)</div>
+                <div class="stat-val" data-i18n="stat_mass_val">~700 g</div>
+                <div class="stat-lbl" data-i18n="stat_mass_lbl">Plate Mass (Volume)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val">18.2 g</div>
-                <div class="stat-lbl">Healthy Fats</div>
+                <div class="stat-val" data-i18n="stat_fats_val">18.2 g</div>
+                <div class="stat-lbl" data-i18n="stat_fats_lbl">Healthy Fats</div>
             </div>
         </div>
     </header>
@@ -505,169 +576,169 @@
         <!-- LEFT COLUMN: INGREDIENTS & CHECKLIST -->
         <div class="left-col">
             <section class="section-card">
-                <h2>🛒 Ingredients Checklist</h2>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                <h2 data-i18n="sec_ingredients_title">🛒 Ingredients Checklist</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n="sec_ingredients_sub">
                     Batch scaled for 6 large meal-prep portions (~700g each). Click any item to check it off.
                 </p>
 
                 <!-- LAYER 1: BASE RAGÙ -->
-                <div class="layer-title">Layer 1: Savoury Turkey & Root Ragù</div>
+                <div class="layer-title" data-i18n="layer1_title">Layer 1: Savoury Turkey & Root Ragù</div>
                 <ul class="ingredient-list">
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">1,200 g</span>
+                        <span class="ing-amount" data-i18n="ing_turkey_amt">1,200 g</span>
                         <div class="ing-name">
-                            Lean Turkey Breast Mince (≤2% Fat)
-                            <span class="ing-note">High-protein anchor (~288g pure protein)</span>
+                            <span class="ing-title" data-i18n="ing_turkey_name">Lean Turkey Breast Mince (≤2% Fat)</span>
+                            <span class="ing-note" data-i18n="ing_turkey_note">High-protein anchor (~288g pure protein)</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">470 g</span>
+                        <span class="ing-amount" data-i18n="ing_carrots1_amt">470 g</span>
                         <div class="ing-name">
-                            Carrots (peeled & finely diced)
-                            <span class="ing-note">Cut into 5mm cubes for sweet aromatic base</span>
+                            <span class="ing-title" data-i18n="ing_carrots1_name">Carrots (peeled & finely diced)</span>
+                            <span class="ing-note" data-i18n="ing_carrots1_note">Cut into 5mm cubes for sweet aromatic base</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">270 g</span>
+                        <span class="ing-amount" data-i18n="ing_parsnips_amt">270 g</span>
                         <div class="ing-name">
-                            Parsnips (peeled & finely diced)
-                            <span class="ing-note">Adds earthy sweetness & velvety body</span>
+                            <span class="ing-title" data-i18n="ing_parsnips_name">Parsnips (peeled & finely diced)</span>
+                            <span class="ing-note" data-i18n="ing_parsnips_note">Adds earthy sweetness & velvety body</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">530 g</span>
+                        <span class="ing-amount" data-i18n="ing_passata_amt">530 g</span>
                         <div class="ing-name">
-                            Smooth Tomato Passata
-                            <span class="ing-note">Strained tomato purée (skinless & seedless)</span>
+                            <span class="ing-title" data-i18n="ing_passata_name">Smooth Tomato Passata</span>
+                            <span class="ing-note" data-i18n="ing_passata_note">Strained tomato purée (skinless & seedless)</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">33 g</span>
+                        <span class="ing-amount" data-i18n="ing_broth_amt">33 g</span>
                         <div class="ing-name">
-                            Beef Bone Broth Powder
-                            <span class="ing-note">~3.5 heaped tbsp; delivers bioavailable glycine & collagen</span>
+                            <span class="ing-title" data-i18n="ing_broth_name">Beef Bone Broth Powder</span>
+                            <span class="ing-note" data-i18n="ing_broth_note">~3.5 heaped tbsp; delivers bioavailable glycine & collagen</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">13 g</span>
+                        <span class="ing-amount" data-i18n="ing_ghee1_amt">13 g</span>
                         <div class="ing-name">
-                            Ghee or Olive Oil
-                            <span class="ing-note">~1 tbsp for browning roots & mince</span>
+                            <span class="ing-title" data-i18n="ing_ghee1_name">Ghee or Olive Oil</span>
+                            <span class="ing-note" data-i18n="ing_ghee1_note">~1 tbsp for browning roots & mince</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">27 ml</span>
+                        <span class="ing-amount" data-i18n="ing_worcestershire_amt">27 ml</span>
                         <div class="ing-name">
-                            Worcestershire Sauce
-                            <span class="ing-note">~2 tbsp (or tamari / coconut aminos) for savory umami</span>
+                            <span class="ing-title" data-i18n="ing_worcestershire_name">Worcestershire Sauce</span>
+                            <span class="ing-note" data-i18n="ing_worcestershire_note">~2 tbsp (or tamari / coconut aminos) for savory umami</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">530 ml</span>
+                        <span class="ing-amount" data-i18n="ing_stock_amt">530 ml</span>
                         <div class="ing-name">
-                            Water or Light Chicken Stock
-                            <span class="ing-note">Warm stock or water to dissolve bone broth</span>
+                            <span class="ing-title" data-i18n="ing_stock_name">Water or Light Chicken Stock</span>
+                            <span class="ing-note" data-i18n="ing_stock_note">Warm stock or water to dissolve bone broth</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">13 g</span>
+                        <span class="ing-amount" data-i18n="ing_starch_amt">13 g</span>
                         <div class="ing-name">
-                            Potato Starch (Slurry)
-                            <span class="ing-note">Dissolved in 35ml cold water to gloss & bind the gravy</span>
+                            <span class="ing-title" data-i18n="ing_starch_name">Potato Starch (Slurry)</span>
+                            <span class="ing-note" data-i18n="ing_starch_note">Dissolved in 35ml cold water to gloss & bind the gravy</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">Aromatics</span>
+                        <span class="ing-amount" data-i18n="ing_aromatics_amt">Aromatics</span>
                         <div class="ing-name">
-                            Fresh Thyme, Fine Salt & Black Pepper
-                            <span class="ing-note">1.5 tbsp chopped fresh thyme + 1.5 tsp fine sea salt</span>
+                            <span class="ing-title" data-i18n="ing_aromatics_name">Fresh Thyme, Fine Salt & Black Pepper</span>
+                            <span class="ing-note" data-i18n="ing_aromatics_note">1.5 tbsp chopped fresh thyme + 1.5 tsp fine sea salt</span>
                         </div>
                     </li>
                 </ul>
 
                 <!-- LAYER 2: GOLDEN SILK MASH -->
-                <div class="layer-title">Layer 2: Golden Silk Mash Topping</div>
+                <div class="layer-title" data-i18n="layer2_title">Layer 2: Golden Silk Mash Topping</div>
                 <ul class="ingredient-list">
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">800 g</span>
+                        <span class="ing-amount" data-i18n="ing_potatoes_amt">800 g</span>
                         <div class="ing-name">
-                            Fluffy Potatoes (peeled chunks)
-                            <span class="ing-note">Maris Piper, Russet, or Yukon Gold</span>
+                            <span class="ing-title" data-i18n="ing_potatoes_name">Fluffy Potatoes (peeled chunks)</span>
+                            <span class="ing-note" data-i18n="ing_potatoes_note">Maris Piper, Russet, or Yukon Gold</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">670 g</span>
+                        <span class="ing-amount" data-i18n="ing_carrots2_amt">670 g</span>
                         <div class="ing-name">
-                            Carrots (peeled chunks)
-                            <span class="ing-note">Introduces anti-syneresis pectin to stabilize freeze-thaw</span>
+                            <span class="ing-title" data-i18n="ing_carrots2_name">Carrots (peeled chunks)</span>
+                            <span class="ing-note" data-i18n="ing_carrots2_note">Introduces anti-syneresis pectin to stabilize freeze-thaw</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">20 g</span>
+                        <span class="ing-amount" data-i18n="ing_ghee2_amt">20 g</span>
                         <div class="ing-name">
-                            Ghee or Butter
-                            <span class="ing-note">~1.5 tbsp whipped into hot mash for silky mouthfeel</span>
+                            <span class="ing-title" data-i18n="ing_ghee2_name">Ghee or Butter</span>
+                            <span class="ing-note" data-i18n="ing_ghee2_note">~1.5 tbsp whipped into hot mash for silky mouthfeel</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">135 ml</span>
+                        <span class="ing-amount" data-i18n="ing_milk_amt">135 ml</span>
                         <div class="ing-name">
-                            Warm Milk (Dairy or Lactose-Free)
-                            <span class="ing-note">Gentle fluid to achieve pipeable buttercream texture</span>
+                            <span class="ing-title" data-i18n="ing_milk_name">Warm Milk (Dairy or Lactose-Free)</span>
+                            <span class="ing-note" data-i18n="ing_milk_note">Gentle fluid to achieve pipeable buttercream texture</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">Pinch</span>
+                        <span class="ing-amount" data-i18n="ing_nutmeg_amt">Pinch</span>
                         <div class="ing-name">
-                            Sea Salt & Fresh Nutmeg
-                            <span class="ing-note">3/4 tsp salt + fine microplaned nutmeg</span>
+                            <span class="ing-title" data-i18n="ing_nutmeg_name">Sea Salt & Fresh Nutmeg</span>
+                            <span class="ing-note" data-i18n="ing_nutmeg_note">3/4 tsp salt + fine microplaned nutmeg</span>
                         </div>
                     </li>
                 </ul>
 
                 <!-- LAYER 3: GRATIN CRUST -->
-                <div class="layer-title">Layer 3: Gratin Cheese Crust</div>
+                <div class="layer-title" data-i18n="layer3_title">Layer 3: Gratin Cheese Crust</div>
                 <ul class="ingredient-list">
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount">120 g</span>
+                        <span class="ing-amount" data-i18n="ing_cheddar_amt">120 g</span>
                         <div class="ing-name">
-                            Mature Cheddar Cheese
-                            <span class="ing-note">Finely grated (20g per portion; naturally aged &lt;0.1% lactose)</span>
+                            <span class="ing-title" data-i18n="ing_cheddar_name">Mature Cheddar Cheese</span>
+                            <span class="ing-note" data-i18n="ing_cheddar_note">Finely grated (20g per portion; naturally aged <0.1% lactose)</span>
                         </div>
                     </li>
                 </ul>
 
                 <div class="action-row">
-                    <button class="action-btn" onclick="clearChecks()">↺ Reset Checks</button>
-                    <button class="action-btn" onclick="window.print()">🖨️ Print Recipe</button>
+                    <button class="action-btn" onclick="clearChecks()" data-i18n="btn_reset">↺ Reset Checks</button>
+                    <button class="action-btn" onclick="window.print()" data-i18n="btn_print">🖨️ Print Recipe</button>
                 </div>
             </section>
 
             <!-- BAKING GEOMETRY CARD -->
             <section class="section-card">
-                <h2>📐 Pan Geometry & Batch Sizing</h2>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                <h2 data-i18n="sec_geometry_title">📐 Pan Geometry & Batch Sizing</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;" data-i18n-html="geometry_intro">
                     This batch yields approximately <strong>~4.2 kg raw preparation</strong>, settling to <strong>~3.8 kg cooked weight</strong> (6 generous portions of ~630–700g each).
                 </p>
                 <div class="callout-box amber">
-                    <div class="callout-title">Baking Pan Options:</div>
-                    <div class="callout-text">
+                    <div class="callout-title" data-i18n="geometry_callout_title">Baking Pan Options:</div>
+                    <div class="callout-text" data-i18n-html="geometry_callout_body">
                         • <strong>Single Large Casserole:</strong> 35 cm × 25 cm deep ceramic or roasting dish (depth ≥ 6 cm).<br>
                         • <strong>Two Medium Bakes:</strong> Split evenly between two 25 cm × 20 cm dishes (bake one fresh for 3 days, freeze the second unbaked).<br>
                         • <strong>6 Individual Meal-Prep Tins:</strong> Portion into 6 oven- and freezer-safe glass or foil meal-prep containers (~750–800 ml each).
@@ -679,62 +750,62 @@
         <!-- RIGHT COLUMN: STEP-BY-STEP METHOD & SCIENCE -->
         <div class="right-col">
             <section class="section-card">
-                <h2>🔥 Step-by-Step Method</h2>
+                <h2 data-i18n="sec_method_title">🔥 Step-by-Step Method</h2>
                 <ol class="step-list">
                     <li class="step-item">
-                        <div class="step-title">Steam the Golden Silk Mash</div>
-                        <div class="step-text">
+                        <div class="step-title" data-i18n="step1_title">Steam the Golden Silk Mash</div>
+                        <div class="step-text" data-i18n-html="step1_p1">
                             Place the 800g peeled potato chunks and 670g peeled carrot chunks in a large steamer basket. Steam over boiling water for <strong>18–20 minutes</strong> until a paring knife glides through the carrot core with zero resistance.
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n-html="step1_p2">
                             Drain thoroughly and let rest in the hot pot off-heat for <strong>2 minutes</strong> to let surface moisture flash-steam off.
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n-html="step1_p3">
                             Add 20g ghee, 135ml warm milk, 3/4 tsp salt, and nutmeg. Mash thoroughly, then whip vigorously with a wooden spoon until glossy and completely smooth.
                         </div>
-                        <div class="cue-box">
+                        <div class="cue-box" data-i18n-html="step1_cue">
                             💡 <strong>Visual Cue:</strong> Should hold soft peaks like warm buttercream.
                         </div>
                     </li>
 
                     <li class="step-item">
-                        <div class="step-title">Simmer the Turkey & Root Base</div>
-                        <div class="step-text">
+                        <div class="step-title" data-i18n="step2_title">Simmer the Turkey & Root Base</div>
+                        <div class="step-text" data-i18n-html="step2_p1">
                             Warm 13g ghee or oil in a wide heavy pot or Dutch oven over medium heat. Sauté the 470g diced carrots and 270g diced parsnips for <strong>5 minutes</strong> until aromatic.
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n-html="step2_p2">
                             Add the 1,200g lean turkey mince. Break it apart gently with a wooden spatula for <strong>3–4 minutes</strong> just until opaque. <em>Avoid aggressive browning to keep lean poultry tender.</em>
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n-html="step2_p3">
                             Whisk 33g bone broth powder into 530ml warm stock/water. Pour into the pot along with 530g passata, 27ml Worcestershire sauce, thyme, salt, and black pepper.
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n-html="step2_p4">
                             Cover and simmer gently on low heat for <strong>15 minutes</strong> until root vegetables are tender. Stir in the potato starch slurry (13g starch + 35ml cold water) and simmer for <strong>60 seconds</strong> until the sauce turns glossy and clings to the mince.
                         </div>
                     </li>
 
                     <li class="step-item">
-                        <div class="step-title">Assemble & Texture the Crust</div>
-                        <div class="step-text">
+                        <div class="step-title" data-i18n="step3_title">Assemble & Texture the Crust</div>
+                        <div class="step-text" data-i18n="step3_p1">
                             Pour the hot turkey base into your baking dish (approx. 3.5 cm depth).
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n="step3_p2">
                             Spoon the warm mash on top. Gently spread with a spatula, sealing completely against the outer edges to trap steam.
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n="step3_p3">
                             Drag fork tines across the top in a cross-hatch pattern to create texture peaks. Scatter the 120g of grated mature cheddar evenly across the surface.
                         </div>
                     </li>
 
                     <li class="step-item">
-                        <div class="step-title">Bake & Crisp</div>
-                        <div class="step-text">
+                        <div class="step-title" data-i18n="step4_title">Bake & Crisp</div>
+                        <div class="step-text" data-i18n-html="step4_p1">
                             Bake at <strong>190°C Fan (200°C Conventional / 400°F)</strong> for <strong>20–22 minutes</strong> until bubbling vigorously at the edges.
                         </div>
-                        <div class="step-text">
+                        <div class="step-text" data-i18n-html="step4_p2">
                             Switch oven to <strong>Broil / Fan Grill at 220°C (430°F)</strong> for <strong>3–5 minutes</strong> until the cheese ridges blister into dark golden spots.
                         </div>
-                        <div class="cue-box">
+                        <div class="cue-box" data-i18n-html="step4_cue">
                             🛑 <strong>Resting Gate:</strong> Rest on the counter for <strong>10 minutes</strong> before slicing. The starch matrix sets as it cools, giving clean, intact portions that lift out cleanly.
                         </div>
                     </li>
@@ -743,11 +814,11 @@
 
             <!-- THE SCIENCE CALLOUTS -->
             <section class="section-card">
-                <h2>🧪 Food Science & Digestive Safeguards</h2>
+                <h2 data-i18n="sec_science_title">🧪 Food Science & Digestive Safeguards</h2>
 
                 <div class="callout-box green">
-                    <div class="callout-title">🌿 Sensitive Gut & IBD Safeguards</div>
-                    <div class="callout-text">
+                    <div class="callout-title" data-i18n="sci_gut_title">🌿 Sensitive Gut & IBD Safeguards</div>
+                    <div class="callout-text" data-i18n-html="sci_gut_body">
                         • <strong>Zero Insoluble Abrasives:</strong> All carrots and potatoes are completely peeled and steamed until cellular pectins break down; zero coarse skins, seeds, or raw cruciferous fibers to irritate delicate gut mucosa.<br>
                         • <strong>High-Density Recovery:</strong> Delivers 64g of lean, bioavailable protein per portion.<br>
                         • <strong>Gut Barrier Support:</strong> Bone broth powder supplies concentrated glycine and proline peptides.<br>
@@ -756,8 +827,8 @@
                 </div>
 
                 <div class="callout-box amber">
-                    <div class="callout-title">❄️ The Anti-Syneresis Freezing Fix</div>
-                    <div class="callout-text">
+                    <div class="callout-title" data-i18n="sci_freeze_title">❄️ The Anti-Syneresis Freezing Fix</div>
+                    <div class="callout-text" data-i18n-html="sci_freeze_body">
                         Standard potato mash turns spongy and weeps water when frozen due to amylose starch retrogradation. Blending <strong>carrots into the potato</strong> introduces branched pectins that sterically disrupt amylose crystallization. Combined with emulsified ghee and milk, it thaws into a smooth, coherent cream without separating.
                     </div>
                 </div>
@@ -765,30 +836,30 @@
 
             <!-- REHEATING PROTOCOL -->
             <section class="section-card">
-                <h2>♨️ Storage & Reheating Matrix</h2>
+                <h2 data-i18n="sec_reheat_title">♨️ Storage & Reheating Matrix</h2>
                 <table class="reheat-table">
                     <thead>
                         <tr>
-                            <th>Method</th>
-                            <th>From Refrigerated</th>
-                            <th>Directly From Frozen</th>
+                            <th data-i18n="th_method">Method</th>
+                            <th data-i18n="th_fridge">From Refrigerated</th>
+                            <th data-i18n="th_frozen">Directly From Frozen</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Air Fryer (Crispiest)</strong></td>
-                            <td>175°C (350°F) for 12–14 mins</td>
-                            <td>160°C (320°F) foil-covered 20m, then 190°C uncovered 5m</td>
+                            <td><strong data-i18n="row1_method">Air Fryer (Crispiest)</strong></td>
+                            <td data-i18n="row1_fridge">175°C (350°F) for 12–14 mins</td>
+                            <td data-i18n="row1_frozen">160°C (320°F) foil-covered 20m, then 190°C uncovered 5m</td>
                         </tr>
                         <tr>
-                            <td><strong>Conventional Oven</strong></td>
-                            <td>180°C (360°F) for 16–18 mins</td>
-                            <td>170°C (340°F) foil-covered 35m, uncover 5m at 200°C</td>
+                            <td><strong data-i18n="row2_method">Conventional Oven</strong></td>
+                            <td data-i18n="row2_fridge">180°C (360°F) for 16–18 mins</td>
+                            <td data-i18n="row2_frozen">170°C (340°F) foil-covered 35m, uncover 5m at 200°C</td>
                         </tr>
                         <tr>
-                            <td><strong>Microwave</strong></td>
-                            <td>High for 3.5–4 mins</td>
-                            <td>Defrost setting 4 mins, then High for 3 mins</td>
+                            <td><strong data-i18n="row3_method">Microwave</strong></td>
+                            <td data-i18n="row3_fridge">High for 3.5–4 mins</td>
+                            <td data-i18n="row3_frozen">Defrost setting 4 mins, then High for 3 mins</td>
                         </tr>
                     </tbody>
                 </table>
@@ -799,12 +870,291 @@
 
     <!-- FOOTER -->
     <footer>
-        High-Volume, High-Protein Culinary Engineering • Designed for Batch Meal Prep & Gentle Digestion
+        <span data-i18n="footer_text">High-Volume, High-Protein Culinary Engineering • Designed for Batch Meal Prep & Gentle Digestion</span>
     </footer>
 
 </div>
 
 <script>
+    const translations = {
+        en: {
+            meta_title: 'The "Golden Silk" High-Protein Turkey Cottage Pie',
+            meta_desc: 'High-volume, low-calorie, gut-friendly meal prep cottage pie. 64g protein per serving. Freeze-thaw stabilized with anti-syneresis silk mash.',
+            badge_protein: '⚡ 64g Protein / Serving',
+            badge_gut: '🌿 Sensitive Gut & IBD Friendly',
+            badge_freeze: '❄️ Freeze-Thaw Stable',
+            hero_title: 'The "Golden Silk" Turkey Cottage Pie',
+            hero_subtitle: 'Zapiekanka Pasterska — High-Protein Artisan Edition',
+            hero_desc: 'Traditional beef cottage pie delivers heavy saturated fats and turns into a watery sponge when frozen. This high-volume formula pairs <strong>1,200 g of lean turkey breast mince</strong> with a rich bone-broth ragù under an anti-syneresis <strong>potato-carrot silk mash</strong> and blistered gratin crust. Engineered for large-batch freezing, effortless reheating, and gentle digestion.',
+            stat_portions_val: '6',
+            stat_portions_lbl: 'Generous Portions',
+            stat_cals_val: '~620',
+            stat_cals_lbl: 'Calories / Serving',
+            stat_protein_val: '64.0 g',
+            stat_protein_lbl: 'Protein / Serving',
+            stat_mass_val: '~700 g',
+            stat_mass_lbl: 'Plate Mass (Volume)',
+            stat_fats_val: '18.2 g',
+            stat_fats_lbl: 'Healthy Fats',
+            sec_ingredients_title: '🛒 Ingredients Checklist',
+            sec_ingredients_sub: 'Batch scaled for 6 large meal-prep portions (~700g each). Click any item to check it off.',
+            btn_reset: '↺ Reset Checks',
+            btn_print: '🖨️ Print Recipe',
+            layer1_title: 'Layer 1: Savoury Turkey & Root Ragù',
+            ing_turkey_amt: '1,200 g',
+            ing_turkey_name: 'Lean Turkey Breast Mince (≤2% Fat)',
+            ing_turkey_note: 'High-protein anchor (~288g pure protein)',
+            ing_carrots1_amt: '470 g',
+            ing_carrots1_name: 'Carrots (peeled & finely diced)',
+            ing_carrots1_note: 'Cut into 5mm cubes for sweet aromatic base',
+            ing_parsnips_amt: '270 g',
+            ing_parsnips_name: 'Parsnips (peeled & finely diced)',
+            ing_parsnips_note: 'Adds earthy sweetness & velvety body',
+            ing_passata_amt: '530 g',
+            ing_passata_name: 'Smooth Tomato Passata',
+            ing_passata_note: 'Strained tomato purée (skinless & seedless)',
+            ing_broth_amt: '33 g',
+            ing_broth_name: 'Beef Bone Broth Powder',
+            ing_broth_note: '~3.5 heaped tbsp; delivers bioavailable glycine & collagen',
+            ing_ghee1_amt: '13 g',
+            ing_ghee1_name: 'Ghee or Olive Oil',
+            ing_ghee1_note: '~1 tbsp for browning roots & mince',
+            ing_worcestershire_amt: '27 ml',
+            ing_worcestershire_name: 'Worcestershire Sauce',
+            ing_worcestershire_note: '~2 tbsp (or tamari / coconut aminos) for savory umami',
+            ing_stock_amt: '530 ml',
+            ing_stock_name: 'Water or Light Chicken Stock',
+            ing_stock_note: 'Warm stock or water to dissolve bone broth',
+            ing_starch_amt: '13 g',
+            ing_starch_name: 'Potato Starch (Slurry)',
+            ing_starch_note: 'Dissolved in 35ml cold water to gloss & bind the gravy',
+            ing_aromatics_amt: 'Aromatics',
+            ing_aromatics_name: 'Fresh Thyme, Fine Salt & Black Pepper',
+            ing_aromatics_note: '1.5 tbsp chopped fresh thyme + 1.5 tsp fine sea salt',
+            layer2_title: 'Layer 2: Golden Silk Mash Topping',
+            ing_potatoes_amt: '800 g',
+            ing_potatoes_name: 'Fluffy Potatoes (peeled chunks)',
+            ing_potatoes_note: 'Maris Piper, Russet, or Yukon Gold',
+            ing_carrots2_amt: '670 g',
+            ing_carrots2_name: 'Carrots (peeled chunks)',
+            ing_carrots2_note: 'Introduces anti-syneresis pectin to stabilize freeze-thaw',
+            ing_ghee2_amt: '20 g',
+            ing_ghee2_name: 'Ghee or Butter',
+            ing_ghee2_note: '~1.5 tbsp whipped into hot mash for silky mouthfeel',
+            ing_milk_amt: '135 ml',
+            ing_milk_name: 'Warm Milk (Dairy or Lactose-Free)',
+            ing_milk_note: 'Gentle fluid to achieve pipeable buttercream texture',
+            ing_nutmeg_amt: 'Pinch',
+            ing_nutmeg_name: 'Sea Salt & Fresh Nutmeg',
+            ing_nutmeg_note: '3/4 tsp salt + fine microplaned nutmeg',
+            layer3_title: 'Layer 3: Gratin Cheese Crust',
+            ing_cheddar_amt: '120 g',
+            ing_cheddar_name: 'Mature Cheddar Cheese',
+            ing_cheddar_note: 'Finely grated (20g per portion; naturally aged <0.1% lactose)',
+            sec_geometry_title: '📐 Pan Geometry & Batch Sizing',
+            geometry_intro: 'This batch yields approximately <strong>~4.2 kg raw preparation</strong>, settling to <strong>~3.8 kg cooked weight</strong> (6 generous portions of ~630–700g each).',
+            geometry_callout_title: 'Baking Pan Options:',
+            geometry_callout_body: '• <strong>Single Large Casserole:</strong> 35 cm × 25 cm deep ceramic or roasting dish (depth ≥ 6 cm).<br>• <strong>Two Medium Bakes:</strong> Split evenly between two 25 cm × 20 cm dishes (bake one fresh for 3 days, freeze the second unbaked).<br>• <strong>6 Individual Meal-Prep Tins:</strong> Portion into 6 oven- and freezer-safe glass or foil meal-prep containers (~750–800 ml each).',
+            sec_method_title: '🔥 Step-by-Step Method',
+            step1_title: 'Steam the Golden Silk Mash',
+            step1_p1: 'Place the 800g peeled potato chunks and 670g peeled carrot chunks in a large steamer basket. Steam over boiling water for <strong>18–20 minutes</strong> until a paring knife glides through the carrot core with zero resistance.',
+            step1_p2: 'Drain thoroughly and let rest in the hot pot off-heat for <strong>2 minutes</strong> to let surface moisture flash-steam off.',
+            step1_p3: 'Add 20g ghee, 135ml warm milk, 3/4 tsp salt, and nutmeg. Mash thoroughly, then whip vigorously with a wooden spoon until glossy and completely smooth.',
+            step1_cue: '💡 <strong>Visual Cue:</strong> Should hold soft peaks like warm buttercream.',
+            step2_title: 'Simmer the Turkey & Root Base',
+            step2_p1: 'Warm 13g ghee or oil in a wide heavy pot or Dutch oven over medium heat. Sauté the 470g diced carrots and 270g diced parsnips for <strong>5 minutes</strong> until aromatic.',
+            step2_p2: 'Add the 1,200g lean turkey mince. Break it apart gently with a wooden spatula for <strong>3–4 minutes</strong> just until opaque. <em>Avoid aggressive browning to keep lean poultry tender.</em>',
+            step2_p3: 'Whisk 33g bone broth powder into 530ml warm stock/water. Pour into the pot along with 530g passata, 27ml Worcestershire sauce, thyme, salt, and black pepper.',
+            step2_p4: 'Cover and simmer gently on low heat for <strong>15 minutes</strong> until root vegetables are tender. Stir in the potato starch slurry (13g starch + 35ml cold water) and simmer for <strong>60 seconds</strong> until the sauce turns glossy and clings to the mince.',
+            step3_title: 'Assemble & Texture the Crust',
+            step3_p1: 'Pour the hot turkey base into your baking dish (approx. 3.5 cm depth).',
+            step3_p2: 'Spoon the warm mash on top. Gently spread with a spatula, sealing completely against the outer edges to trap steam.',
+            step3_p3: 'Drag fork tines across the top in a cross-hatch pattern to create texture peaks. Scatter the 120g of grated mature cheddar evenly across the surface.',
+            step4_title: 'Bake & Crisp',
+            step4_p1: 'Bake at <strong>190°C Fan (200°C Conventional / 400°F)</strong> for <strong>20–22 minutes</strong> until bubbling vigorously at the edges.',
+            step4_p2: 'Switch oven to <strong>Broil / Fan Grill at 220°C (430°F)</strong> for <strong>3–5 minutes</strong> until the cheese ridges blister into dark golden spots.',
+            step4_cue: '🛑 <strong>Resting Gate:</strong> Rest on the counter for <strong>10 minutes</strong> before slicing. The starch matrix sets as it cools, giving clean, intact portions that lift out cleanly.',
+            sec_science_title: '🧪 Food Science & Digestive Safeguards',
+            sci_gut_title: '🌿 Sensitive Gut & IBD Safeguards',
+            sci_gut_body: '• <strong>Zero Insoluble Abrasives:</strong> All carrots and potatoes are completely peeled and steamed until cellular pectins break down; zero coarse skins, seeds, or raw cruciferous fibers to irritate delicate gut mucosa.<br>• <strong>High-Density Recovery:</strong> Delivers 64g of lean, bioavailable protein per portion.<br>• <strong>Gut Barrier Support:</strong> Bone broth powder supplies concentrated glycine and proline peptides.<br>• <strong>Ultra-Low Lactose:</strong> Naturally aged mature cheddar ferments to &lt;0.1% lactose.',
+            sci_freeze_title: '❄️ The Anti-Syneresis Freezing Fix',
+            sci_freeze_body: 'Standard potato mash turns spongy and weeps water when frozen due to amylose starch retrogradation. Blending <strong>carrots into the potato</strong> introduces branched pectins that sterically disrupt amylose crystallization. Combined with emulsified ghee and milk, it thaws into a smooth, coherent cream without separating.',
+            sec_reheat_title: '♨️ Storage & Reheating Matrix',
+            th_method: 'Method',
+            th_fridge: 'From Refrigerated',
+            th_frozen: 'Directly From Frozen',
+            row1_method: 'Air Fryer (Crispiest)',
+            row1_fridge: '175°C (350°F) for 12–14 mins',
+            row1_frozen: '160°C (320°F) foil-covered 20m, then 190°C uncovered 5m',
+            row2_method: 'Conventional Oven',
+            row2_fridge: '180°C (360°F) for 16–18 mins',
+            row2_frozen: '170°C (340°F) foil-covered 35m, uncover 5m at 200°C',
+            row3_method: 'Microwave',
+            row3_fridge: 'High for 3.5–4 mins',
+            row3_frozen: 'Defrost setting 4 mins, then High for 3 mins',
+            footer_text: 'High-Volume, High-Protein Culinary Engineering • Designed for Batch Meal Prep & Gentle Digestion'
+        },
+        pl: {
+            meta_title: 'Wysokobiałkowa Zapiekanka Pasterska „Złocisty Aksamit” z Indykiem',
+            meta_desc: 'Wysokoobjętościowa, niskokaloryczna i łagodna dla jelit zapiekanka pasterska na meal prep. 64 g białka w porcji. Purée odporne na synerozę po zamrożeniu.',
+            badge_protein: '⚡ 64 g białka / porcję',
+            badge_gut: '🌿 Przyjazne dla jelit (NZJ / WZJG)',
+            badge_freeze: '❄️ Stabilne po rozmrożeniu (brak synerozy)',
+            hero_title: 'Zapiekanka Pasterska „Złocisty Aksamit” z Indykiem',
+            hero_subtitle: 'Autorska receptura wysokobiałkowa • Wygodny meal prep',
+            hero_desc: 'Tradycyjna wołowa zapiekanka pasterska dostarcza ciężkich nasyconych kwasów tłuszczowych, a po zamrożeniu zamienia się w podchodzącą wodą gąbkę. Ta wysokoobjętościowa formuła łączy <strong>1 200 g chudego mięsa z piersi indyka</strong> z esencjonalnym ragù na bulionie kolagenowym, zwieńczonym <strong>aksamitnym purée ziemniaczano-marchewkowym</strong> chroniącym przed synerozą oraz zapieczoną skorupką z dojrzałego cheddara. Zaprojektowana do mrożenia w dużych partiach, łatwego odgrzewania i maksymalnej łagodności trawiennej.',
+            stat_portions_val: '6',
+            stat_portions_lbl: 'Solidnych porcji',
+            stat_cals_val: '~620',
+            stat_cals_lbl: 'kcal w porcji',
+            stat_protein_val: '64,0 g',
+            stat_protein_lbl: 'Białko na porcję',
+            stat_mass_val: '~700 g',
+            stat_mass_lbl: 'Masa porcji',
+            stat_fats_val: '18,2 g',
+            stat_fats_lbl: 'Zdrowe tłuszcze',
+            sec_ingredients_title: '🛒 Lista składników',
+            sec_ingredients_sub: 'Proporcje na 6 dużych porcji meal prep (~700 g każda). Kliknij składnik, aby go odhaczyć.',
+            btn_reset: '↺ Zresetuj listę',
+            btn_print: '🖨️ Drukuj przepis',
+            layer1_title: 'Warstwa 1: Wytrawne ragù z indyka i warzyw korzeniowych',
+            ing_turkey_amt: '1 200 g',
+            ing_turkey_name: 'Chude mięso mielone z piersi indyka (≤2% tłuszczu)',
+            ing_turkey_note: 'Wysokobiałkowa baza (~288 g czystego białka)',
+            ing_carrots1_amt: '470 g',
+            ing_carrots1_name: 'Marchew (obrana i drobno pokrojona w kostkę)',
+            ing_carrots1_note: 'Pokrojona w kostkę 5 mm jako słodka baza aromatyczna',
+            ing_parsnips_amt: '270 g',
+            ing_parsnips_name: 'Pasternak (obrany i drobno pokrojony w kostkę)',
+            ing_parsnips_note: 'Nadaje głęboką, korzenną słodycz i aksamitną strukturę',
+            ing_passata_amt: '530 g',
+            ing_passata_name: 'Gładka passata pomidorowa',
+            ing_passata_note: 'Przetarte pomidory (bez skórek i nasion — bezpieczne dla jelit)',
+            ing_broth_amt: '33 g',
+            ing_broth_name: 'Wołowy bulion kolagenowy w proszku (bone broth)',
+            ing_broth_note: '~3,5 czubatej łyżki; źródło biodostępnej glicyny i kolagenu',
+            ing_ghee1_amt: '13 g',
+            ing_ghee1_name: 'Masło klarowane (ghee) lub oliwa z oliwek',
+            ing_ghee1_note: '~1 łyżka do zeszklania warzyw i podsmażenia mięsa',
+            ing_worcestershire_amt: '27 ml',
+            ing_worcestershire_name: 'Sos Worcestershire',
+            ing_worcestershire_note: '~2 łyżki (lub tamari / aminos kokosowe) dla głębokiego smaku umami',
+            ing_stock_amt: '530 ml',
+            ing_stock_name: 'Woda lub lekki bulion drobiowy',
+            ing_stock_note: 'Ciepły płyn do dokładnego rozpuszczenia proszku kolagenowego',
+            ing_starch_amt: '13 g',
+            ing_starch_name: 'Skrobia ziemniaczana (zawiesina)',
+            ing_starch_note: 'Rozmącona w 35 ml zimnej wody; nadaje połysk i wiąże sos',
+            ing_aromatics_amt: 'Przyprawy',
+            ing_aromatics_name: 'Świeży tymianek, drobna sól morska i czarny pieprz',
+            ing_aromatics_note: '1,5 łyżki posiekanego tymianku + 1,5 łyżeczki soli morskiej',
+            layer2_title: 'Warstwa 2: Aksamitne purée „Złocisty Aksamit” (Golden Silk)',
+            ing_potatoes_amt: '800 g',
+            ing_potatoes_name: 'Mączyste ziemniaki (obrane, w kawałkach)',
+            ing_potatoes_note: 'Ziemniaki mączyste o wysokiej zawartości skrobi (typ kulinarny C lub B-C, np. Bryza, Tajfun, Augusta lub Russet)',
+            ing_carrots2_amt: '670 g',
+            ing_carrots2_name: 'Marchew (obrana, w kawałkach)',
+            ing_carrots2_note: 'Wprowadza pektyny chroniące purée przed podchodzeniem wodą (synerozą)',
+            ing_ghee2_amt: '20 g',
+            ing_ghee2_name: 'Masło klarowane (ghee) lub masło 82%',
+            ing_ghee2_note: '~1,5 łyżki wmieszane w gorące purée dla maślanej gładkości',
+            ing_milk_amt: '135 ml',
+            ing_milk_name: 'Ciepłe mleko (krowie lub bezlaktozowe)',
+            ing_milk_note: 'Płyn zapewniający konsystencję aksamitnego kremu',
+            ing_nutmeg_amt: 'Szczypta',
+            ing_nutmeg_name: 'Sól morska i świeżo starta gałka muszkatołowa',
+            ing_nutmeg_note: '3/4 łyżeczki soli + świeżo otarta na tarce gałka muszkatołowa',
+            layer3_title: 'Warstwa 3: Zapieczona chrupiąca skorupka serowa (gratin)',
+            ing_cheddar_amt: '120 g',
+            ing_cheddar_name: 'Dojrzewający ser Cheddar (Mature)',
+            ing_cheddar_note: 'Drobno starty (20 g na porcję; długo dojrzewający, naturalnie <0,1% laktozy)',
+            sec_geometry_title: '📐 Geometria naczynia i podział na porcje',
+            geometry_intro: 'Z tej receptury uzyskasz około <strong>~4,2 kg surowej masy</strong>, co po upieczeniu daje <strong>~3,8 kg gotowej potrawy</strong> (6 solidnych porcji po ~630–700 g każda).',
+            geometry_callout_title: 'Warianty form do pieczenia:',
+            geometry_callout_body: '• <strong>Jedno duże naczynie żaroodporne:</strong> Brytfanna ceramiczna lub naczynie szklane 35 cm × 25 cm (głębokość ≥ 6 cm).<br>• <strong>Dwie średnie formy:</strong> Równy podział na dwie formy 25 cm × 20 cm (jedną pieczesz na świeżo na 3 dni, drugą zamrażasz przed pieczeniem).<br>• <strong>6 pojedynczych pojemników meal prep:</strong> Rozdziel do 6 żaroodpornych i odpornych na mrożenie pojemników szklanych lub foremek aluminiowych (~750–800 ml każdy).',
+            sec_method_title: '🔥 Przygotowanie krok po kroku',
+            step1_title: 'Ugotuj na parze purée „Złocisty Aksamit”',
+            step1_p1: 'Umieść 800 g obranych ziemniaków i 670 g obranej marchwi w dużym koszyku do gotowania na parze. Gotuj nad wrzątkiem przez <strong>18–20 minut</strong>, aż mały nóż wejdzie w środek marchwi bez najmniejszego oporu.',
+            step1_p2: 'Dokładnie odcedź i pozostaw w gorącym garnku poza palnikiem na <strong>2 minuty</strong>, aby resztki wilgoci z powierzchni całkowicie odparowały.',
+            step1_p3: 'Dodaj 20 g ghee, 135 ml ciepłego mleka, 3/4 łyżeczki soli i gałkę muszkatołową. Ugnieć dokładnie praską, a następnie energicznie utrzyj drewnianą łyżką lub rózgą, aż purée stanie się lśniące i idealnie aksamitne.',
+            step1_cue: '💡 <strong>Wskazówka wizualna:</strong> Purée powinno tworzyć miękkie wierzchołki niczym puszysty maślany krem.',
+            step2_title: 'Podduszenie bazy z indyka i warzyw',
+            step2_p1: 'Rozgrzej 13 g ghee lub oliwy w szerokim garnku z grubym dnem lub żeliwnym kociołku na średnim ogniu. Podsmażaj 470 g marchwi i 270 g pasternaku przez <strong>5 minut</strong>, aż uwolnią słodki aromat.',
+            step2_p2: 'Dodaj 1 200 g chudego mięsa mielonego z indyka. Rozdrabniaj delikatnie drewnianą łopatką przez <strong>3–4 minuty</strong> tylko do momentu ścięcia białka (aż mięso zmatowieje). <em>Unikaj mocnego przypiekania, aby zachować soczystość chudego drobiu.</em>',
+            step2_p3: 'Rozmieszaj 33 g bulionu kolagenowego w 530 ml ciepłego bulionu lub wody. Wlej do garnka razem z 530 g passaty, 27 ml sosu Worcestershire, tymiankiem, solą oraz pieprzem.',
+            step2_p4: 'Przykryj i gotuj na wolnym ogniu przez <strong>15 minut</strong>, aż warzywa korzeniowe zmiękną. Wlej zawiesinę ze skrobi ziemniaczanej (13 g skrobi dokładnie wymieszane w 35 ml zimnej wody) i gotuj jeszcze przez <strong>60 sekund</strong>, aż sos stanie się lśniący, gęsty i oblepi mięso.',
+            step3_title: 'Układanie warstw i fakturowanie wierzchu',
+            step3_p1: 'Przełóż gorące ragù z indyka do naczynia żaroodpornego (warstwa powinna mieć ok. 3,5 cm głębokości).',
+            step3_p2: 'Wyłóż ciepłe purée na wierzch. Rozprowadź ostrożnie łopatką, dokładnie domykając brzegi naczynia, aby zamknąć parę wewnątrz.',
+            step3_p3: 'Przeciągnij zębami widelca w kratkę po powierzchni purée, tworząc wyraźne rowki i wierzchołki. Równomiernie posyp wierzch 120 g startego cheddara.',
+            step4_title: 'Pieczenie i zapiekanie skórki',
+            step4_p1: 'Piecz w temperaturze <strong>190°C z termoobiegiem (200°C góra-dół)</strong> przez <strong>20–22 minuty</strong>, aż sos zacznie wyraźnie bulgotać przy brzegach naczynia.',
+            step4_p2: 'Przełącz piekarnik na <strong>grill z termoobiegiem na 220°C</strong> na <strong>3–5 minut</strong>, aż ser i wierzchołki purée zapieką się na złocistobrązowy, chrupiący kolor.',
+            step4_cue: '🛑 <strong>Odpoczynek przed porcjowaniem:</strong> Pozostaw naczynie na blacie na <strong>10 minut</strong> przed krojeniem. Matryca skrobiowo-pektynowa stabilizuje się podczas stygnięcia, co pozwala na krojenie zwartych, czystych porcji, które nie rozpadają się przy nakładaniu.',
+            sec_science_title: '🧪 Fizjologia trawienia i fizykochemia kulinarna',
+            sci_gut_title: '🌿 Ochrona przewodu pokarmowego przy NZJ i WZJG',
+            sci_gut_body: '• <strong>Zero drażniącego błonnika nierozpuszczalnego:</strong> Wszystkie warzywa są dokładnie obrane i ugotowane na parze do pełnej miękkości (rozluźnienia ścian komórkowych i protopektyn); brak skórek, nasion oraz twardych włókien zapobiega mechanicznemu podrażnianiu wrażliwej śluzówki jelit.<br>• <strong>Wysokobiałkowa regeneracja:</strong> Dostarcza aż 64 g lekkostrawnego, biodostępnego białka w jednej porcji.<br>• <strong>Ochrona bariery jelitowej:</strong> Wołowy bulion kolagenowy w proszku dostarcza skoncentrowaną glicynę i prolinę — kluczowe aminokwasy wspierające szczelność i odbudowę nabłonka jelitowego.<br>• <strong>Znikoma zawartość laktozy:</strong> Długo dojrzewający ser Cheddar dzięki naturalnemu procesowi fermentacji traci niemal całą laktozę (&lt;0,1%), co gwarantuje pełne bezpieczeństwo trawienne.',
+            sci_freeze_title: '❄️ Ochrona przed synerozą (podchodzeniem wodą podczas mrożenia)',
+            sci_freeze_body: 'Klasyczne purée ziemniaczane po zamrożeniu staje się gąbczaste i podchodzi wodą na skutek retrogradacji amylozy (krystalizacji skrobi). Połączenie <strong>marchwi z ziemniakami</strong> wprowadza rozgałęzione pektyny, które sterycznie blokują krystalizację łańcuchów amylozy. W połączeniu ze zemulgowanym ghee i mlekiem, purée po rozmrożeniu zachowuje idealnie gładką, kremową strukturę bez rozwarstwiania.',
+            sec_reheat_title: '♨️ Przechowywanie i protokół odgrzewania',
+            th_method: 'Metoda',
+            th_fridge: 'Z lodówki (schłodzone)',
+            th_frozen: 'Bezpośrednio z zamrażarki',
+            row1_method: 'Air Fryer (maksymalna chrupkość)',
+            row1_fridge: '175°C przez 12–14 min',
+            row1_frozen: '160°C pod przykryciem z folii przez 20 min, potem 190°C bez przykrycia przez 5 min',
+            row2_method: 'Piekarnik tradycyjny (góra-dół)',
+            row2_fridge: '180°C przez 16–18 min',
+            row2_frozen: '170°C pod przykryciem z folii przez 35 min, potem 200°C bez przykrycia przez 5 min',
+            row3_method: 'Kuchenka mikrofalowa',
+            row3_fridge: 'Maksymalna moc przez 3,5–4 min',
+            row3_frozen: 'Tryb rozmrażania (Defrost) przez 4 min, następnie maksymalna moc przez 3 min',
+            footer_text: 'Zaawansowana inżynieria kulinarna • Wysoka objętość, maksimum białka i łagodne trawienie'
+        }
+    };
+
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+        
+        document.documentElement.lang = lang;
+        try {
+            localStorage.setItem('cottage_pie_lang', lang);
+        } catch (e) {
+            // Guard against disabled localStorage / private browsing
+        }
+        
+        const btnEn = document.getElementById('btn-en');
+        const btnPl = document.getElementById('btn-pl');
+        if (btnEn && btnPl) {
+            btnEn.classList.toggle('active', lang === 'en');
+            btnEn.setAttribute('aria-pressed', lang === 'en');
+            btnPl.classList.toggle('active', lang === 'pl');
+            btnPl.setAttribute('aria-pressed', lang === 'pl');
+        }
+        
+        if (translations[lang].meta_title) {
+            document.title = translations[lang].meta_title;
+        }
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && translations[lang].meta_desc) {
+            metaDesc.setAttribute('content', translations[lang].meta_desc);
+        }
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key] !== undefined) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (translations[lang][key] !== undefined) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
     function toggleCheck(el) {
         const checkbox = el.querySelector('input[type="checkbox"]');
         checkbox.checked = !checkbox.checked;
@@ -817,6 +1167,16 @@
             item.querySelector('input[type="checkbox"]').checked = false;
         });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let savedLang = null;
+        try {
+            savedLang = localStorage.getItem('cottage_pie_lang');
+        } catch (e) {}
+
+        const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';
+        setLanguage(savedLang || browserLang);
+    });
 </script>
 
 </body>
