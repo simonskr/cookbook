@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — High-Protein Meal-Prep Cookbook</title>
+    <meta name="description" content="Food science principles, cryo-stabilization mechanisms, and clinical gut safeguards behind the High-Protein Meal-Prep Compendium.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #fbf9f5;
+            --bg-card: #ffffff;
+            --bg-inset: #f3efe6;
+            --text-main: #231c16;
+            --text-muted: #6e645a;
+            --text-light: #94897e;
+            --border-color: #e5ded3;
+            --border-subtle: #eee8de;
+            --amber-warm: #c85a17;
+            --amber-hover: #b04b0f;
+            --amber-light: #fbeee6;
+            --gold-accent: #d97706;
+            --gold-light: #fef3c7;
+            --green-gut: #2d7a4f;
+            --green-light: #e8f5ed;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 2px 6px rgba(35, 28, 22, 0.04);
+            --shadow-md: 0 10px 25px rgba(35, 28, 22, 0.06);
+            --shadow-lg: 0 20px 40px rgba(35, 28, 22, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Nav Bar */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+            padding: 0.5rem 0.25rem;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--amber-warm);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--amber-hover);
+            text-decoration: underline;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: inline-flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            padding: 3px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 0.35rem 0.85rem;
+            min-height: 36px;
+            min-width: 44px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: var(--amber-warm);
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(200, 90, 23, 0.35);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--amber-warm);
+            background-color: var(--amber-light);
+        }
+
+        .lang-btn:focus-visible,
+        .nav-back:focus-visible,
+        .btn-action:focus-visible {
+            outline: 2px solid var(--amber-warm);
+            outline-offset: 2px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, var(--bg-inset) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.75rem 2.25rem 2.25rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--amber-warm), var(--gold-accent));
+        }
+
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--amber-warm);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            line-height: 1.65;
+        }
+
+        /* Content Sections */
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-card h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Pillars Detail */
+        .pillar-block {
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .pillar-block:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .pillar-head {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pillar-body {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Matrix Table */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 0.5rem;
+        }
+
+        .matrix-table th, .matrix-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .matrix-table th {
+            background: var(--bg-inset);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .matrix-table td {
+            color: var(--text-muted);
+        }
+
+        /* Callout Box */
+        .callout-box {
+            background: var(--bg-inset);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .callout-box.amber {
+            background: var(--amber-light);
+            border-color: #fed7aa;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--amber-warm);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .callout-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--amber-warm);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.92rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(200, 90, 23, 0.25);
+            margin-top: 1.5rem;
+        }
+
+        .btn-action:hover {
+            background: var(--amber-hover);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 0 1rem;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .matrix-table th, .matrix-table td {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .hero, .section-card {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+            .page-nav, .lang-switch, .btn-action, footer {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="page-nav" aria-label="Nawigacja / Navigation">
+        <a href="index.html" class="nav-back" data-i18n="nav_back">← Back to Recipes</a>
+        <div class="lang-switch" role="group" aria-label="Language selection">
+            <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" id="btn-pl" onclick="setLanguage('pl')" aria-pressed="false">PL</button>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="hero">
+        <h1 data-i18n="hero_title">Culinary Engineering & Food Science</h1>
+        <span class="hero-subtitle" data-i18n="hero_subtitle">The Architecture of High-Volume, Cryo-Stabilized Meal Prep</span>
+
+        <p class="hero-desc" data-i18n-html="hero_desc">
+            Most batch meal-prep recipes fail in the freezer: starches retrograde into watery sponges, eggs weep moisture, tortillas become soggy glue, and lean poultry turns stringy. 
+            This compendium approaches home cooking through physical chemistry and digestive physiology—delivering massive plate volume, high complete protein, and effortless freeze-thaw stability.
+        </p>
+    </header>
+
+    <!-- THREE PILLARS DETAIL -->
+    <section class="section-card">
+        <h2 data-i18n="sec_pillars_title">🔬 The Three Core Design Pillars</h2>
+
+        <!-- Pillar 1 -->
+        <div class="pillar-block">
+            <div class="pillar-head" data-i18n="p1_head">⚖️ 1. High Volume & Satiety (Low Caloric Density)</div>
+            <div class="pillar-body" data-i18n-html="p1_body">
+                Hunger during fat loss is primarily triggered by gastric mechanoreceptor volume signaling rather than calories alone. By using high-moisture root vegetables, pureed aromatics, and lean poultry, each portion delivers <strong>~330–700 g of physical mass</strong> for only <strong>~380–620 kcal</strong>, anchored by <strong>45–64 g of complete bioavailable protein</strong>. You finish every meal fully satiated with zero metabolic crash.
+            </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-block">
+            <div class="pillar-head" data-i18n="p2_head">❄️ 2. Anti-Syneresis Cryo-Stability</div>
+            <div class="pillar-body" data-i18n-html="p2_body">
+                Freezer storage causes standard amylose starch molecules to re-align and crystallize, squeezing out trapped water (syneresis). We engineer freeze-thaw stability through three physical mechanisms:
+                <br>• <strong>Pectin-Amylose Disruption:</strong> Blending 50% steamed sweet carrots into potato mash introduces branched pectin hydrocolloids that sterically obstruct amylose crystallization.
+                <br>• <strong>Egg Interpenetrating Polymer Networks (IPN):</strong> Whisking potato starch and milk into eggs blocks ovalbumin from over-coagulating into rubber during freezing.
+                <br>• <strong>Cold Assembly (&le;4°C) & Hydrophobic Barriers:</strong> Assembling burritos ice-cold with an inner cheddar fat barrier completely eliminates steam condensation and prevents soggy tortillas.
+            </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-block">
+            <div class="pillar-head" data-i18n="p3_head">🌿 3. Sensitive Gut & IBD Safeguards (NZJ / WZJG)</div>
+            <div class="pillar-body" data-i18n-html="p3_body">
+                Formulated for sensitive digestive tracts and chronic inflammatory bowel diseases (NZJ/WZJG):
+                <br>• <strong>Zero Insoluble Abrasives:</strong> All carrots and potatoes are 100% peeled and steamed until cellular pectins soften completely; zero skins, seeds, or raw cruciferous fibers to abrade delicate mucosa.
+                <br>• <strong>Zero Capsaicin / Mucosal Irritants:</strong> Seasoned exclusively with gentle digestive herbs (thyme, cumin, oregano, mild curry spices) without chili burns.
+                <br>• <strong>Epithelial Repair:</strong> Unflavored beef bone broth supplies concentrated glycine and proline to support intestinal barrier integrity.
+                <br>• <strong>Naturally Low Lactose:</strong> Mature cheddar ferments to &lt;0.1% lactose.
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE MATRIX TABLE -->
+    <section class="section-card">
+        <h2 data-i18n="sec_matrix_title">📊 Master Recipe Architecture Comparison</h2>
+        <div style="overflow-x: auto;">
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="th_dish">Recipe</th>
+                        <th data-i18n="th_format">Format</th>
+                        <th data-i18n="th_per_serving">Per Serving</th>
+                        <th data-i18n="th_cryo">Cryo Mechanism</th>
+                        <th data-i18n="th_best_reheat">Optimal Reheat Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong data-i18n="t_dish1_name">Turkey Cottage Pie</strong></td>
+                        <td data-i18n="t_dish1_format">Baked Gratin</td>
+                        <td data-i18n="t_dish1_macros">620 kcal • 64g P • ~700g</td>
+                        <td data-i18n="t_dish1_cryo">50/50 carrot-potato pectin disruption of amylose retrogradation</td>
+                        <td data-i18n="t_dish1_reheat">Air Fryer at 175°C (12m) or Fan Oven 180°C</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="t_dish2_name">Golden Foil Burritos</strong></td>
+                        <td data-i18n="t_dish2_format">Foil Grab & Go</td>
+                        <td data-i18n="t_dish2_macros">452 kcal • 47g P • ~330g</td>
+                        <td data-i18n="t_dish2_cryo">Cold assembly (≤4°C) + hydrophobic cheddar barrier + egg IPN network</td>
+                        <td data-i18n="t_dish2_reheat">Air Fryer 16m in foil &rarr; 3m unshielded at 195°C</td>
+                    </tr>
+                    <tr>
+                        <td><strong data-i18n="t_dish3_name">Japanese Curry Stew</strong></td>
+                        <td data-i18n="t_dish3_format">Big-Pot Stew Bowl</td>
+                        <td data-i18n="t_dish3_macros">387 kcal • 45g P • ~550g</td>
+                        <td data-i18n="t_dish3_cryo">Sweet potato β-amylase stability + alkaline chicken actomyosin protection</td>
+                        <td data-i18n="t_dish3_reheat">Stovetop covered with 2 tbsp water + gentle whisk</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout-box amber">
+            <div class="callout-title" data-i18n="rules_title">❄️ The Two Golden Freezing Rules</div>
+            <div class="callout-text" data-i18n-html="rules_body">
+                1. <strong>Mandatory Rapid Chill:</strong> Always cool cooked preparations to &le;4°C in the refrigerator before wrapping and transferring to the freezer. Warm food in sealed foil or containers creates condensation that destroys texture.
+                <br>2. <strong>Two-Phase Reheating:</strong> When reheating from frozen, thaw the core shielded (in foil or covered) first, then uncover at high heat (air fryer or fan grill) for the final 3–5 minutes to restore crisp textures.
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-action" data-i18n="btn_explore">← Explore the Master Recipes</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <span data-i18n="footer_text">Open-Source Culinary Engineering • Designed for Batch Meal-Prep, High Volume & Gentle Digestion</span>
+    </footer>
+
+</div>
+
+<script>
+    const translations = {
+        en: {
+            nav_back: '← Back to Recipes',
+            hero_title: 'Culinary Engineering & Food Science',
+            hero_subtitle: 'The Architecture of High-Volume, Cryo-Stabilized Meal Prep',
+            hero_desc: 'Most batch meal-prep recipes fail in the freezer: starches retrograde into watery sponges, eggs weep moisture, tortillas become soggy glue, and lean poultry turns stringy. This compendium approaches home cooking through physical chemistry and digestive physiology—delivering massive plate volume, high complete protein, and effortless freeze-thaw stability.',
+            
+            sec_pillars_title: '🔬 The Three Core Design Pillars',
+            p1_head: '⚖️ 1. High Volume & Satiety (Low Caloric Density)',
+            p1_body: 'Hunger during fat loss is primarily triggered by gastric mechanoreceptor volume signaling rather than calories alone. By using high-moisture root vegetables, pureed aromatics, and lean poultry, each portion delivers <strong>~330–700 g of physical mass</strong> for only <strong>~380–620 kcal</strong>, anchored by <strong>45–64 g of complete bioavailable protein</strong>. You finish every meal fully satiated with zero metabolic crash.',
+            p2_head: '❄️ 2. Anti-Syneresis Cryo-Stability',
+            p2_body: 'Freezer storage causes standard amylose starch molecules to re-align and crystallize, squeezing out trapped water (syneresis). We engineer freeze-thaw stability through three physical mechanisms:<br>• <strong>Pectin-Amylose Disruption:</strong> Blending 50% steamed sweet carrots into potato mash introduces branched pectin hydrocolloids that sterically obstruct amylose crystallization.<br>• <strong>Egg Interpenetrating Polymer Networks (IPN):</strong> Whisking potato starch and milk into eggs blocks ovalbumin from over-coagulating into rubber during freezing.<br>• <strong>Cold Assembly (&le;4°C) & Hydrophobic Barriers:</strong> Assembling burritos ice-cold with an inner cheddar fat barrier completely eliminates steam condensation and prevents soggy tortillas.',
+            p3_head: '🌿 3. Sensitive Gut & IBD Safeguards (NZJ / WZJG)',
+            p3_body: 'Formulated for sensitive digestive tracts and chronic inflammatory bowel diseases (NZJ/WZJG):<br>• <strong>Zero Insoluble Abrasives:</strong> All carrots and potatoes are 100% peeled and steamed until cellular pectins soften completely; zero skins, seeds, or raw cruciferous fibers to abrade delicate mucosa.<br>• <strong>Zero Capsaicin / Mucosal Irritants:</strong> Seasoned exclusively with gentle digestive herbs (thyme, cumin, oregano, mild curry spices) without chili burns.<br>• <strong>Epithelial Repair:</strong> Unflavored beef bone broth supplies concentrated glycine and proline to support intestinal barrier integrity.<br>• <strong>Naturally Low Lactose:</strong> Mature cheddar ferments to &lt;0.1% lactose.',
+            
+            sec_matrix_title: '📊 Master Recipe Architecture Comparison',
+            th_dish: 'Recipe',
+            th_format: 'Format',
+            th_per_serving: 'Per Serving',
+            th_cryo: 'Cryo Mechanism',
+            th_best_reheat: 'Optimal Reheat Method',
+            
+            t_dish1_name: 'Turkey Cottage Pie',
+            t_dish1_format: 'Baked Gratin',
+            t_dish1_macros: '620 kcal • 64g P • ~700g',
+            t_dish1_cryo: '50/50 carrot-potato pectin disruption of amylose retrogradation',
+            t_dish1_reheat: 'Air Fryer at 175°C (12m) or Fan Oven 180°C',
+            
+            t_dish2_name: 'Golden Foil Burritos',
+            t_dish2_format: 'Foil Grab & Go',
+            t_dish2_macros: '452 kcal • 47g P • ~330g',
+            t_dish2_cryo: 'Cold assembly (≤4°C) + hydrophobic cheddar barrier + egg IPN network',
+            t_dish2_reheat: 'Air Fryer 16m in foil → 3m unshielded at 195°C',
+            
+            t_dish3_name: 'Japanese Curry Stew',
+            t_dish3_format: 'Big-Pot Stew Bowl',
+            t_dish3_macros: '387 kcal • 45g P • ~550g',
+            t_dish3_cryo: 'Sweet potato β-amylase stability + alkaline chicken actomyosin protection',
+            t_dish3_reheat: 'Stovetop covered with 2 tbsp water + gentle whisk',
+            
+            rules_title: '❄️ The Two Golden Freezing Rules',
+            rules_body: '1. <strong>Mandatory Rapid Chill:</strong> Always cool cooked preparations to &le;4°C in the refrigerator before wrapping and transferring to the freezer. Warm food in sealed foil or containers creates condensation that destroys texture.<br>2. <strong>Two-Phase Reheating:</strong> When reheating from frozen, thaw the core shielded (in foil or covered) first, then uncover at high heat (air fryer or fan grill) for the final 3–5 minutes to restore crisp textures.',
+            
+            btn_explore: '← Explore the Master Recipes',
+            footer_text: 'Open-Source Culinary Engineering • Designed for Batch Meal-Prep, High Volume & Gentle Digestion'
+        },
+        pl: {
+            nav_back: '← Wróć do przepisów',
+            hero_title: 'Inżynieria kulinarna i fizykochemia potraw',
+            hero_subtitle: 'Architektura meal prepu o wysokiej objętości i stabilności po zamrożeniu',
+            hero_desc: 'Większość dań gotowanych na zapas rozczarowuje po rozmrożeniu: skrobie ulegają retrogradacji i podchodzą wodą, jajka stają się gumowate, tortille zamieniają się w mokrą papkę, a chudy drób staje się suchy i wiórowaty. To kompendium opiera się na fizykochemii żywności i fizjologii trawienia, dostarczając potrawy o ogromnej objętości, potężnej dawce białka i perfekcyjnej strukturze po rozmrożeniu.',
+            
+            sec_pillars_title: '🔬 Trzy filary inżynierii kulinarnej',
+            p1_head: '⚖️ 1. Wysoka objętość i sytość (Niska gęstość kaloryczna)',
+            p1_body: 'Uczucie sytości podczas redukcji zależy przede wszystkim od pobudzenia mechanoreceptorów żołądka objętością pokarmu, a nie samymi kaloriami. Dzięki zastosowaniu warzyw korzeniowych i chudego drobiu każda porcja dostarcza <strong>~330–700 g fizycznej masy</strong> przy zaledwie <strong>~380–620 kcal</strong>, zawierając <strong>45–64 g pełnowartościowego białka</strong>. Posiłek daje głębokie nasycenie bez spadków energii.',
+            p2_head: '❄️ 2. Ochrona przed synerozą (stabilność po zamrożeniu)',
+            p2_body: 'Mrożenie sprawia, że cząsteczki amylozy łączą się w regularne kryształy, wyciskając uwięzioną wodę (syneroza). Blokujemy ten proces za pomocą trzech mechanizmów:<br>• <strong>Rozbijanie łańcuchów amylozy pektyną:</strong> Dodatek 50% gotowanej marchwi do purée ziemniaczanego wprowadza rozgałęzione pektyny, które sterycznie uniemożliwiają krystalizację skrobi.<br>• <strong>Sieci polimerowe w jajecznicy (IPN):</strong> Dodatek skrobi ziemniaczanej do jaj tworzy sieć chroniącą owalbuminę przed zbijaniem się w gumę podczas mrożenia.<br>• <strong>Zimny montaż (&le;4°C) i warstwy hydrofobowe:</strong> Składanie burrito z lodowatych składników oraz warstwa cheddara całkowicie eliminują skraplanie pary wodnej i rozmakanie tortilli.',
+            p3_head: '🌿 3. Ochrona przewodu pokarmowego przy NZJ / WZJG',
+            p3_body: 'Dania opracowane z myślą o osobach z wrażliwym przewodem pokarmowym i nieswoistymi zapaleniami jelit (NZJ/WZJG):<br>• <strong>Zero drażniącego błonnika nierozpuszczalnego:</strong> Wszystkie warzywa są dokładnie obierane i gotowane na parze do miękkości; brak pestek i surowych włókien kapustnych chroni śluzówkę.<br>• <strong>Brak ostrej kapsaicyny:</strong> Przyprawy łagodne dla trawienia (tymianek, kumin, oregano, łagodne curry) bez palących podrażnień.<br>• <strong>Regeneracja nabłonka:</strong> Wołowy bulion kolagenowy w proszku dostarcza glicyny i proliny wspierających szczelność jelit.<br>• <strong>Znikoma zawartość laktozy:</strong> Długo dojrzewający cheddar naturalnie zawiera &lt;0,1% laktozy.',
+            
+            sec_matrix_title: '📊 Porównanie architektury dań i odporności na mrożenie',
+            th_dish: 'Danie',
+            th_format: 'Format',
+            th_per_serving: 'W porcji',
+            th_cryo: 'Mechanizm ochrony przed rozwarstwianiem',
+            th_best_reheat: 'Optymalna metoda odgrzewania',
+            
+            t_dish1_name: 'Zapiekanka Pasterska',
+            t_dish1_format: 'Zapieczony Gratin',
+            t_dish1_macros: '620 kcal • 64 g B • ~700 g',
+            t_dish1_cryo: 'Pektyny z marchwi (50/50) blokujące retrogradację amylozy w ziemniakach',
+            t_dish1_reheat: 'Air Fryer 175°C (12 min) lub piekarnik z termoobiegiem 180°C',
+            
+            t_dish2_name: 'Burrito w Złotej Folii',
+            t_dish2_format: 'Danie do ręki w folii',
+            t_dish2_macros: '452 kcal • 47 g B • ~330 g',
+            t_dish2_cryo: 'Zimny montaż (≤4°C) + hydrofobowa warstwa cheddara + sieć IPN w jajecznicy',
+            t_dish2_reheat: 'Air Fryer 16 min w folii → 3 min bez przykrycia w 195°C',
+            
+            t_dish3_name: 'Japońskie Gulasz Curry',
+            t_dish3_format: 'Miska gulaszu z garnka',
+            t_dish3_macros: '387 kcal • 45 g B • ~550 g',
+            t_dish3_cryo: 'Aktywność β-amylazy w batatach + ochrona aktiomiozyny sodą oczyszczoną',
+            t_dish3_reheat: 'Rondel pod przykryciem z 2 łyżkami wody + roztrzepanie rózgą',
+            
+            rules_title: '❄️ Dwie złote zasady mrożenia',
+            rules_body: '1. <strong>Bezwzględne szybkie chłodzenie:</strong> Zawsze schłodź ugotowane dania do &le;4°C w lodówce przed zawinięciem w folię i włożeniem do zamrażarki. Ciepłe jedzenie w zamkniętym pojemniku paruje, co niszczy strukturę potrawy.<br>2. <strong>Dwufazowe odgrzewanie:</strong> Odgrzewając potrawę bezpośrednio z zamrażarki, najpierw rozmroź rdzeń pod osłoną (w folii lub pod przykryciem), a dopiero w ostatnich 3–5 minutach dopiecz na wysokiej mocy (Air Fryer / grill) dla chrupkości.',
+            
+            btn_explore: '← Przejdź do przepisów',
+            footer_text: 'Zaawansowana inżynieria kulinarna • Wysoka objętość, maksimum białka i łagodne trawienie'
+        }
+    };
+
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+        
+        document.documentElement.lang = lang;
+        try {
+            localStorage.setItem('cottage_pie_lang', lang);
+        } catch (e) {}
+        
+        const btnEn = document.getElementById('btn-en');
+        const btnPl = document.getElementById('btn-pl');
+        if (btnEn && btnPl) {
+            btnEn.classList.toggle('active', lang === 'en');
+            btnEn.setAttribute('aria-pressed', lang === 'en');
+            btnPl.classList.toggle('active', lang === 'pl');
+            btnPl.setAttribute('aria-pressed', lang === 'pl');
+        }
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key] !== undefined) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (translations[lang][key] !== undefined) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let savedLang = null;
+        try {
+            savedLang = localStorage.getItem('cottage_pie_lang');
+        } catch (e) {}
+
+        const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';
+        setLanguage(savedLang || browserLang);
+    });
+</script>
+
+</body>
+</html>
