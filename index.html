@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The "Golden Silk" High-Protein Turkey Cottage Pie — 1,200g Mince Scale</title>
-    <meta name="description" content="High-volume, low-calorie, gut-soothing meal prep cottage pie scaled for 1,200g mince. 48g protein per serving. Freeze-thaw stabilized.">
+    <title>The "Golden Silk" High-Protein Turkey Cottage Pie</title>
+    <meta name="description" content="High-volume, low-calorie, gut-friendly meal prep cottage pie. 64g protein per serving. Freeze-thaw stabilized with anti-syneresis silk mash.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -115,7 +115,7 @@
             font-weight: 700;
             line-height: 1.15;
             color: var(--text-main);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.02em;
         }
 
@@ -171,56 +171,7 @@
             margin-top: 0.25rem;
         }
 
-        /* Yield Interactive Toggle */
-        .control-panel {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .control-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .toggle-group {
-            display: inline-flex;
-            background: var(--bg-inset);
-            padding: 4px;
-            border-radius: 9999px;
-            border: 1px solid var(--border-color);
-        }
-
-        .toggle-btn {
-            background: transparent;
-            border: none;
-            padding: 0.45rem 1.25rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: all 0.2s ease;
-        }
-
-        .toggle-btn.active {
-            background: var(--bg-card);
-            color: var(--amber-warm);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Two Column Layout */
+        /* Layout */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -277,7 +228,7 @@
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
-            padding: 0.55rem 0.25rem;
+            padding: 0.6rem 0.25rem;
             border-bottom: 1px solid var(--border-subtle);
             font-size: 0.95rem;
             cursor: pointer;
@@ -290,7 +241,7 @@
         }
 
         .ingredient-item.checked {
-            opacity: 0.5;
+            opacity: 0.45;
             text-decoration: line-through;
         }
 
@@ -484,26 +435,17 @@
             margin-top: 2rem;
         }
 
-        footer a {
-            color: var(--amber-warm);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
         /* Print styles */
         @media print {
             body {
                 background: #fff;
                 padding: 0;
             }
-            .hero, .section-card, .control-panel {
+            .hero, .section-card {
                 box-shadow: none !important;
                 border: 1px solid #ccc !important;
             }
-            .control-panel, .action-row, footer {
+            .action-row, footer {
                 display: none !important;
             }
             .content-grid {
@@ -519,8 +461,8 @@
     <!-- HERO HEADER -->
     <header class="hero">
         <div class="badges-row">
-            <span class="badge badge-amber">⚡ 1,200g Mince Scale</span>
-            <span class="badge badge-green">🌿 IBD / UC Remission Safe</span>
+            <span class="badge badge-amber">⚡ 64g Protein / Serving</span>
+            <span class="badge badge-green">🌿 Sensitive Gut & IBD Friendly</span>
             <span class="badge badge-gold">❄️ Freeze-Thaw Stable</span>
         </div>
 
@@ -528,47 +470,34 @@
         <span class="polish-subtitle">Zapiekanka Pasterska — High-Protein Artisan Edition</span>
 
         <p class="hero-desc">
-            An engineered, high-volume meal-prep classic formulated specifically around your household staples. 
-            Traditional 20% beef cottage pie delivers heavy fats and retrogrades into a watery sponge in the freezer. 
-            This formula locks <strong>1,200 g of lean 2% turkey breast mince</strong> into a rich bone-broth ragù under an anti-syneresis <strong>potato-carrot silk mash</strong> and blistered mature cheddar crust.
+            Traditional beef cottage pie delivers heavy saturated fats and turns into a watery sponge when frozen. 
+            This high-volume formula pairs <strong>1,200 g of lean turkey breast mince</strong> with a rich bone-broth ragù under an anti-syneresis <strong>potato-carrot silk mash</strong> and blistered gratin crust. Engineered for large-batch freezing, effortless reheating, and gentle digestion.
         </p>
 
-        <!-- Dynamic Stats Grid -->
+        <!-- Stats Grid (6 Giant Servings) -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-val" id="stat-portions">8</div>
-                <div class="stat-lbl">Meal Portions</div>
+                <div class="stat-val">6</div>
+                <div class="stat-lbl">Generous Portions</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val" id="stat-cals">~465</div>
+                <div class="stat-val">~620</div>
                 <div class="stat-lbl">Calories / Serving</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val" id="stat-protein">48.0 g</div>
+                <div class="stat-val">64.0 g</div>
                 <div class="stat-lbl">Protein / Serving</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val" id="stat-mass">~525 g</div>
+                <div class="stat-val">~700 g</div>
                 <div class="stat-lbl">Plate Mass (Volume)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val" id="stat-fat">13.6 g</div>
+                <div class="stat-val">18.2 g</div>
                 <div class="stat-lbl">Healthy Fats</div>
             </div>
         </div>
     </header>
-
-    <!-- INTERACTIVE YIELD TOGGLE -->
-    <div class="control-panel">
-        <div class="control-title">
-            <span>⚖️ Select Portion Geometry:</span>
-            <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">(Scaled from 1,200g mince)</span>
-        </div>
-        <div class="toggle-group">
-            <button class="toggle-btn active" id="btn-8" onclick="setPortions(8)">8 Standard Portions (465 kcal / 48g P)</button>
-            <button class="toggle-btn" id="btn-6" onclick="setPortions(6)">6 Giant Portions (620 kcal / 64g P)</button>
-        </div>
-    </div>
 
     <!-- MAIN TWO-COLUMN LAYOUT -->
     <div class="content-grid">
@@ -578,7 +507,7 @@
             <section class="section-card">
                 <h2>🛒 Ingredients Checklist</h2>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-                    Click any item to check it off during shopping or kitchen prep.
+                    Batch scaled for 6 large meal-prep portions (~700g each). Click any item to check it off.
                 </p>
 
                 <!-- LAYER 1: BASE RAGÙ -->
@@ -588,8 +517,8 @@
                         <input type="checkbox">
                         <span class="ing-amount">1,200 g</span>
                         <div class="ing-name">
-                            2% Turkey Breast Mince
-                            <span class="ing-note">Tesco / Sainsbury's lean protein anchor (~288g P)</span>
+                            Lean Turkey Breast Mince (≤2% Fat)
+                            <span class="ing-note">High-protein anchor (~288g pure protein)</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -605,7 +534,7 @@
                         <span class="ing-amount">270 g</span>
                         <div class="ing-name">
                             Parsnips (peeled & finely diced)
-                            <span class="ing-note">Adds traditional earthy British cottage sweetness</span>
+                            <span class="ing-note">Adds earthy sweetness & velvety body</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -613,22 +542,22 @@
                         <span class="ing-amount">530 g</span>
                         <div class="ing-name">
                             Smooth Tomato Passata
-                            <span class="ing-note">1 standard 500g carton + 2 tbsp (seedless/skinless)</span>
+                            <span class="ing-note">Strained tomato purée (skinless & seedless)</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount">33 g</span>
                         <div class="ing-name">
-                            Grass-Fed Beef Bone Broth Powder
-                            <span class="ing-note">Hunter & Gather (~3.5 heaped tbsp; glycine & gelatin)</span>
+                            Beef Bone Broth Powder
+                            <span class="ing-note">~3.5 heaped tbsp; delivers bioavailable glycine & collagen</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount">13 g</span>
                         <div class="ing-name">
-                            Grass-Fed Ghee
+                            Ghee or Olive Oil
                             <span class="ing-note">~1 tbsp for browning roots & mince</span>
                         </div>
                     </li>
@@ -637,7 +566,7 @@
                         <span class="ing-amount">27 ml</span>
                         <div class="ing-name">
                             Worcestershire Sauce
-                            <span class="ing-note">~2 tbsp for deep savoury umami complexity</span>
+                            <span class="ing-note">~2 tbsp (or tamari / coconut aminos) for savory umami</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -645,7 +574,7 @@
                         <span class="ing-amount">530 ml</span>
                         <div class="ing-name">
                             Water or Light Chicken Stock
-                            <span class="ing-note">Kallø organic stock or warm water</span>
+                            <span class="ing-note">Warm stock or water to dissolve bone broth</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -653,7 +582,7 @@
                         <span class="ing-amount">13 g</span>
                         <div class="ing-name">
                             Potato Starch (Slurry)
-                            <span class="ing-note">Dissolved in 35ml cold water to bind gravy</span>
+                            <span class="ing-note">Dissolved in 35ml cold water to gloss & bind the gravy</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -673,8 +602,8 @@
                         <input type="checkbox">
                         <span class="ing-amount">800 g</span>
                         <div class="ing-name">
-                            Potatoes (peeled chunks)
-                            <span class="ing-note">Maris Piper or King Edward (fluffy & clean)</span>
+                            Fluffy Potatoes (peeled chunks)
+                            <span class="ing-note">Maris Piper, Russet, or Yukon Gold</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -682,22 +611,22 @@
                         <span class="ing-amount">670 g</span>
                         <div class="ing-name">
                             Carrots (peeled chunks)
-                            <span class="ing-note">50/50 blend introduces anti-syneresis pectin</span>
+                            <span class="ing-note">Introduces anti-syneresis pectin to stabilize freeze-thaw</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount">20 g</span>
                         <div class="ing-name">
-                            Grass-Fed Ghee
-                            <span class="ing-note">~1.5 tbsp whipped into mash for silky emulsification</span>
+                            Ghee or Butter
+                            <span class="ing-note">~1.5 tbsp whipped into hot mash for silky mouthfeel</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount">135 ml</span>
                         <div class="ing-name">
-                            Warm Milk (Whole or Arla Lactofree)
+                            Warm Milk (Dairy or Lactose-Free)
                             <span class="ing-note">Gentle fluid to achieve pipeable buttercream texture</span>
                         </div>
                     </li>
@@ -718,8 +647,8 @@
                         <input type="checkbox">
                         <span class="ing-amount">120 g</span>
                         <div class="ing-name">
-                            Mature British Cheddar (Pilgrims Choice)
-                            <span class="ing-note">Finely grated (exactly 15g per 8-portion serving)</span>
+                            Mature Cheddar Cheese
+                            <span class="ing-note">Finely grated (20g per portion; naturally aged &lt;0.1% lactose)</span>
                         </div>
                     </li>
                 </ul>
@@ -732,16 +661,16 @@
 
             <!-- BAKING GEOMETRY CARD -->
             <section class="section-card">
-                <h2>📐 Pan Geometry & Physics</h2>
+                <h2>📐 Pan Geometry & Batch Sizing</h2>
                 <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
-                    A 1,200g mince batch yields approx <strong>~4.2 kg total raw preparation</strong>, settling to ~3.8 kg cooked weight.
+                    This batch yields approximately <strong>~4.2 kg raw preparation</strong>, settling to <strong>~3.8 kg cooked weight</strong> (6 generous portions of ~630–700g each).
                 </p>
                 <div class="callout-box amber">
-                    <div class="callout-title">Pan Options:</div>
+                    <div class="callout-title">Baking Pan Options:</div>
                     <div class="callout-text">
-                        • <strong>Single Large Casserole:</strong> 35 cm × 25 cm deep ceramic/glass roaster (depth: ~6.0 cm).<br>
-                        • <strong>Two Standard Bakes:</strong> Split between two 25 cm × 20 cm dishes (eat one across 4 days, freeze the second whole unbaked).<br>
-                        • <strong>8 Individual Tins:</strong> Portion into 8 oven/freezer-safe foil meal-prep containers (~500–550ml each).
+                        • <strong>Single Large Casserole:</strong> 35 cm × 25 cm deep ceramic or roasting dish (depth ≥ 6 cm).<br>
+                        • <strong>Two Medium Bakes:</strong> Split evenly between two 25 cm × 20 cm dishes (bake one fresh for 3 days, freeze the second unbaked).<br>
+                        • <strong>6 Individual Meal-Prep Tins:</strong> Portion into 6 oven- and freezer-safe glass or foil meal-prep containers (~750–800 ml each).
                     </div>
                 </div>
             </section>
@@ -750,18 +679,18 @@
         <!-- RIGHT COLUMN: STEP-BY-STEP METHOD & SCIENCE -->
         <div class="right-col">
             <section class="section-card">
-                <h2>🔥 Step-by-Step Culinary Protocol</h2>
+                <h2>🔥 Step-by-Step Method</h2>
                 <ol class="step-list">
                     <li class="step-item">
                         <div class="step-title">Steam the Golden Silk Mash</div>
                         <div class="step-text">
-                            Place the 800g peeled potato chunks and 670g peeled carrot chunks in a large steamer pot. Steam over boiling water for <strong>18–20 minutes</strong> until a paring knife glides through the carrot core with zero resistance.
+                            Place the 800g peeled potato chunks and 670g peeled carrot chunks in a large steamer basket. Steam over boiling water for <strong>18–20 minutes</strong> until a paring knife glides through the carrot core with zero resistance.
                         </div>
                         <div class="step-text">
-                            Drain thoroughly and let rest in the hot pot off-heat for <strong>2 minutes</strong> to let excess surface water flash-steam off.
+                            Drain thoroughly and let rest in the hot pot off-heat for <strong>2 minutes</strong> to let surface moisture flash-steam off.
                         </div>
                         <div class="step-text">
-                            Add 20g ghee, 135ml warm milk, 3/4 tsp salt, and nutmeg. Mash thoroughly, then whip with a sturdy wooden spoon until velvety and glossy.
+                            Add 20g ghee, 135ml warm milk, 3/4 tsp salt, and nutmeg. Mash thoroughly, then whip vigorously with a wooden spoon until glossy and completely smooth.
                         </div>
                         <div class="cue-box">
                             💡 <strong>Visual Cue:</strong> Should hold soft peaks like warm buttercream.
@@ -771,42 +700,42 @@
                     <li class="step-item">
                         <div class="step-title">Simmer the Turkey & Root Base</div>
                         <div class="step-text">
-                            In a wide Dutch oven, warm 13g ghee over medium heat. Sauté the 470g diced carrots and 270g diced parsnips for <strong>5 minutes</strong> until aromatic.
+                            Warm 13g ghee or oil in a wide heavy pot or Dutch oven over medium heat. Sauté the 470g diced carrots and 270g diced parsnips for <strong>5 minutes</strong> until aromatic.
                         </div>
                         <div class="step-text">
-                            Add the 1,200g of 2% turkey breast mince. Break it apart gently with a wooden spatula for <strong>3–4 minutes</strong> just until opaque. <em>Do not hard-sear to dryness.</em>
+                            Add the 1,200g lean turkey mince. Break it apart gently with a wooden spatula for <strong>3–4 minutes</strong> just until opaque. <em>Avoid aggressive browning to keep lean poultry tender.</em>
                         </div>
                         <div class="step-text">
-                            Whisk 33g beef bone broth powder into 530ml warm water/stock. Add to the pot with 530g passata, 27ml Worcestershire sauce, thyme, salt, and black pepper.
+                            Whisk 33g bone broth powder into 530ml warm stock/water. Pour into the pot along with 530g passata, 27ml Worcestershire sauce, thyme, salt, and black pepper.
                         </div>
                         <div class="step-text">
-                            Cover and simmer gently on low heat for <strong>14–16 minutes</strong> until root cubes are tender. Stir in the potato starch slurry (13g starch + 35ml cold water). Simmer for <strong>60 seconds</strong> until the gravy turns into a lustrous glaze that clings to the mince.
-                        </div>
-                    </li>
-
-                    <li class="step-item">
-                        <div class="step-title">Assembly & Gratin Ridges</div>
-                        <div class="step-text">
-                            Pour the piping hot turkey base into your baking dish (layer depth: ~3.5 cm).
-                        </div>
-                        <div class="step-text">
-                            Spoon the warm Golden Silk Mash on top. Gently smooth with an offset spatula or back of a spoon, sealing tightly against all outer edges to lock in steam.
-                        </div>
-                        <div class="step-text">
-                            Drag fork tines across the mash in a criss-cross pattern to create high ridges. Scatter the 120g of finely grated mature cheddar evenly over top.
+                            Cover and simmer gently on low heat for <strong>15 minutes</strong> until root vegetables are tender. Stir in the potato starch slurry (13g starch + 35ml cold water) and simmer for <strong>60 seconds</strong> until the sauce turns glossy and clings to the mince.
                         </div>
                     </li>
 
                     <li class="step-item">
-                        <div class="step-title">The Thermal Bake & Maillard Blister</div>
+                        <div class="step-title">Assemble & Texture the Crust</div>
                         <div class="step-text">
-                            Bake at <strong>190°C Fan (200°C Conventional)</strong> for <strong>20–22 minutes</strong>. The hot base will begin bubbling vigorously at the dish perimeter.
+                            Pour the hot turkey base into your baking dish (approx. 3.5 cm depth).
                         </div>
                         <div class="step-text">
-                            Switch oven to <strong>Fan Grill at 220°C</strong> for <strong>3–5 minutes</strong>. Watch closely through the glass door as the cheese ridges bubble and blister into dark amber spots.
+                            Spoon the warm mash on top. Gently spread with a spatula, sealing completely against the outer edges to trap steam.
+                        </div>
+                        <div class="step-text">
+                            Drag fork tines across the top in a cross-hatch pattern to create texture peaks. Scatter the 120g of grated mature cheddar evenly across the surface.
+                        </div>
+                    </li>
+
+                    <li class="step-item">
+                        <div class="step-title">Bake & Crisp</div>
+                        <div class="step-text">
+                            Bake at <strong>190°C Fan (200°C Conventional / 400°F)</strong> for <strong>20–22 minutes</strong> until bubbling vigorously at the edges.
+                        </div>
+                        <div class="step-text">
+                            Switch oven to <strong>Broil / Fan Grill at 220°C (430°F)</strong> for <strong>3–5 minutes</strong> until the cheese ridges blister into dark golden spots.
                         </div>
                         <div class="cue-box">
-                            🛑 <strong>Resting Gate:</strong> Rest on counter for <strong>10 minutes</strong> before cutting. The starch matrix sets on cooling, giving razor-clean square cuts that lift out without collapsing.
+                            🛑 <strong>Resting Gate:</strong> Rest on the counter for <strong>10 minutes</strong> before slicing. The starch matrix sets as it cools, giving clean, intact portions that lift out cleanly.
                         </div>
                     </li>
                 </ol>
@@ -814,53 +743,52 @@
 
             <!-- THE SCIENCE CALLOUTS -->
             <section class="section-card">
-                <h2>🧪 Food Science & Clinical Safeguards</h2>
+                <h2>🧪 Food Science & Digestive Safeguards</h2>
 
                 <div class="callout-box green">
-                    <div class="callout-title">🌿 Ulcerative Colitis (UC) Safeguards (Jola)</div>
+                    <div class="callout-title">🌿 Sensitive Gut & IBD Safeguards</div>
                     <div class="callout-text">
-                        • <strong>Zero Insoluble Abrasives:</strong> All carrots and potatoes are completely peeled and steamed until cellular pectins break down; zero coarse skins, seeds, or raw cruciferous fibers to abrade colonic mucosa.<br>
-                        • <strong>Corticosteroid Catabolism Counter:</strong> Delivers 48g of bioavailable protein per serving.<br>
-                        • <strong>Tight-Junction Repair:</strong> Grass-fed beef bone broth powder supplies abundant glycine and proline to support gut barrier repair.<br>
-                        • <strong>Low Lactose:</strong> Mature British cheddar naturally ferments to &lt;0.1% lactose.
+                        • <strong>Zero Insoluble Abrasives:</strong> All carrots and potatoes are completely peeled and steamed until cellular pectins break down; zero coarse skins, seeds, or raw cruciferous fibers to irritate delicate gut mucosa.<br>
+                        • <strong>High-Density Recovery:</strong> Delivers 64g of lean, bioavailable protein per portion.<br>
+                        • <strong>Gut Barrier Support:</strong> Bone broth powder supplies concentrated glycine and proline peptides.<br>
+                        • <strong>Ultra-Low Lactose:</strong> Naturally aged mature cheddar ferments to &lt;0.1% lactose.
                     </div>
                 </div>
 
                 <div class="callout-box amber">
                     <div class="callout-title">❄️ The Anti-Syneresis Freezing Fix</div>
                     <div class="callout-text">
-                        Standard potato mash turns into a watery, spongy mess in the freezer due to amylose retrogradation crystallization. 
-                        Blending <strong>50% sweet carrot into the potato</strong> introduces branched pectins that sterically obstruct amylose crystallization. Combined with emulsified ghee and milk, it freezes and thaws as a velvety, coherent cream without weeping water.
+                        Standard potato mash turns spongy and weeps water when frozen due to amylose starch retrogradation. Blending <strong>carrots into the potato</strong> introduces branched pectins that sterically disrupt amylose crystallization. Combined with emulsified ghee and milk, it thaws into a smooth, coherent cream without separating.
                     </div>
                 </div>
             </section>
 
             <!-- REHEATING PROTOCOL -->
             <section class="section-card">
-                <h2>♨️ Reheat & Storage Matrix</h2>
+                <h2>♨️ Storage & Reheating Matrix</h2>
                 <table class="reheat-table">
                     <thead>
                         <tr>
                             <th>Method</th>
-                            <th>From Thawed (Fridge)</th>
+                            <th>From Refrigerated</th>
                             <th>Directly From Frozen</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Air Fryer (Best Crust)</strong></td>
-                            <td>175°C for 12–14 mins</td>
-                            <td>160°C covered in foil 20m, then 190°C unshielded 5m</td>
+                            <td><strong>Air Fryer (Crispiest)</strong></td>
+                            <td>175°C (350°F) for 12–14 mins</td>
+                            <td>160°C (320°F) foil-covered 20m, then 190°C uncovered 5m</td>
                         </tr>
                         <tr>
-                            <td><strong>Fan Oven</strong></td>
-                            <td>180°C for 16–18 mins</td>
-                            <td>170°C covered in foil 35m, uncover 5m at 200°C</td>
+                            <td><strong>Conventional Oven</strong></td>
+                            <td>180°C (360°F) for 16–18 mins</td>
+                            <td>170°C (340°F) foil-covered 35m, uncover 5m at 200°C</td>
                         </tr>
                         <tr>
                             <td><strong>Microwave</strong></td>
-                            <td>High for 3.5 mins</td>
-                            <td>Defrost 4 mins, then High for 3 mins</td>
+                            <td>High for 3.5–4 mins</td>
+                            <td>Defrost setting 4 mins, then High for 3 mins</td>
                         </tr>
                     </tbody>
                 </table>
@@ -871,42 +799,12 @@
 
     <!-- FOOTER -->
     <footer>
-        Part of Simon & Jola's Household Knowledge Base • Built for <a href="https://github.com/simonskr/life-os">life-os</a> • 
-        Tracked in <a href="docs/cooking/high_volume_freezer_meal_prep_compendium.md">docs/cooking/</a>
+        High-Volume, High-Protein Culinary Engineering • Designed for Batch Meal Prep & Gentle Digestion
     </footer>
 
 </div>
 
 <script>
-    const macroData = {
-        8: {
-            portions: "8",
-            cals: "~465",
-            protein: "48.0 g",
-            mass: "~525 g",
-            fat: "13.6 g"
-        },
-        6: {
-            portions: "6",
-            cals: "~620",
-            protein: "64.0 g",
-            mass: "~700 g",
-            fat: "18.2 g"
-        }
-    };
-
-    function setPortions(num) {
-        document.getElementById('btn-8').classList.toggle('active', num === 8);
-        document.getElementById('btn-6').classList.toggle('active', num === 6);
-
-        const d = macroData[num];
-        document.getElementById('stat-portions').textContent = d.portions;
-        document.getElementById('stat-cals').textContent = d.cals;
-        document.getElementById('stat-protein').textContent = d.protein;
-        document.getElementById('stat-mass').textContent = d.mass;
-        document.getElementById('stat-fat').textContent = d.fat;
-    }
-
     function toggleCheck(el) {
         const checkbox = el.querySelector('input[type="checkbox"]');
         checkbox.checked = !checkbox.checked;
