@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Japanese "Golden Velvet" Chicken & Sweet Potato Curry Stew</title>
+    <meta name="description" content="High-protein, comforting Japanese curry stew. ~45g protein per bowl. Roux-free hydrocolloid velouté, alkaline-velveted chicken breast, and cryo-stable sweet potatoes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #fbf9f5;
+            --bg-card: #ffffff;
+            --bg-inset: #f3efe6;
+            --text-main: #231c16;
+            --text-muted: #6e645a;
+            --text-light: #94897e;
+            --border-color: #e5ded3;
+            --border-subtle: #eee8de;
+            --amber-warm: #c85a17;
+            --amber-hover: #b04b0f;
+            --amber-light: #fbeee6;
+            --gold-accent: #d97706;
+            --gold-light: #fef3c7;
+            --green-gut: #2d7a4f;
+            --green-light: #e8f5ed;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 2px 6px rgba(35, 28, 22, 0.04);
+            --shadow-md: 0 10px 25px rgba(35, 28, 22, 0.06);
+            --shadow-lg: 0 20px 40px rgba(35, 28, 22, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Recipe Navigation */
+        .recipe-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding: 0.5rem 0.25rem;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--amber-warm);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--amber-hover);
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.3rem 0.7rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--amber-warm);
+            background: var(--bg-inset);
+        }
+
+        .nav-link.active {
+            color: var(--amber-warm);
+            font-weight: 700;
+            background: var(--amber-light);
+        }
+
+        .lang-btn:focus-visible,
+        .nav-back:focus-visible,
+        .nav-link:focus-visible,
+        .btn-action:focus-visible {
+            outline: 2px solid var(--amber-warm);
+            outline-offset: 2px;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, var(--bg-inset) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2.25rem 2.25rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold-accent), var(--amber-warm));
+        }
+
+        .header-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .badge-amber {
+            background-color: var(--amber-light);
+            color: var(--amber-warm);
+        }
+
+        .badge-green {
+            background-color: var(--green-light);
+            color: var(--green-gut);
+        }
+
+        .badge-gold {
+            background-color: var(--gold-light);
+            color: #92400e;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            padding: 3px;
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 0.35rem 0.85rem;
+            min-height: 36px;
+            min-width: 44px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: var(--amber-warm);
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(200, 90, 23, 0.35);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--amber-warm);
+            background-color: var(--amber-light);
+        }
+
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .polish-subtitle {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--amber-warm);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 780px;
+            margin-bottom: 1.75rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-val {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--amber-warm);
+            line-height: 1.2;
+        }
+
+        .stat-lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 860px) {
+            .content-grid {
+                grid-template-columns: 1.15fr 0.85fr;
+            }
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-card h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .layer-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--amber-warm);
+            margin: 1.25rem 0 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .layer-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .ingredient-list {
+            list-style: none;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.95rem;
+            cursor: pointer;
+            user-select: none;
+            transition: opacity 0.2s;
+        }
+
+        .ingredient-item:last-child {
+            border-bottom: none;
+        }
+
+        .ingredient-item.checked {
+            opacity: 0.45;
+            text-decoration: line-through;
+        }
+
+        .ingredient-item input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--amber-warm);
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        .ing-amount {
+            font-weight: 700;
+            color: var(--text-main);
+            min-width: 90px;
+        }
+
+        .ing-name {
+            color: var(--text-muted);
+            flex: 1;
+        }
+
+        .ing-title {
+            color: var(--text-main);
+            font-weight: 500;
+            display: block;
+        }
+
+        .ing-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 0.1rem;
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--amber-light);
+            color: var(--amber-warm);
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            border: 1px solid rgba(200, 90, 23, 0.2);
+        }
+
+        .step-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-body {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .step-body p {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-box {
+            background-color: var(--bg-inset);
+            border-left: 4px solid var(--amber-warm);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-sm);
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .callout-box strong {
+            color: var(--text-main);
+        }
+
+        .science-card {
+            background: linear-gradient(to bottom right, #ffffff, var(--bg-inset));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .science-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .science-title {
+            font-weight: 700;
+            color: var(--amber-warm);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .science-body {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            padding: 0.75rem 0.85rem;
+            border: 1px solid var(--border-subtle);
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background-color: var(--bg-inset);
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .matrix-table tr:nth-child(even) td {
+            background-color: rgba(243, 239, 230, 0.35);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        .btn-action:hover {
+            background: var(--bg-inset);
+            border-color: var(--amber-warm);
+            color: var(--amber-warm);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+            .hero, .section-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            .lang-switch, .btn-row {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="recipe-nav" aria-label="Nawigacja po przepisach / Recipe Navigation">
+        <a href="index.html" class="nav-back" data-i18n="nav_back">← Back to Meal-Prep Portal</a>
+        <div class="nav-links">
+            <a href="cottage_pie.html" class="nav-link" data-i18n="nav_link_cottage">Cottage Pie</a>
+            <a href="freezer_burritos.html" class="nav-link" data-i18n="nav_link_burritos">Freezer Burritos</a>
+            <a href="japanese_curry.html" class="nav-link active" aria-current="page" data-i18n="nav_link_curry">Japanese Curry</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="header-top-row">
+            <div class="badges-row">
+                <span class="badge badge-amber" data-i18n="badge_protein">⚡ 44.9g Protein / Bowl</span>
+                <span class="badge badge-green" data-i18n="badge_gut">🌿 Sensitive Gut & IBD Friendly</span>
+                <span class="badge badge-gold" data-i18n="badge_freeze">❄️ Zero Starch Retrogradation</span>
+            </div>
+            <div class="lang-switch" role="group" aria-label="Language Switcher">
+                <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')" aria-pressed="true">EN</button>
+                <button type="button" class="lang-btn" id="btn-pl" onclick="setLanguage('pl')" aria-pressed="false">PL</button>
+            </div>
+        </div>
+
+        <h1 data-i18n="hero_title">The Japanese "Golden Velvet" Chicken & Sweet Potato Curry Stew</h1>
+        <span class="polish-subtitle" data-i18n="hero_subtitle">Artisan Golden Velvet Japanese Stew • Roux-Free Hydrocolloid Architecture</span>
+        <p class="hero-desc" data-i18n-html="hero_desc">
+            Commercial Japanese curry blocks pack 45–50% industrial saturated palm oil and irritating chilies that cause white potatoes to weep water when frozen. This artisan formula eliminates palm oil entirely, creating an unctuous, gut-soothing velouté from <strong>puréed carrots, apples, fresh ginger, and rich bone broth</strong>. Combined with <strong>alkaline-velveted chicken breast</strong> and <strong>cryo-stable sweet potatoes</strong>, it freezes and reheats with flawless silky gloss.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_portions_val">6</div>
+                <div class="stat-lbl" data-i18n="stat_portions_lbl">Generous Bowls</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_cals_val">~387</div>
+                <div class="stat-lbl" data-i18n="stat_cals_lbl">Calories (Stew Alone)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_protein_val">44.9 g</div>
+                <div class="stat-lbl" data-i18n="stat_protein_lbl">Protein / Serving</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_mass_val">~550 g</div>
+                <div class="stat-lbl" data-i18n="stat_mass_lbl">Stew Bowl Mass</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_fats_val">6.1 g</div>
+                <div class="stat-lbl" data-i18n="stat_fats_lbl">Healthy Fats</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-grid">
+        <!-- Left Column: Ingredients Checklist & Sizing -->
+        <div class="left-col">
+            <section class="section-card">
+                <h2 data-i18n="sec_ingredients_title">🛒 Ingredients Checklist</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;" data-i18n="sec_ingredients_sub">
+                    Scaled for 6 large meal-prep portions (~550g stew bowl each). Click any item to check it off.
+                </p>
+
+                <!-- Layer 1: Alkaline Velveted Poultry -->
+                <div class="layer-title" data-i18n="layer1_title">Layer 1: Alkaline Velveted Chicken Breast</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Chicken breast">
+                        <span class="ing-amount" data-i18n="ing_chicken_amt">960 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_chicken_name">Skinless Chicken Breast Fillets</span>
+                            <span class="ing-note" data-i18n="ing_chicken_note">160g/portion; cut into 2.5cm cubes (~300g pure protein)</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Baking soda">
+                        <span class="ing-amount" data-i18n="ing_soda_amt">3 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_soda_name">Baking Soda (Sodium Bicarbonate)</span>
+                            <span class="ing-note" data-i18n="ing_soda_note">1/2 tsp; shifts muscle pH above isoelectric point to retain water</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Velveting liquid">
+                        <span class="ing-amount" data-i18n="ing_velvet_liq_amt">45 ml</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_velvet_liq_name">Water & Naturally Brewed Soy Sauce</span>
+                            <span class="ing-note" data-i18n="ing_velvet_liq_note">2 tbsp water + 1 tbsp soy sauce for hydration</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Velveting starch">
+                        <span class="ing-amount" data-i18n="ing_velvet_starch_amt">12 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_velvet_starch_name">Potato Starch (Velveting Coat)</span>
+                            <span class="ing-note" data-i18n="ing_velvet_starch_note">Envelops meat fibers with a protective hydration shield</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Layer 2: Roux-Free Golden Velvet Sauce Base -->
+                <div class="layer-title" data-i18n="layer2_title">Layer 2: Roux-Free Golden Velvet Sauce Base</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Carrots">
+                        <span class="ing-amount" data-i18n="ing_carrots_amt">480 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_carrots_name">Peeled Carrots (split 50/50)</span>
+                            <span class="ing-note" data-i18n="ing_carrots_note">240g pureed for velvet body; 240g sliced into tender coins</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Apples">
+                        <span class="ing-amount" data-i18n="ing_apples_amt">240 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_apples_name">Peeled Sweet Apples (Gala or Bramley)</span>
+                            <span class="ing-note" data-i18n="ing_apples_note">Cored & peeled; supplies soluble pectin and mild fruit acidity</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Broth">
+                        <span class="ing-amount" data-i18n="ing_broth_amt">900 ml</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_broth_name">Rich Chicken Bone Broth / Rosół</span>
+                            <span class="ing-note" data-i18n="ing_broth_note">Rich in bioavailable glycine, proline, and natural gelatin</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Ginger">
+                        <span class="ing-amount" data-i18n="ing_ginger_amt">30 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_ginger_name">Fresh Ginger (finely grated)</span>
+                            <span class="ing-note" data-i18n="ing_ginger_note">Aromatic warmth & digestive support (0% capsaicin)</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Ghee">
+                        <span class="ing-amount" data-i18n="ing_ghee_amt">18 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_ghee_name">Ghee or Extra Virgin Olive Oil</span>
+                            <span class="ing-note" data-i18n="ing_ghee_note">~1.5 tbsp to gently bloom aromatic curry spices</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Curry powder">
+                        <span class="ing-amount" data-i18n="ing_curry_amt">18 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_curry_name">Mild Japanese Curry Powder</span>
+                            <span class="ing-note" data-i18n="ing_curry_note">Turmeric, coriander, cumin, fenugreek, cinnamon (0% chili/pepper)</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Seasoning liquids">
+                        <span class="ing-amount" data-i18n="ing_seasoning_liq_amt">90 ml</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_seasoning_liq_name">Soy Sauce & Hon-Mirin</span>
+                            <span class="ing-note" data-i18n="ing_seasoning_liq_note">60ml naturally brewed soy sauce + 30ml sweet mirin for umami</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Starch slurry">
+                        <span class="ing-amount" data-i18n="ing_slurry_amt">18 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_slurry_name">Potato Starch Slurry</span>
+                            <span class="ing-note" data-i18n="ing_slurry_note">Dissolved in 35ml cold water to gloss and bind the velouté</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Layer 3: Cryo-Stable Sweet Potato Chunks -->
+                <div class="layer-title" data-i18n="layer3_title">Layer 3: Cryo-Stable Sweet Potato Chunks</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Sweet potatoes">
+                        <span class="ing-amount" data-i18n="ing_sweetpotatoes_amt">480 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_sweetpotatoes_name">Sweet Potatoes (peeled & 2cm diced)</span>
+                            <span class="ing-note" data-i18n="ing_sweetpotatoes_note">80g/portion; β-amylase converts starches, preventing syneresis</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Layer 4: Optional Serving Carbohydrate -->
+                <div class="layer-title" data-i18n="layer4_title">Layer 4: Optional Serving Carbohydrate</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Japanese rice">
+                        <span class="ing-amount" data-i18n="ing_rice_amt">240 g dry</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_rice_name">Japanese Short-Grain Rice (optional)</span>
+                            <span class="ing-note" data-i18n="ing_rice_note">40g dry / ~100g cooked per serving (+142 kcal | +2.7g P | +31.6g C)</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="btn-row">
+                    <button type="button" class="btn-action" onclick="clearChecks()" data-i18n="btn_reset">↺ Reset Checks</button>
+                    <button type="button" class="btn-action" onclick="window.print()" data-i18n="btn_print">🖨️ Print Recipe</button>
+                </div>
+            </section>
+
+            <!-- Batch Sizing & Containers Card -->
+            <section class="section-card">
+                <h2 data-i18n="sec_geometry_title">📐 Batch Yield & Storage Sizing</h2>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n-html="geometry_intro">
+                    Batch yield: <strong>6 large portions (~550g stew bowl each)</strong>, totaling ~3.3 kg cooked stew.
+                </p>
+                <div class="callout-box">
+                    <strong data-i18n="geometry_callout_title">Cooking Pot & Storage Options:</strong>
+                    <div style="margin-top: 0.4rem; font-size: 0.88rem;" data-i18n-html="geometry_callout_body">
+                        • <strong>Cooking Pot:</strong> Heavy 5–6 L Dutch oven or wide stainless steel stockpot.<br>
+                        • <strong>Freezer Containers:</strong> 6 individual freezer-safe, airtight glass or BPA-free containers (~600–750 ml capacity).<br>
+                        • <strong>Rice Strategy:</strong> Freeze stew alone. Cook Japanese rice fresh in batch for 3–4 days, or freeze rice in cling-film pucks separately.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Step-by-Step Method, Science, Reheating -->
+        <div class="right-col">
+            <section class="section-card">
+                <h2 data-i18n="sec_method_title">🔥 Step-by-Step Method</h2>
+                <ol class="step-list">
+                    <!-- Step 1 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step1_title">Alkaline Velvet the Poultry</div>
+                        <div class="step-body">
+                            <p data-i18n="step1_p1">Place the 960g diced chicken breast in a bowl. Add 3g (1/2 tsp) baking soda, 30ml water, 15ml soy sauce, and 12g potato starch.</p>
+                            <p data-i18n-html="step1_p2">Massage vigorously with clean hands for <strong>60 seconds</strong> until all free liquid is absorbed into the meat matrix. Rest at room temperature for <strong>15 minutes</strong>.</p>
+                            <div class="callout-box" data-i18n-html="step1_cue">💡 <strong>Velveting Mechanism:</strong> The baking soda shifts muscle pH above the isoelectric point, forcing fibers to hold bound water during cooking and freezing.</div>
+                        </div>
+                    </li>
+
+                    <!-- Step 2 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step2_title">Bloom Spices & Simmer Velouté Base</div>
+                        <div class="step-body">
+                            <p data-i18n-html="step2_p1">Melt 18g ghee or EVOO in a Dutch oven over medium heat. Add 30g grated fresh ginger and 18g mild Japanese curry powder. Sauté for <strong>60 seconds</strong> until deeply aromatic.</p>
+                            <p data-i18n-html="step2_p2">Add 240g roughly chopped carrots, 240g peeled and chopped apples, and 900ml rich chicken bone broth. Cover and simmer gently for <strong>15 minutes</strong> until carrots and apples are completely tender.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 3 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step3_title">Puree into Silk Velouté</div>
+                        <div class="step-body">
+                            <p data-i18n-html="step3_p1">Insert an immersion blender into the pot and blend on high speed for <strong>90 seconds</strong> until the broth, carrots, and apples transform into an emulsified, silky-smooth golden velouté.</p>
+                            <p data-i18n="step3_p2">Stir in 60ml soy sauce and 30ml mirin, adjusting heat to medium-low.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 4 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step4_title">Thicken & Poach Velvet Chicken & Sweet Potatoes</div>
+                        <div class="step-body">
+                            <p data-i18n-html="step4_p1">Whisk 18g potato starch in 35ml cold water. Pour slurry into the simmering sauce and cook for <strong>2 minutes</strong> until glossy, clear, and unctuous.</p>
+                            <p data-i18n-html="step4_p2">Add the velveted chicken cubes and the remaining 240g sliced carrot coins. Simmer gently on low heat for <strong>6–8 minutes</strong> until chicken cubes reach ~68°C internal temperature.</p>
+                            <p data-i18n="step4_p3">Fold in the 480g pre-steamed tender sweet potato cubes. Simmer for 1 minute just to coat in the velouté, then remove from heat.</p>
+                            <div class="callout-box" data-i18n-html="step4_cue">🛑 <strong>Carryover Heat Gate:</strong> Removing the chicken at 68°C allows gentle carryover heat to achieve complete tenderness without squeezing out cellular water.</div>
+                        </div>
+                    </li>
+
+                    <!-- Step 5 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step5_title">Rapid Cool & Freeze</div>
+                        <div class="step-body">
+                            <p data-i18n="step5_p1">Cool the pot rapidly in an ambient cold-water or ice bath to protect the volatile ginger aromatics.</p>
+                            <p data-i18n="step5_p2">Portion into 6 freezer-safe containers (~550g per container). Seal tightly and freeze at -18°C.</p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Food Science & Safeguards -->
+            <section class="section-card">
+                <h2 data-i18n="sec_science_title">🧪 Food Science & Digestive Safeguards</h2>
+                <div class="science-card">
+                    <div class="science-title" data-i18n="sci_gut_title">🌿 Sensitive Gut & IBD Safeguards</div>
+                    <div class="science-body" data-i18n-html="sci_gut_body">
+                        • <strong>Zero Palm Oil & Zero Capsaicin:</strong> Commercial curry roux blocks contain 45–50% hydrogenated palm oil and high chili concentrations that trigger gut distress; this recipe uses 0% chili and clean ghee/broth.<br>
+                        • <strong>Soothing Ginger & Bioavailable Pectin:</strong> Fresh grated ginger promotes healthy gastric motility; puréed apples and carrots provide gentle soluble pectin that coats the intestinal mucosal barrier.<br>
+                        • <strong>High Protein Density:</strong> 44.9g complete protein per bowl supports tissue repair without bulky difficult-to-digest meats.<br>
+                        • <strong>Skinless & Seedless:</strong> Carrots and apples are fully peeled; smooth emulsion prevents mechanical abrasions to the digestive lining.
+                    </div>
+                </div>
+                <div class="science-card">
+                    <div class="science-title" data-i18n="sci_freeze_title">❄️ The Cryo-Stability & Velveting Chemistry</div>
+                    <div class="science-body" data-i18n-html="sci_freeze_body">
+                        • <strong>Sweet Potato β-Amylase Resistance:</strong> White potatoes turn spongy and weep water upon thawing due to amylose retrogradation. Sweet potatoes possess active β-amylase enzymes that break starches into maltose and short-chain dextrins during heating, preventing crystalline syneresis.<br>
+                        • <strong>Alkaline Velveting Protection:</strong> Baking soda raises muscle pH past the isoelectric point (pI ≈ 5.3). The resulting negative charge repulsion holds intracellular water bound even during sub-zero storage and high-heat reheating.<br>
+                        • <strong>Roux-Free Hydrocolloid Velouté:</strong> The synergy between apple pectin, bovine/poultry gelatin from bone broth, and potato starch creates a stable freeze-thaw colloidal matrix with no fat separation.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Storage & Reheating Matrix -->
+            <section class="section-card">
+                <h2 data-i18n="sec_reheat_title">♨️ Storage & Reheating Matrix</h2>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="th_method">Method</th>
+                            <th data-i18n="th_fridge">From Refrigerated</th>
+                            <th data-i18n="th_frozen">Directly From Frozen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;" data-i18n="row1_method">Stovetop (Best Emulsion)</td>
+                            <td data-i18n="row1_fridge">Saucepan + 1 tbsp water; medium-low for 4–5m, whisk sauce</td>
+                            <td data-i18n="row1_frozen">Saucepan + 2 tbsp water; covered medium-low for 8–10m; whisk sauce gently to restore gloss</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;" data-i18n="row2_method">Microwave (Quick Prep)</td>
+                            <td data-i18n="row2_fridge">Covered bowl; High for 2.5–3m, stir halfway</td>
+                            <td data-i18n="row2_frozen">Covered bowl; Defrost 3m, stir, then High 2.5–3m until bubbling (>74°C)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;" data-i18n="row3_method">Serving Customization</td>
+                            <td colspan="2" data-i18n="row3_custom">Base pot is 100% capsaicin-free and gut-safe. Individual plated bowls can be topped with Lao Gan Ma chili crisp or fresh sliced scallions for customized heat!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p data-i18n="footer_text">High-Volume, High-Protein Culinary Engineering • Designed for Batch Meal Prep & Gentle Digestion</p>
+    </footer>
+</div>
+
+<script>
+    const translations = {
+        en: {
+            meta_title: 'The Japanese "Golden Velvet" Chicken & Sweet Potato Curry Stew',
+            meta_desc: 'High-protein, comforting Japanese curry stew. ~45g protein per bowl. Roux-free hydrocolloid velouté, alkaline-velveted chicken breast, and cryo-stable sweet potatoes.',
+            nav_back: '← Back to Meal-Prep Portal',
+            nav_link_cottage: 'Cottage Pie',
+            nav_link_burritos: 'Freezer Burritos',
+            nav_link_curry: 'Japanese Curry',
+            badge_protein: '⚡ 44.9g Protein / Bowl',
+            badge_gut: '🌿 Sensitive Gut & IBD Friendly',
+            badge_freeze: '❄️ Zero Starch Retrogradation',
+            hero_title: 'The Japanese "Golden Velvet" Chicken & Sweet Potato Curry Stew',
+            hero_subtitle: 'Artisan Golden Velvet Japanese Stew • Roux-Free Hydrocolloid Architecture',
+            hero_desc: 'Commercial Japanese curry blocks pack 45–50% industrial saturated palm oil and irritating chilies that cause white potatoes to weep water when frozen. This artisan formula eliminates palm oil entirely, creating an unctuous, gut-soothing velouté from <strong>puréed carrots, apples, fresh ginger, and rich bone broth</strong>. Combined with <strong>alkaline-velveted chicken breast</strong> and <strong>cryo-stable sweet potatoes</strong>, it freezes and reheats with flawless silky gloss.',
+            stat_portions_val: '6',
+            stat_portions_lbl: 'Generous Bowls',
+            stat_cals_val: '~387',
+            stat_cals_lbl: 'Calories (Stew Alone)',
+            stat_protein_val: '44.9 g',
+            stat_protein_lbl: 'Protein / Serving',
+            stat_mass_val: '~550 g',
+            stat_mass_lbl: 'Stew Bowl Mass',
+            stat_fats_val: '6.1 g',
+            stat_fats_lbl: 'Healthy Fats',
+            sec_ingredients_title: '🛒 Ingredients Checklist',
+            sec_ingredients_sub: 'Scaled for 6 large meal-prep portions (~550g stew bowl each). Click any item to check it off.',
+            btn_reset: '↺ Reset Checks',
+            btn_print: '🖨️ Print Recipe',
+            layer1_title: 'Layer 1: Alkaline Velveted Chicken Breast',
+            ing_chicken_amt: '960 g',
+            ing_chicken_name: 'Skinless Chicken Breast Fillets',
+            ing_chicken_note: '160g/portion; cut into 2.5cm cubes (~300g pure protein)',
+            ing_soda_amt: '3 g',
+            ing_soda_name: 'Baking Soda (Sodium Bicarbonate)',
+            ing_soda_note: '1/2 tsp; shifts muscle pH above isoelectric point to retain water',
+            ing_velvet_liq_amt: '45 ml',
+            ing_velvet_liq_name: 'Water & Naturally Brewed Soy Sauce',
+            ing_velvet_liq_note: '2 tbsp water + 1 tbsp soy sauce for hydration',
+            ing_velvet_starch_amt: '12 g',
+            ing_velvet_starch_name: 'Potato Starch (Velveting Coat)',
+            ing_velvet_starch_note: 'Envelops meat fibers with a protective hydration shield',
+            layer2_title: 'Layer 2: Roux-Free Golden Velvet Sauce Base',
+            ing_carrots_amt: '480 g',
+            ing_carrots_name: 'Peeled Carrots (split 50/50)',
+            ing_carrots_note: '240g pureed for velvet body; 240g sliced into tender coins',
+            ing_apples_amt: '240 g',
+            ing_apples_name: 'Peeled Sweet Apples (Gala or Bramley)',
+            ing_apples_note: 'Cored & peeled; supplies soluble pectin and mild fruit acidity',
+            ing_broth_amt: '900 ml',
+            ing_broth_name: 'Rich Chicken Bone Broth / Rosół',
+            ing_broth_note: 'Rich in bioavailable glycine, proline, and natural gelatin',
+            ing_ginger_amt: '30 g',
+            ing_ginger_name: 'Fresh Ginger (finely grated)',
+            ing_ginger_note: 'Aromatic warmth & digestive support (0% capsaicin)',
+            ing_ghee_amt: '18 g',
+            ing_ghee_name: 'Ghee or Extra Virgin Olive Oil',
+            ing_ghee_note: '~1.5 tbsp to gently bloom aromatic curry spices',
+            ing_curry_amt: '18 g',
+            ing_curry_name: 'Mild Japanese Curry Powder',
+            ing_curry_note: 'Turmeric, coriander, cumin, fenugreek, cinnamon (0% chili/pepper)',
+            ing_seasoning_liq_amt: '90 ml',
+            ing_seasoning_liq_name: 'Soy Sauce & Hon-Mirin',
+            ing_seasoning_liq_note: '60ml naturally brewed soy sauce + 30ml sweet mirin for umami',
+            ing_slurry_amt: '18 g',
+            ing_slurry_name: 'Potato Starch Slurry',
+            ing_slurry_note: 'Dissolved in 35ml cold water to gloss and bind the velouté',
+            layer3_title: 'Layer 3: Cryo-Stable Sweet Potato Chunks',
+            ing_sweetpotatoes_amt: '480 g',
+            ing_sweetpotatoes_name: 'Sweet Potatoes (peeled & 2cm diced)',
+            ing_sweetpotatoes_note: '80g/portion; β-amylase converts starches, preventing syneresis',
+            layer4_title: 'Layer 4: Optional Serving Carbohydrate',
+            ing_rice_amt: '240 g dry',
+            ing_rice_name: 'Japanese Short-Grain Rice (optional)',
+            ing_rice_note: '40g dry / ~100g cooked per serving (+142 kcal | +2.7g P | +31.6g C)',
+            sec_geometry_title: '📐 Batch Yield & Storage Sizing',
+            geometry_intro: 'Batch yield: <strong>6 large portions (~550g stew bowl each)</strong>, totaling ~3.3 kg cooked stew.',
+            geometry_callout_title: 'Cooking Pot & Storage Options:',
+            geometry_callout_body: '• <strong>Cooking Pot:</strong> Heavy 5–6 L Dutch oven or wide stainless steel stockpot.<br>• <strong>Freezer Containers:</strong> 6 individual freezer-safe, airtight glass or BPA-free containers (~600–750 ml capacity).<br>• <strong>Rice Strategy:</strong> Freeze stew alone. Cook Japanese rice fresh in batch for 3–4 days, or freeze rice in cling-film pucks separately.',
+            sec_method_title: '🔥 Step-by-Step Method',
+            step1_title: 'Alkaline Velvet the Poultry',
+            step1_p1: 'Place the 960g diced chicken breast in a bowl. Add 3g (1/2 tsp) baking soda, 30ml water, 15ml soy sauce, and 12g potato starch.',
+            step1_p2: 'Massage vigorously with clean hands for <strong>60 seconds</strong> until all free liquid is absorbed into the meat matrix. Rest at room temperature for <strong>15 minutes</strong>.',
+            step1_cue: '💡 <strong>Velveting Mechanism:</strong> The baking soda shifts muscle pH above the isoelectric point, forcing fibers to hold bound water during cooking and freezing.',
+            step2_title: 'Bloom Spices & Simmer Velouté Base',
+            step2_p1: 'Melt 18g ghee or EVOO in a Dutch oven over medium heat. Add 30g grated fresh ginger and 18g mild Japanese curry powder. Sauté for <strong>60 seconds</strong> until deeply aromatic.',
+            step2_p2: 'Add 240g roughly chopped carrots, 240g peeled and chopped apples, and 900ml rich chicken bone broth. Cover and simmer gently for <strong>15 minutes</strong> until carrots and apples are completely tender.',
+            step3_title: 'Puree into Silk Velouté',
+            step3_p1: 'Insert an immersion blender into the pot and blend on high speed for <strong>90 seconds</strong> until the broth, carrots, and apples transform into an emulsified, silky-smooth golden velouté.',
+            step3_p2: 'Stir in 60ml soy sauce and 30ml mirin, adjusting heat to medium-low.',
+            step4_title: 'Thicken & Poach Velvet Chicken & Sweet Potatoes',
+            step4_p1: 'Whisk 18g potato starch in 35ml cold water. Pour slurry into the simmering sauce and cook for <strong>2 minutes</strong> until glossy, clear, and unctuous.',
+            step4_p2: 'Add the velveted chicken cubes and the remaining 240g sliced carrot coins. Simmer gently on low heat for <strong>6–8 minutes</strong> until chicken cubes reach ~68°C internal temperature.',
+            step4_p3: 'Fold in the 480g pre-steamed tender sweet potato cubes. Simmer for 1 minute just to coat in the velouté, then remove from heat.',
+            step4_cue: '🛑 <strong>Carryover Heat Gate:</strong> Removing the chicken at 68°C allows gentle carryover heat to achieve complete tenderness without squeezing out cellular water.',
+            step5_title: 'Rapid Cool & Freeze',
+            step5_p1: 'Cool the pot rapidly in an ambient cold-water or ice bath to protect the volatile ginger aromatics.',
+            step5_p2: 'Portion into 6 freezer-safe containers (~550g per container). Seal tightly and freeze at -18°C.',
+            sec_science_title: '🧪 Food Science & Digestive Safeguards',
+            sci_gut_title: '🌿 Sensitive Gut & IBD Safeguards',
+            sci_gut_body: '• <strong>Zero Palm Oil & Zero Capsaicin:</strong> Commercial curry roux blocks contain 45–50% hydrogenated palm oil and high chili concentrations that trigger gut distress; this recipe uses 0% chili and clean ghee/broth.<br>• <strong>Soothing Ginger & Bioavailable Pectin:</strong> Fresh grated ginger promotes healthy gastric motility; puréed apples and carrots provide gentle soluble pectin that coats the intestinal mucosal barrier.<br>• <strong>High Protein Density:</strong> 44.9g complete protein per bowl supports tissue repair without bulky difficult-to-digest meats.<br>• <strong>Skinless & Seedless:</strong> Carrots and apples are fully peeled; smooth emulsion prevents mechanical abrasions to the digestive lining.',
+            sci_freeze_title: '❄️ The Cryo-Stability & Velveting Chemistry',
+            sci_freeze_body: '• <strong>Sweet Potato β-Amylase Resistance:</strong> White potatoes turn spongy and weep water upon thawing due to amylose retrogradation. Sweet potatoes possess active β-amylase enzymes that break starches into maltose and short-chain dextrins during heating, preventing crystalline syneresis.<br>• <strong>Alkaline Velveting Protection:</strong> Baking soda raises muscle pH past the isoelectric point (pI ≈ 5.3). The resulting negative charge repulsion holds intracellular water bound even during sub-zero storage and high-heat reheating.<br>• <strong>Roux-Free Hydrocolloid Velouté:</strong> The synergy between apple pectin, bovine/poultry gelatin from bone broth, and potato starch creates a stable freeze-thaw colloidal matrix with no fat separation.',
+            sec_reheat_title: '♨️ Storage & Reheating Matrix',
+            th_method: 'Method',
+            th_fridge: 'From Refrigerated',
+            th_frozen: 'Directly From Frozen',
+            row1_method: 'Stovetop (Best Emulsion)',
+            row1_fridge: 'Saucepan + 1 tbsp water; medium-low for 4–5 min, whisk sauce',
+            row1_frozen: 'Saucepan + 2 tbsp water; covered medium-low for 8–10 min; whisk sauce gently to restore gloss',
+            row2_method: 'Microwave (Quick Prep)',
+            row2_fridge: 'Covered bowl; High for 2.5–3 min, stir halfway',
+            row2_frozen: 'Covered bowl; Defrost 3 min, stir, then High 2.5–3 min until bubbling (>74°C)',
+            row3_method: 'Serving Customization',
+            row3_custom: 'Base pot is 100% capsaicin-free and gut-safe. Individual plated bowls can be topped with Lao Gan Ma chili crisp or fresh sliced scallions for customized heat!',
+            footer_text: 'High-Volume, High-Protein Culinary Engineering • Designed for Batch Meal Prep & Gentle Digestion'
+        },
+        pl: {
+            meta_title: 'Aksamitne Japońskie Curry z Drobiem i Batatami („Złoty Aksamit”)',
+            meta_desc: 'Wysokobiałkowe, rozgrzewające japońskie curry na meal prep. ~45 g białka w misce. Aksamitne velouté bez zasmażki roux, drób aksamitowany sodą i bataty odporne na synerozę.',
+            nav_back: '← Wróć do kompendium meal-prep',
+            nav_link_cottage: 'Zapiekanka pasterska',
+            nav_link_burritos: 'Burrito do mrożenia',
+            nav_link_curry: 'Aksamitne japońskie curry',
+            badge_protein: '⚡ 44,9 g białka / porcję',
+            badge_gut: '🌿 Łagodne dla jelit (NZJ / WZJG)',
+            badge_freeze: '❄️ Odporne na retrogradację skrobi',
+            hero_title: 'Aksamitne Japońskie Curry z Indykiem/Kurczakiem i Batatami („Złoty Aksamit”)',
+            hero_subtitle: 'Rozgrzewający japoński gulasz curry • Aksamitne velouté bez tradycyjnej zasmażki roux',
+            hero_desc: 'Tradycyjne japońskie curry bazuje na gotowych kostkach roux zawierających 45–50% utwardzonego oleju palmowego i drażniące ostre przyprawy, a dodatek klasycznych ziemniaków sprawia, że po zamrożeniu danie podchodzi wodą. Ta autorska receptura całkowicie eliminuje olej palmowy, tworząc <strong>gęsty sos velouté bez tradycyjnej zasmażki roux</strong> z przetartej marchwi, słodkich jabłek, świeżego imbiru i esencjonalnego rosołu. W połączeniu z <strong>aksamitowanym sodą drobiem (velveting)</strong> oraz batatami odpornymi na mrożenie, danie zachowuje idealny połysk i soczystość po rozmrożeniu.',
+            stat_portions_val: '6',
+            stat_portions_lbl: 'Solidnych Porcji',
+            stat_cals_val: '~387',
+            stat_cals_lbl: 'kcal (samo curry)',
+            stat_protein_val: '44,9 g',
+            stat_protein_lbl: 'Białko na porcję',
+            stat_mass_val: '~550 g',
+            stat_mass_lbl: 'Masa miski curry',
+            stat_fats_val: '6,1 g',
+            stat_fats_lbl: 'Zdrowe tłuszcze',
+            sec_ingredients_title: '🛒 Lista składników',
+            sec_ingredients_sub: 'Proporcje na 6 dużych porcji meal-prep (~550 g miska gulaszu). Kliknij składnik, aby go odhaczyć.',
+            btn_reset: '↺ Zresetuj listę',
+            btn_print: '🖨️ Drukuj przepis',
+            layer1_title: 'Warstwa 1: Aksamitowanie drobiu (chińska technika velveting / zmiękczanie sodą)',
+            ing_chicken_amt: '960 g',
+            ing_chicken_name: 'Filet z piersi kurczaka lub indyka bez skóry',
+            ing_chicken_note: '160 g na porcję; pokrojony w kostkę 2,5 cm (~300 g czystego białka)',
+            ing_soda_amt: '3 g',
+            ing_soda_name: 'Soda oczyszczona (wodorowęglan sodu)',
+            ing_soda_note: '1/2 łyżeczki; podnosi pH mięsa powyżej punktu izoelektrycznego, blokując wyciek wody',
+            ing_velvet_liq_amt: '45 ml',
+            ing_velvet_liq_name: 'Woda i naturalny sos sojowy',
+            ing_velvet_liq_note: '2 łyżki wody + 1 łyżka sosu sojowego do uwodnienia włókien',
+            ing_velvet_starch_amt: '12 g',
+            ing_velvet_starch_name: 'Skrobia ziemniaczana (otoczka aksamitująca)',
+            ing_velvet_starch_note: 'Tworzy ochronną powłokę hydrokoloidową wokół włókien mięśniowych',
+            layer2_title: 'Warstwa 2: Gęsty sos velouté bez tradycyjnej zasmażki roux',
+            ing_carrots_amt: '480 g',
+            ing_carrots_name: 'Marchew obrana (podział 50/50)',
+            ing_carrots_note: '240 g do zblendowania na gładki sos; 240 g w talarkach do gulaszu',
+            ing_apples_amt: '240 g',
+            ing_apples_name: 'Słodkie jabłka (obrane i pozbawione gniazd)',
+            ing_apples_note: 'Dostarczają rozpuszczalną pektynę i łagodną owocową kwasowość jabłkową',
+            ing_broth_amt: '900 ml',
+            ing_broth_name: 'Esencjonalny rosół drobiowy z kości / wywar kolagenowy',
+            ing_broth_note: 'Bogaty w naturalną żelatynę, glicynę i głęboki smak umami',
+            ing_ginger_amt: '30 g',
+            ing_ginger_name: 'Świeży imbir (drobno starty na tarce)',
+            ing_ginger_note: 'Głęboki korzenny aromat i wsparcie perystaltyki żołądka (0% kapsaicyny)',
+            ing_ghee_amt: '18 g',
+            ing_ghee_name: 'Masło klarowane (ghee) lub oliwa z oliwek',
+            ing_ghee_note: '~1,5 łyżki do delikatnego podsmażenia i otwarcia aromatów przyprawy curry',
+            ing_curry_amt: '18 g',
+            ing_curry_name: 'Łagodna japońska przyprawa curry w proszku',
+            ing_curry_note: 'Mieszanka kurkumy, kolendry, kuminu, kozieradki i cynamonu (0% ostrego chili)',
+            ing_seasoning_liq_amt: '90 ml',
+            ing_seasoning_liq_name: 'Sos sojowy i Hon-Mirin',
+            ing_seasoning_liq_note: '60 ml sosu sojowego + 30 ml mirinu dla autentycznego balansu umami',
+            ing_slurry_amt: '18 g',
+            ing_slurry_name: 'Zawiesina ze skrobi ziemniaczanej',
+            ing_slurry_note: 'Rozmącona w 35 ml zimnej wody; nadaje połysk i wiąże emulsję velouté',
+            layer3_title: 'Warstwa 3: Kawałki batatów odporne na mrożenie',
+            ing_sweetpotatoes_amt: '480 g',
+            ing_sweetpotatoes_name: 'Bataty / słodkie ziemniaki (obrane, w kostce 2 cm)',
+            ing_sweetpotatoes_note: '80 g/porcję; wysoka aktywność β-amylazy zapobiega synerozie skrobi',
+            layer4_title: 'Warstwa 4: Opcjonalny dodatek węglowodanowy',
+            ing_rice_amt: '240 g suchego',
+            ing_rice_name: 'Japoński ryż krótkoziarnisty (opcjonalnie)',
+            ing_rice_note: '40 g suchego / ~100 g ugotowanego na porcję (+142 kcal | +2,7 g B | +31,6 g W)',
+            sec_geometry_title: '📐 Wielkość partii i przechowywanie',
+            geometry_intro: 'Wydajność: <strong>6 dużych porcji (~550 g gotowej potrawy na miskę)</strong>, łącznie ~3,3 kg gulaszu.',
+            geometry_callout_title: 'Zalecany garnek i pojemniki do mrożenia:',
+            geometry_callout_body: '• <strong>Garnek do gotowania:</strong> Żeliwny kociołek Dutch oven (5–6 L) lub szeroki garnek stalowy z grubym dnem.<br>• <strong>Pojemniki do mrożenia:</strong> 6 pojedynczych, hermetycznych pojemników szklanych lub z tworzywa wolnego od BPA (~600–750 ml).<br>• <strong>Zarządzanie ryżem:</strong> Zamrażaj samo curry. Ryż gotuj świeży na bieżąco na 3–4 dni lub mroź osobno w porcjach zawiniętych w folię spożywczą.',
+            sec_method_title: '🔥 Przygotowanie krok po kroku',
+            step1_title: 'Aksamitowanie drobiu z sodą (velveting)',
+            step1_p1: 'Umieść 960 g pokrojonej w kostkę piersi z drobiu w misce. Dodaj 3 g (1/2 łyżeczki) sody oczyszczonej, 30 ml wody, 15 ml sosu sojowego oraz 12 g skrobi ziemniaczanej.',
+            step1_p2: 'Wmasuj płyn energicznie w mięso przez <strong>60 sekund</strong>, aż cała wilgoć zostanie wchłonięta przez matrycę mięśniową. Odstaw na <strong>15 minut</strong> w temperaturze pokojowej.',
+            step1_cue: '💡 <strong>Mechanizm chemiczny:</strong> Soda podnosi pH powyżej punktu izoelektrycznego białek, co wywołuje odpychanie ładunków elektrostatycznych i zamyka wodę w komórkach podczas gotowania i mrożenia.',
+            step2_title: 'Zeszklenie przypraw i ugotowanie bazy velouté',
+            step2_p1: 'Rozgrzej 18 g ghee lub oliwy w żeliwnym garnku na średnim ogniu. Dodaj 30 g startego imbiru oraz 18 g łagodnej przyprawy curry. Podsmażaj przez <strong>60 sekund</strong>, aż uwolni się głęboki korzenny aromat.',
+            step2_p2: 'Dodaj 240 g grubo posiekanej marchwi, 240 g obranych i posiekanych jabłek oraz 900 ml esencjonalnego rosołu. Przykryj i gotuj na wolnym ogniu przez <strong>15 minut</strong>, aż marchew i jabłka będą całkowicie miękkie pod widelcem.',
+            step3_title: 'Zblendowanie na lśniące aksamitne velouté',
+            step3_p1: 'Zblenduj zawartość garnka blenderem ręcznym na najwyższych obrotach przez <strong>90 sekund</strong>, aż wywar z marchwią i jabłkami zamieni się w idealnie gładki, aksamitny złocisty sos velouté.',
+            step3_p2: 'Wlej 60 ml sosu sojowego oraz 30 ml mirinu, zmniejszając ogień na mały.',
+            step4_title: 'Zagęszczenie, gotowanie drobiu i dodanie batatów',
+            step4_p1: 'Rozmieszaj 18 g skrobi ziemniaczanej w 35 ml zimnej wody. Wlej zawiesinę do pyrkającego sosu i gotuj przez <strong>2 minuty</strong>, aż sos stanie się lśniący, gęsty i gładki.',
+            step4_p2: 'Włóż do sosu zamarynowane kostki drobiu oraz pozostałe 240 g marchwi pokrojonej w talarki. Gotuj delikatnie na małym ogniu przez <strong>6–8 minut</strong>, aż drób osiągnie wewnątrz temperaturę ~68°C.',
+            step4_p3: 'Wmieszaj do garnka 480 g ugotowanych wcześniej na parze batatów. Gotuj jeszcze przez 1 minutę tylko do oblepienia warzyw sosem i natychmiast zestaw garnek z ognia.',
+            step4_cue: '🛑 <strong>Zabezpieczenie przed przesuszeniem mięsa:</strong> Zdjęcie drobiu przy 68°C pozwala ciepłu resztkowemu doprowadzić mięso do idealnej pasteryzacji bez gwałtownego skurczu aktyny i utraty soczystości.',
+            step5_title: 'Szybkie studzenie i mrożenie',
+            step5_p1: 'Zestawiony garnek wystudź szybko w kąpieli wodno-lodowej w zlewie, co chroni delikatne nuty świeżego imbiru przed wywietrzeniem.',
+            step5_p2: 'Rozlej gulasz do 6 hermetycznych pojemników na meal prep (~550 g na pojemnik). Zamknij szczelnie i zamroź w temperaturze -18°C.',
+            sec_science_title: '🧪 Fizjologia trawienia i fizykochemia kulinarna',
+            sci_gut_title: '🌿 Ochrona przewodu pokarmowego przy NZJ i WZJG',
+            sci_gut_body: '• <strong>Zero oleju palmowego i zero drażniącej kapsaicyny:</strong> Sklepowe kostki curry zawierają 45–50% utwardzonego tłuszczu palmowego i wysokie stężenia ostrej papryki zaostrzającej stany zapalne jelit; ta receptura ma 0% chili i bazuje na czystym maśle klarowanym i rosole.<br>• <strong>Kojący imbir i biodostępny błonnik rozpuszczalny:</strong> Świeży starty imbir wspiera opróżnianie żołądka bez drażnienia śluzówki; przetarte jabłka i marchew dostarczają łagodnego błonnika rozpuszczalnego (pektyn) osłaniającego nabłonek jelitowy.<br>• <strong>Wysoka gęstość białka:</strong> 44,9 g czystego, biodostępnego białka w porcji regeneruje organizm bez obciążania żołądka.<br>• <strong>Bez skórek i pestek:</strong> Wszystkie warzywa i owoce są dokładnie obrane; gładka emulsja zapobiega mechanicznym mikrourazom ściany jelita.',
+            sci_freeze_title: '❄️ Stabilność batatów po rozmrożeniu i chemia aksamitowania',
+            sci_freeze_body: '• <strong>Odporność batatów na synerozę (aktywność β-amylazy):</strong> Zwykłe białe ziemniaki po rozmrożeniu stają się gąbczaste i wyciskają wodę na skutek retrogradacji amylozy. Bataty zawierają aktywny enzym β-amylazę, który podczas obróbki cieplnej rozkłada skrobię na maltozę i dekstryny, co trwale zapobiega krystalizacji i rozwarstwianiu po zamrożeniu.<br>• <strong>Ochrona miofibryli sodą (velveting):</strong> Wodorowęglan sodu przesuwa pH włókien mięśniowych powyżej punktu izoelektrycznego (pI ≈ 5,3). Odpychanie ujemnych ładunków utrzymuje wodę wewnątrz komórek nawet w temperaturze -18°C i podczas ponownego podgrzewania.<br>• <strong>Hydrokoloidowe velouté bez tłuszczu nasyconego:</strong> Synergia pektyn jabłkowych, naturalnego kolagenu z rosołu i skrobi ziemniaczanej tworzy trwałą matrycę żelową odporną na rozpad emulsji.',
+            sec_reheat_title: '♨️ Przechowywanie i protokół odgrzewania',
+            th_method: 'Metoda',
+            th_fridge: 'Z lodówki (schłodzone)',
+            th_frozen: 'Bezpośrednio z zamrażarki',
+            row1_method: 'Płyta / Palnik (Najlepsza emulsja)',
+            row1_fridge: 'Rondel + 1 łyżka wody; mały ogień przez 4–5 min, wymieszać rózgą',
+            row1_frozen: 'Rondel + 2 łyżki wody; pod przykryciem na małym ogniu 8–10 min; na koniec delikatnie roztrzepać rózgą dla przywrócenia aksamitnego blasku',
+            row2_method: 'Kuchenka mikrofalowa',
+            row2_fridge: 'Przykryta miska; pełna moc przez 2,5–3 min, zamieszać w połowie',
+            row2_frozen: 'Przykryta miska; rozmrażanie (Defrost) 3 min, zamieszać, potem pełna moc 2,5–3 min do wrzenia (>74°C)',
+            row3_method: 'Indywidualne doprawianie',
+            row3_custom: 'Baza potrawy w garnku jest w 100% łagodna i bezpieczna dla delikatnego przewodu pokarmowego. Indywidualne porcje na talerzu można zaostrzyć łyżeczką chrupiącego oleju chili Lao Gan Ma lub świeżą dymką!',
+            footer_text: 'Zaawansowana inżynieria kulinarna • Wysoka objętość, maksimum białka i łagodne trawienie'
+        }
+    };
+
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+        
+        document.documentElement.lang = lang;
+        try {
+            localStorage.setItem('japanese_curry_lang', lang);
+        } catch (e) {}
+        
+        const btnEn = document.getElementById('btn-en');
+        const btnPl = document.getElementById('btn-pl');
+        if (btnEn && btnPl) {
+            btnEn.classList.toggle('active', lang === 'en');
+            btnEn.setAttribute('aria-pressed', lang === 'en');
+            btnPl.classList.toggle('active', lang === 'pl');
+            btnPl.setAttribute('aria-pressed', lang === 'pl');
+        }
+        
+        if (translations[lang].meta_title) {
+            document.title = translations[lang].meta_title;
+        }
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && translations[lang].meta_desc) {
+            metaDesc.setAttribute('content', translations[lang].meta_desc);
+        }
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key] !== undefined) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (translations[lang][key] !== undefined) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    function toggleCheck(el) {
+        const checkbox = el.querySelector('input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+        el.classList.toggle('checked', checkbox.checked);
+    }
+
+    function clearChecks() {
+        document.querySelectorAll('.ingredient-item').forEach(item => {
+            item.classList.remove('checked');
+            item.querySelector('input[type="checkbox"]').checked = false;
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let savedLang = null;
+        try {
+            savedLang = localStorage.getItem('japanese_curry_lang');
+        } catch (e) {}
+
+        const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';
+        setLanguage(savedLang || browserLang);
+    });
+</script>
+
+</body>
+</html>
