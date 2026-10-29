@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-Protein Meal-Prep Cookbook</title>
-    <meta name="description" content="High-volume, low-calorie, gut-friendly meal-prep recipes. 45–64g protein per serving. Freeze-thaw stabilized.">
+    <title>High-Protein Meal-Prep & Kitchen Cookbook</title>
+    <meta name="description" content="A curated cookbook of high-protein meal-prep staples and weeknight comfort classics. 45–64g protein per serving. Clear physics, honest macros, and simple execution.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
         }
 
         .container {
-            max-width: 980px;
+            max-width: 1040px;
             margin: 0 auto;
         }
 
@@ -151,7 +151,7 @@
             border-radius: var(--radius-lg);
             padding: 2.5rem 2.25rem 2rem;
             box-shadow: var(--shadow-md);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             position: relative;
             overflow: hidden;
             text-align: center;
@@ -221,12 +221,38 @@
             color: #92400e;
         }
 
+        /* Recipe Sections */
+        .recipe-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+
+        .category-header h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-header p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
         /* Recipe Cards Grid */
         .recipes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 2.5rem;
         }
 
         .recipe-card {
@@ -399,8 +425,8 @@
 
     <!-- CLEAN HERO -->
     <header class="hero">
-        <h1 data-i18n="hero_title">High-Protein Meal-Prep Cookbook</h1>
-        <span class="hero-subtitle" data-i18n="hero_subtitle">Engineered for massive volume, complete satiety, and freeze-thaw stability.</span>
+        <h1 data-i18n="hero_title">High-Protein Meal-Prep & Kitchen Cookbook</h1>
+        <span class="hero-subtitle" data-i18n="hero_subtitle">Engineered for massive volume, complete satiety, and culinary excellence.</span>
 
         <div class="badges-row">
             <span class="badge badge-amber" data-i18n="badge_protein">⚡ 45–64g Protein / Portion</span>
@@ -409,104 +435,160 @@
         </div>
     </header>
 
-    <!-- RECIPES GRID -->
-    <main class="recipes-grid">
+    <!-- MAIN RECIPES DISPLAY -->
+    <main>
 
-        <!-- CARD 1: COTTAGE PIE -->
-        <article class="recipe-card">
-            <div>
-                <div class="card-top">
-                    <span class="card-tag" data-i18n="card1_tag">Baked Gratin</span>
-                    <span class="card-time" data-i18n="card1_time">⏱️ 45m Bake</span>
-                </div>
-                <h2 class="card-title" data-i18n="card1_title">The "Golden Silk" Turkey Cottage Pie</h2>
-                <span class="card-subtitle" data-i18n="card1_subtitle">Zapiekanka Pasterska „Złocisty Aksamit”</span>
-
-                <div class="card-macros">
-                    <div>
-                        <div class="macro-val">~620</div>
-                        <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
-                    </div>
-                    <div>
-                        <div class="macro-val">64.0 g</div>
-                        <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
-                    </div>
-                    <div>
-                        <div class="macro-val">~700 g</div>
-                        <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
-                    </div>
-                </div>
-
-                <p class="card-desc" data-i18n="card1_desc">
-                    Rich lean turkey & root ragù under an anti-syneresis potato-carrot silk mash and blistered mature cheddar crust.
-                </p>
+        <!-- SECTION 1: HIGH-VOLUME FREEZER MEAL PREP -->
+        <section class="recipe-section">
+            <div class="category-header">
+                <h2 data-i18n="sec1_title">🍱 High-Volume Freezer Meal Prep</h2>
+                <p data-i18n="sec1_desc">Cryo-stabilized, high-satiety bakes, wraps & stews engineered for large-batch freezing.</p>
             </div>
-            <a href="cottage_pie.html" class="recipe-btn" data-i18n="btn_view_cottage">View Recipe & Checklist →</a>
-        </article>
 
-        <!-- CARD 2: FREEZER BURRITOS -->
-        <article class="recipe-card">
-            <div>
-                <div class="card-top">
-                    <span class="card-tag" data-i18n="card2_tag">Grab & Go Handheld</span>
-                    <span class="card-time" data-i18n="card2_time">⏱️ 20m Prep</span>
-                </div>
-                <h2 class="card-title" data-i18n="card2_title">The "Golden Foil" Freezer Burritos</h2>
-                <span class="card-subtitle" data-i18n="card2_subtitle">Wysokobiałkowe Burrito w Złotej Folii</span>
+            <div class="recipes-grid">
 
-                <div class="card-macros">
+                <!-- CARD 1: COTTAGE PIE -->
+                <article class="recipe-card">
                     <div>
-                        <div class="macro-val">~452</div>
-                        <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
-                    </div>
-                    <div>
-                        <div class="macro-val">46.9 g</div>
-                        <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
-                    </div>
-                    <div>
-                        <div class="macro-val">~330 g</div>
-                        <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
-                    </div>
-                </div>
+                        <div class="card-top">
+                            <span class="card-tag" data-i18n="card1_tag">Baked Gratin</span>
+                            <span class="card-time" data-i18n="card1_time">⏱️ 45m Bake</span>
+                        </div>
+                        <h3 class="card-title" data-i18n="card1_title">The "Golden Silk" Turkey Cottage Pie</h3>
+                        <span class="card-subtitle" data-i18n="card1_subtitle">Zapiekanka Pasterska „Złocisty Aksamit”</span>
 
-                <p class="card-desc" data-i18n="card2_desc">
-                    Cold-assembled meal-prep burritos with au-sec turkey reduction, anti-syneresis scrambled eggs, and hydrophobic cheddar barrier.
-                </p>
+                        <div class="card-macros">
+                            <div>
+                                <div class="macro-val">~620</div>
+                                <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">64.0 g</div>
+                                <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">~700 g</div>
+                                <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
+                            </div>
+                        </div>
+
+                        <p class="card-desc" data-i18n="card1_desc">
+                            Rich lean turkey & root ragù under an anti-syneresis potato-carrot silk mash and blistered mature cheddar crust.
+                        </p>
+                    </div>
+                    <a href="cottage_pie.html" class="recipe-btn" data-i18n="btn_view_cottage">View Recipe & Checklist →</a>
+                </article>
+
+                <!-- CARD 2: FREEZER BURRITOS -->
+                <article class="recipe-card">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-tag" data-i18n="card2_tag">Grab & Go Handheld</span>
+                            <span class="card-time" data-i18n="card2_time">⏱️ 20m Prep</span>
+                        </div>
+                        <h3 class="card-title" data-i18n="card2_title">The "Golden Foil" Freezer Burritos</h3>
+                        <span class="card-subtitle" data-i18n="card2_subtitle">Wysokobiałkowe Burrito w Złotej Folii</span>
+
+                        <div class="card-macros">
+                            <div>
+                                <div class="macro-val">~452</div>
+                                <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">46.9 g</div>
+                                <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">~330 g</div>
+                                <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
+                            </div>
+                        </div>
+
+                        <p class="card-desc" data-i18n="card2_desc">
+                            Cold-assembled meal-prep burritos with au-sec turkey reduction, anti-syneresis scrambled eggs, and hydrophobic cheddar barrier.
+                        </p>
+                    </div>
+                    <a href="freezer_burritos.html" class="recipe-btn" data-i18n="btn_view_burritos">View Recipe & Checklist →</a>
+                </article>
+
+                <!-- CARD 3: JAPANESE CURRY -->
+                <article class="recipe-card">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-tag" data-i18n="card3_tag">Big-Pot Comfort Stew</span>
+                            <span class="card-time" data-i18n="card3_time">⏱️ 35m Simmer</span>
+                        </div>
+                        <h3 class="card-title" data-i18n="card3_title">The Japanese "Golden Velvet" Curry Stew</h3>
+                        <span class="card-subtitle" data-i18n="card3_subtitle">Aksamitne Japońskie Curry z Drobiem i Batatami</span>
+
+                        <div class="card-macros">
+                            <div>
+                                <div class="macro-val">~387</div>
+                                <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">44.9 g</div>
+                                <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">~550 g</div>
+                                <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
+                            </div>
+                        </div>
+
+                        <p class="card-desc" data-i18n="card3_desc">
+                            Comforting Japanese curry utilizing a roux-free apple-carrot velouté and alkaline-velveted poultry that stays succulent across reheating.
+                        </p>
+                    </div>
+                    <a href="japanese_curry.html" class="recipe-btn" data-i18n="btn_view_curry">View Recipe & Checklist →</a>
+                </article>
+
             </div>
-            <a href="freezer_burritos.html" class="recipe-btn" data-i18n="btn_view_burritos">View Recipe & Checklist →</a>
-        </article>
+        </section>
 
-        <!-- CARD 3: JAPANESE CURRY -->
-        <article class="recipe-card">
-            <div>
-                <div class="card-top">
-                    <span class="card-tag" data-i18n="card3_tag">Big-Pot Comfort Stew</span>
-                    <span class="card-time" data-i18n="card3_time">⏱️ 35m Simmer</span>
-                </div>
-                <h2 class="card-title" data-i18n="card3_title">The Japanese "Golden Velvet" Curry Stew</h2>
-                <span class="card-subtitle" data-i18n="card3_subtitle">Aksamitne Japońskie Curry z Drobiem i Batatami</span>
-
-                <div class="card-macros">
-                    <div>
-                        <div class="macro-val">~387</div>
-                        <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
-                    </div>
-                    <div>
-                        <div class="macro-val">44.9 g</div>
-                        <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
-                    </div>
-                    <div>
-                        <div class="macro-val">~550 g</div>
-                        <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
-                    </div>
-                </div>
-
-                <p class="card-desc" data-i18n="card3_desc">
-                    Comforting Japanese curry utilizing a roux-free apple-carrot velouté and alkaline-velveted poultry that stays succulent across reheating.
-                </p>
+        <!-- SECTION 2: WEEKNIGHT CLASSICS & COMFORT -->
+        <section class="recipe-section">
+            <div class="category-header">
+                <h2 data-i18n="sec2_title">🍝 Weeknight Classics & Comfort</h2>
+                <p data-i18n="sec2_desc">Hearty, uncompromised comfort dishes celebrating deep flavor, rich umami, and pure kitchen joy.</p>
             </div>
-            <a href="japanese_curry.html" class="recipe-btn" data-i18n="btn_view_curry">View Recipe & Checklist →</a>
-        </article>
+
+            <div class="recipes-grid">
+
+                <!-- CARD 4: TUNA PASTA -->
+                <article class="recipe-card">
+                    <div>
+                        <div class="card-top">
+                            <span class="card-tag" data-i18n="card4_tag">Stovetop Mantecatura</span>
+                            <span class="card-time" data-i18n="card4_time">⏱️ 25m Prep</span>
+                        </div>
+                        <h3 class="card-title" data-i18n="card4_title">The High-Umami Tuna & Spinach Comfort Pasta</h3>
+                        <span class="card-subtitle" data-i18n="card4_subtitle">Makaron z Tuńczykiem i Warzywami</span>
+
+                        <div class="card-macros">
+                            <div>
+                                <div class="macro-val">~676</div>
+                                <div class="macro-lbl" data-i18n="macro_cals">Calories</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">49.4 g</div>
+                                <div class="macro-lbl" data-i18n="macro_protein">Protein</div>
+                            </div>
+                            <div>
+                                <div class="macro-val">~480 g</div>
+                                <div class="macro-lbl" data-i18n="macro_volume">Mass</div>
+                            </div>
+                        </div>
+
+                        <p class="card-desc" data-i18n="card4_desc">
+                            Flaked tuna reduced in savory brine, folded with melted anchovies, sweet peppers, baby spinach, and 18% sour cream into an al dente starch-emulsified glaze.
+                        </p>
+                    </div>
+                    <a href="tuna_pasta.html" class="recipe-btn" data-i18n="btn_view_tuna">View Recipe & Checklist →</a>
+                </article>
+
+            </div>
+        </section>
 
     </main>
 
@@ -522,11 +604,14 @@
     const translations = {
         en: {
             nav_about: 'ℹ️ Food Science & About',
-            hero_title: 'High-Protein Meal-Prep Cookbook',
-            hero_subtitle: 'Engineered for massive volume, complete satiety, and freeze-thaw stability.',
+            hero_title: 'High-Protein Meal-Prep & Kitchen Cookbook',
+            hero_subtitle: 'Engineered for massive volume, complete satiety, and culinary excellence.',
             badge_protein: '⚡ 45–64g Protein / Portion',
             badge_gut: '🌿 Sensitive Gut & IBD Friendly (NZJ / WZJG)',
             badge_freeze: '❄️ 100% Freeze-Thaw Stabilized',
+            
+            sec1_title: '🍱 High-Volume Freezer Meal Prep',
+            sec1_desc: 'Cryo-stabilized, high-satiety bakes, wraps & stews engineered for large-batch freezing.',
             
             card1_tag: 'Baked Gratin',
             card1_time: '⏱️ 45m Bake',
@@ -549,6 +634,16 @@
             card3_desc: 'Comforting Japanese curry utilizing a roux-free apple-carrot velouté and alkaline-velveted poultry that stays succulent across reheating.',
             btn_view_curry: 'View Recipe & Checklist →',
             
+            sec2_title: '🍝 Weeknight Classics & Comfort',
+            sec2_desc: 'Hearty, uncompromised comfort dishes celebrating deep flavor, rich umami, and pure kitchen joy.',
+            
+            card4_tag: 'Stovetop Mantecatura',
+            card4_time: '⏱️ 25m Prep',
+            card4_title: 'The High-Umami Tuna & Spinach Comfort Pasta',
+            card4_subtitle: 'Makaron z Tuńczykiem i Warzywami',
+            card4_desc: 'Flaked tuna reduced in savory brine, folded with melted anchovies, sweet peppers, baby spinach, and 18% sour cream into an al dente starch-emulsified glaze.',
+            btn_view_tuna: 'View Recipe & Checklist →',
+            
             macro_cals: 'Calories',
             macro_protein: 'Protein',
             macro_volume: 'Mass',
@@ -558,11 +653,14 @@
         },
         pl: {
             nav_about: 'ℹ️ O projekcie i fizykochemia',
-            hero_title: 'Książka Kucharska: Meal Prep',
-            hero_subtitle: 'Zaprojektowana dla maksymalnej objętości, pełnej sytości i odporności na mrożenie.',
+            hero_title: 'Książka Kucharska: Meal Prep & Klasyki',
+            hero_subtitle: 'Zaprojektowana dla maksymalnej objętości, pełnej sytości i kulinarnej doskonałości.',
             badge_protein: '⚡ 45–64 g białka / porcję',
             badge_gut: '🌿 Łagodne dla jelit (NZJ / WZJG)',
             badge_freeze: '❄️ 100% stabilne po rozmrożeniu',
+            
+            sec1_title: '🍱 Wysokoobjętościowy Meal Prep na Zapasy',
+            sec1_desc: 'Stabilne po zamrożeniu zapiekanki, dania do ręki i gulasze o potężnej objętości i sytości.',
             
             card1_tag: 'Zapiekanka Gratin',
             card1_time: '⏱️ 45 min pieczenia',
@@ -584,6 +682,16 @@
             card3_subtitle: 'The Japanese "Golden Velvet" Curry Stew',
             card3_desc: 'Rozgrzewające curry oparte na aksamitnym velouté z jabłek i marchwi oraz aksamitowanym drobiu zachowującym soczystość po zamrożeniu.',
             btn_view_curry: 'Zobacz przepis i listę kroków →',
+            
+            sec2_title: '🍝 Klasyki i Dania Codzienne',
+            sec2_desc: 'Wyraziste, pełne smaku dania obiadowe celebrujące synergię umami i czystą radość ze wspólnego gotowania.',
+            
+            card4_tag: 'Kremowa Mantecatura',
+            card4_time: '⏱️ 25 min przygotowania',
+            card4_title: 'Kremowy Makaron z Tuńczykiem i Warzywami',
+            card4_subtitle: 'The High-Umami Tuna & Spinach Comfort Pasta',
+            card4_desc: 'Tuńczyk odparowany w solance umami, połączony z rozpuszczonymi anchois, papryką, młodym szpinakiem i 18% śmietaną w lśniącą emulsję mantecatura.',
+            btn_view_tuna: 'Zobacz przepis i listę kroków →',
             
             macro_cals: 'Kalorie',
             macro_protein: 'Białko',

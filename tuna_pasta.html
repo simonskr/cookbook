@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The High-Umami Tuna & Spinach Comfort Pasta (Mantecatura Classic)</title>
+    <meta name="description" content="Hearty weeknight tuna & spinach comfort pasta delivering ~49g protein per serving. Features au-sec tuna brine reduction, melted anchovies, and mantecatura sour cream emulsion.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #fbf9f5;
+            --bg-card: #ffffff;
+            --bg-inset: #f3efe6;
+            --text-main: #231c16;
+            --text-muted: #6e645a;
+            --text-light: #94897e;
+            --border-color: #e5ded3;
+            --border-subtle: #eee8de;
+            --amber-warm: #c85a17;
+            --amber-hover: #b04b0f;
+            --amber-light: #fbeee6;
+            --gold-accent: #d97706;
+            --gold-light: #fef3c7;
+            --green-gut: #2d7a4f;
+            --green-light: #e8f5ed;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 2px 6px rgba(35, 28, 22, 0.04);
+            --shadow-md: 0 10px 25px rgba(35, 28, 22, 0.06);
+            --shadow-lg: 0 20px 40px rgba(35, 28, 22, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Recipe Navigation */
+        .recipe-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding: 0.5rem 0.25rem;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--amber-warm);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--amber-hover);
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.3rem 0.7rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--amber-warm);
+            background: var(--bg-inset);
+        }
+
+        .nav-link.active {
+            color: var(--amber-warm);
+            font-weight: 700;
+            background: var(--amber-light);
+        }
+
+        .lang-btn:focus-visible,
+        .nav-back:focus-visible,
+        .nav-link:focus-visible,
+        .btn-action:focus-visible {
+            outline: 2px solid var(--amber-warm);
+            outline-offset: 2px;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, var(--bg-inset) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2.25rem 2.25rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold-accent), var(--amber-warm));
+        }
+
+        .header-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .badge-amber {
+            background-color: var(--amber-light);
+            color: var(--amber-warm);
+        }
+
+        .badge-green {
+            background-color: var(--green-light);
+            color: var(--green-gut);
+        }
+
+        .badge-gold {
+            background-color: var(--gold-light);
+            color: #92400e;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            padding: 3px;
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 0.35rem 0.85rem;
+            min-height: 36px;
+            min-width: 44px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: var(--amber-warm);
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(200, 90, 23, 0.35);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--amber-warm);
+            background-color: var(--amber-light);
+        }
+
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .polish-subtitle {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--amber-warm);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 780px;
+            margin-bottom: 1.75rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-val {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--amber-warm);
+            line-height: 1.2;
+        }
+
+        .stat-lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 860px) {
+            .content-grid {
+                grid-template-columns: 1.15fr 0.85fr;
+            }
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-card h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .layer-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--amber-warm);
+            margin: 1.25rem 0 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .layer-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .ingredient-list {
+            list-style: none;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.95rem;
+            cursor: pointer;
+            user-select: none;
+            transition: opacity 0.2s;
+        }
+
+        .ingredient-item:last-child {
+            border-bottom: none;
+        }
+
+        .ingredient-item.checked {
+            opacity: 0.45;
+            text-decoration: line-through;
+        }
+
+        .ingredient-item input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--amber-warm);
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        .ing-amount {
+            font-weight: 700;
+            color: var(--text-main);
+            min-width: 90px;
+        }
+
+        .ing-name {
+            color: var(--text-muted);
+            flex: 1;
+        }
+
+        .ing-title {
+            color: var(--text-main);
+            font-weight: 500;
+            display: block;
+        }
+
+        .ing-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 0.1rem;
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--amber-light);
+            color: var(--amber-warm);
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            border: 1px solid rgba(200, 90, 23, 0.2);
+        }
+
+        .step-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-body {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .step-body p {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-box {
+            background-color: var(--bg-inset);
+            border-left: 4px solid var(--amber-warm);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-sm);
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .callout-box strong {
+            color: var(--text-main);
+        }
+
+        .science-card {
+            background: linear-gradient(to bottom right, #ffffff, var(--bg-inset));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .science-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .science-title {
+            font-weight: 700;
+            color: var(--amber-warm);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .science-body {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            padding: 0.75rem 0.85rem;
+            border: 1px solid var(--border-subtle);
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background-color: var(--bg-inset);
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .matrix-table tr:nth-child(even) td {
+            background-color: rgba(243, 239, 230, 0.35);
+        }
+
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .nutrition-table td {
+            padding: 0.45rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+        }
+
+        .nutrition-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        .btn-action:hover {
+            background: var(--bg-inset);
+            border-color: var(--amber-warm);
+            color: var(--amber-warm);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--amber-warm);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+            .hero, .section-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            .recipe-nav, .lang-switch, .btn-row, footer {
+                display: none !important;
+            }
+            .content-grid {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Top Navigation Bar Matching Cookbook -->
+    <nav class="recipe-nav" aria-label="Nawigacja po przepisach / Recipe Navigation">
+        <a href="index.html" class="nav-back" data-i18n="nav_back">← Back to Recipes</a>
+        <div class="nav-links">
+            <a href="cottage_pie.html" class="nav-link" data-i18n="nav_link_cottage">Cottage Pie</a>
+            <a href="freezer_burritos.html" class="nav-link" data-i18n="nav_link_burritos">Freezer Burritos</a>
+            <a href="japanese_curry.html" class="nav-link" data-i18n="nav_link_curry">Japanese Curry</a>
+            <a href="tuna_pasta.html" class="nav-link active" aria-current="page" data-i18n="nav_link_tuna">Tuna Pasta</a>
+            <a href="about.html" class="nav-link" data-i18n="nav_link_about">About</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="header-top-row">
+            <div class="badges-row">
+                <span class="badge badge-amber" data-i18n="badge_protein">⚡ 49g Protein / Serving</span>
+                <span class="badge badge-gold" data-i18n="badge_comfort">🍝 Weeknight Comfort Classic</span>
+                <span class="badge badge-green" data-i18n="badge_time">⏱️ 25m Total Prep</span>
+            </div>
+            <div class="lang-switch" role="group" aria-label="Language Switcher">
+                <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')" aria-pressed="true">EN</button>
+                <button type="button" class="lang-btn" id="btn-pl" onclick="setLanguage('pl')" aria-pressed="false">PL</button>
+            </div>
+        </div>
+
+        <h1 data-i18n="hero_title">The High-Umami Tuna & Spinach Comfort Pasta</h1>
+        <span class="polish-subtitle" data-i18n="hero_subtitle">Makaron z Tuńczykiem i Szpinakiem • Mantecatura Glaze & Sarcoplasmic Umami Reduction</span>
+        <p class="hero-desc" data-i18n-html="hero_desc">
+            A cherished comfort classic from Simon's kitchen, elevated with kitchen physics. This is <strong>not</strong> a sad calorie-restricted diet plate—it is an authentic, soul-warming weeknight pasta delivering <strong>nearly 50g of natural protein</strong> per generous bowl. Instead of discarding the canned tuna brine, we reduce it <em>au sec</em> to concentrate savory inosine monophosphate (IMP), dissolve anchovies invisibly into golden butter, and toss the hot al dente pasta directly into the pan to emulsify 18% Polish sour cream into a clingy, restaurant-grade glaze.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_portions_val">6</div>
+                <div class="stat-lbl" data-i18n="stat_portions_lbl">Generous Bowls</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_cals_val">~676</div>
+                <div class="stat-lbl" data-i18n="stat_cals_lbl">Calories / Bowl</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_protein_val">49.4 g</div>
+                <div class="stat-lbl" data-i18n="stat_protein_lbl">Protein / Serving</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_mass_val">~480 g</div>
+                <div class="stat-lbl" data-i18n="stat_mass_lbl">Plated Bowl Mass</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_fats_val">17.7 g</div>
+                <div class="stat-lbl" data-i18n="stat_fats_lbl">Rich Dairy Lipids</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-grid">
+        <!-- Left Column: Ingredients Checklist & Hardware & Nutrition -->
+        <div class="left-col">
+            <!-- Checklist Card -->
+            <section class="section-card">
+                <h2 data-i18n="sec_ingredients_title">🛒 Ingredients Checklist</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;" data-i18n="sec_ingredients_sub">
+                    Scaled for 6 generous comfort bowls (~480g plated mass each). Click any ingredient to check it off as you prep.
+                </p>
+
+                <!-- Layer 1: Durum Pasta Foundation & Starch Donor -->
+                <div class="layer-title" data-i18n="layer1_title">Layer 1: Durum Pasta Foundation & Starch Donor</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Durum wheat pasta">
+                        <span class="ing-amount" data-i18n="ing_pasta_amt">500 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_pasta_name">Durum Wheat Pasta (Fusilli, Penne, or Tagliatelle)</span>
+                            <span class="ing-note" data-i18n="ing_pasta_note">1 standard box; ridged or spiral shapes trap the glossy emulsion in every crevice</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Coarse sea salt">
+                        <span class="ing-amount" data-i18n="ing_salt_amt">25 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_salt_name">Coarse Sea Salt (for Pasta Water)</span>
+                            <span class="ing-note" data-i18n="ing_salt_note">~1 heaping tbsp per 3.5–4L water; establishes baseline 0.6–0.7% salinity</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Starchy pasta water">
+                        <span class="ing-amount" data-i18n="ing_water_amt">150 ml</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_water_name">Starchy Pasta Cooking Water</span>
+                            <span class="ing-note" data-i18n="ing_water_note">~1 to 1.5 ladles reserved right before draining; crucial amylose hydrocolloid donor for the starchy mantecatura emulsion</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Layer 2: Aromatic Lipid Base & Anchovy Melt -->
+                <div class="layer-title" data-i18n="layer2_title">Layer 2: Aromatic Lipid Base & Anchovy Melt</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Butter or EVOO">
+                        <span class="ing-amount" data-i18n="ing_butter_amt">30 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_butter_name">Butter (82% Fat) or Extra Virgin Olive Oil</span>
+                            <span class="ing-note" data-i18n="ing_butter_note">2 full tablespoons; fat solvent to melt anchovies and extract fat-soluble carotenoids</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Anchovy fillets">
+                        <span class="ing-amount" data-i18n="ing_anchovy_amt">20 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_anchovy_name">Canned Anchovy Fillets in Oil</span>
+                            <span class="ing-note" data-i18n="ing_anchovy_note">5–6 fillets; dissolves completely into warm butter, unlocking secret inosinate & glutamate</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Yellow onions">
+                        <span class="ing-amount" data-i18n="ing_onions_amt">500 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_onions_name">Yellow / Brown Onions</span>
+                            <span class="ing-note" data-i18n="ing_onions_note">4–5 medium onions, finely diced (~3–4 mm); provides sweet soluble sugar foundation</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Fresh garlic">
+                        <span class="ing-amount" data-i18n="ing_garlic_amt">25 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_garlic_name">Fresh Garlic Cloves</span>
+                            <span class="ing-note" data-i18n="ing_garlic_note">5–6 plump cloves, finely minced or microplaned; sweet allicin, added after onion sweat</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Sweet bell peppers">
+                        <span class="ing-amount" data-i18n="ing_peppers_amt">320 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_peppers_name">Sweet Bell Peppers (Red and/or Yellow)</span>
+                            <span class="ing-note" data-i18n="ing_peppers_note">2 medium peppers, cut into thin batons; brings crisp sweetness, color & vitamin C</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Layer 3: Protein Payload & Umami Deglaze -->
+                <div class="layer-title" data-i18n="layer3_title">Layer 3: Protein Payload & Umami Deglaze</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Canned tuna in brine">
+                        <span class="ing-amount" data-i18n="ing_tuna_amt">6 cans</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_tuna_name">Canned Tuna in Brine (Undrained!)</span>
+                            <span class="ing-note" data-i18n="ing_tuna_note">~1,110g gross / ~810g drained tuna + ~300ml brine; do NOT drain the savory canning juices!</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Mirin or Shaoxing wine">
+                        <span class="ing-amount" data-i18n="ing_mirin_amt">30 ml</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_mirin_name">Mirin or Shaoxing Rice Wine</span>
+                            <span class="ing-note" data-i18n="ing_mirin_note">2 tbsp; deglazes pan fond, adds subtle non-crystallizing sweetness and aroma</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Oyster sauce">
+                        <span class="ing-amount" data-i18n="ing_oyster_amt">35 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_oyster_name">Premium Oyster Sauce</span>
+                            <span class="ing-note" data-i18n="ing_oyster_note">2 tbsp; concentrated marine glutamate, natural oyster glycogen & unctuous body</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Monosodium glutamate">
+                        <span class="ing-amount" data-i18n="ing_msg_amt">2.5 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_msg_name">Monosodium Glutamate (MSG)</span>
+                            <span class="ing-note" data-i18n="ing_msg_note">~½ tsp Uncle Roger-approved dose ("Fuiyoh!"); triggers the T1R1/T1R3 receptor lock</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Herbes de Provence">
+                        <span class="ing-amount" data-i18n="ing_herbs_amt">3 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_herbs_name">Dried Herbes de Provence</span>
+                            <span class="ing-note" data-i18n="ing_herbs_note">2 tsp; thyme, rosemary, savory, basil, marjoram bloomed directly in the warm lipid phase</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Cracked pepper">
+                        <span class="ing-amount" data-i18n="ing_pepper_amt">2 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_pepper_name">Coarsely Cracked Black / White Pepper</span>
+                            <span class="ing-note" data-i18n="ing_pepper_note">~1 tsp; pungent piperine heat to cut through the rich dairy fats</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Layer 4: Dairy Emulsion & Fresh Finish -->
+                <div class="layer-title" data-i18n="layer4_title">Layer 4: Dairy Emulsion & Fresh Finish</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Fresh baby spinach">
+                        <span class="ing-amount" data-i18n="ing_spinach_amt">150 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_spinach_name">Fresh Baby Spinach Leaves</span>
+                            <span class="ing-note" data-i18n="ing_spinach_note">4–5 generous handfuls; folded at residual steam turn; retains bright emerald crunch</span>
+                        </div>
+                    </li>
+                    <li class="ingredient-item" onclick="toggleCheck(this)">
+                        <input type="checkbox" aria-label="Sour cream 18%">
+                        <span class="ing-amount" data-i18n="ing_sourcream_amt">350 g</span>
+                        <div class="ing-name">
+                            <span class="ing-title" data-i18n="ing_sourcream_name">Polish Sour Cream 18% (Śmietana 18%)</span>
+                            <span class="ing-note" data-i18n="ing_sourcream_note">~1 large tub (or crème fraîche 18–30%); tempered off-flame to prevent casein curdling</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="btn-row">
+                    <button type="button" class="btn-action" onclick="clearChecks()" data-i18n="btn_reset">↺ Reset Checks</button>
+                    <button type="button" class="btn-action" onclick="window.print()" data-i18n="btn_print">🖨️ Print Recipe</button>
+                </div>
+            </section>
+
+            <!-- Hardware & Geometry Card -->
+            <section class="section-card">
+                <h2 data-i18n="sec_hardware_title">📐 Hardware Setup & Cooking Geometry</h2>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n-html="hardware_intro">
+                    Yields <strong>6 generous comfort portions (~480g plated mass each)</strong>, totaling ~2.8 kg cooked feast.
+                </p>
+                <div class="callout-box">
+                    <strong data-i18n="hardware_box_title">Critical Pan & Hardware Requirements:</strong>
+                    <div style="margin-top: 0.4rem; font-size: 0.88rem;" data-i18n-html="hardware_box_body">
+                        • <strong>Wide Sauté Pan / Rondeau (Essential):</strong> Use a large, deep skillet or sauté pan (min. 30–32 cm diameter / 4.5+ L capacity). Wide surface area is mandatory so the tuna brine evaporates rapidly instead of boiling your onions into mush.<br>• <strong>Pasta Stockpot:</strong> 4–5 liter pot with 3.5–4L rapidly boiling water. Generous water volume prevents temperature drops when adding 500g dry pasta.<br>• <strong>Spider Strainer or Tongs:</strong> For lifting pasta dripping wet directly into the sauce skillet—retaining precious surface starch.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Macro Ledger Card -->
+            <section class="section-card">
+                <h2 data-i18n="sec_nutrition_title">📊 Macro Ledger & Energy Breakdown</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n="nutrition_intro">
+                    Honest comfort-food nutritional accounting (no artificial trimming or fake low-calorie hacks).
+                </p>
+                <table class="nutrition-table">
+                    <tbody>
+                        <tr>
+                            <td data-i18n="macro_lbl_cals">Calories / Serving</td>
+                            <td data-i18n="macro_val_cals">676 kcal</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_protein">Protein</td>
+                            <td data-i18n="macro_val_protein">49.4 g (29.3% cal)</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_fats">Fats (8.8g sat)</td>
+                            <td data-i18n="macro_val_fats">17.7 g (23.5% cal)</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_carbs">Carbohydrates</td>
+                            <td data-i18n="macro_val_carbs">79.7 g (47.2% cal)</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_fiber">Dietary Fiber</td>
+                            <td data-i18n="macro_val_fiber">5.8 g (Net: 73.9g)</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_sodium">Sodium (approx.)</td>
+                            <td data-i18n="macro_val_sodium">~1,350 mg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);" data-i18n="nutrition_note">
+                    💡 High natural protein payload (~49g) delivered entirely through wild tuna sarcoplasm, dairy casein, and durum wheat gluten.
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Step-by-Step Method, Food Science, Reheat Matrix -->
+        <div class="right-col">
+            <!-- Chronological Method -->
+            <section class="section-card">
+                <h2 data-i18n="sec_method_title">🔥 Step-by-Step Chronological Execution</h2>
+                <ol class="step-list">
+                    <!-- Step 1 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step1_title">Mise en Place & Salted Rolling Boil</div>
+                        <div class="step-body">
+                            <p data-i18n-html="step1_p1">Finely dice 500g yellow onions (~3–4 mm). Core 320g bell peppers and slice into thin 4–5 cm batons. Mince 25g garlic. Finely mince 20g anchovies into a paste. Pop the lids off all 6 cans of tuna, but <strong>do not drain</strong>.</p>
+                            <p data-i18n="step1_p2">Fill a large pot with 3.5–4.0 liters of water, stir in 25g coarse sea salt (0.6% salinity), and bring to a rolling boil over high heat.</p>
+                            <div class="callout-box" data-i18n-html="step1_cue">💡 <strong>Kitchen Efficiency:</strong> Have all ingredients prepped before turning on the heat. Once the brine reduces, the steps move fast!</div>
+                        </div>
+                    </li>
+
+                    <!-- Step 2 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step2_title">Fat Foundation & The Melting Anchovy Secret</div>
+                        <div class="step-body">
+                            <p data-i18n="step2_p1">Set a large, deep sauté pan (30–32 cm) over medium heat. Melt 30g butter (or heat 2 tbsp EVOO).</p>
+                            <p data-i18n-html="step2_p2">Add the 20g minced anchovies. Stir continuously with a wooden spatula for <strong>60–90 seconds</strong> over gentle heat.</p>
+                            <div class="callout-box" data-i18n-html="step2_cue">✨ <strong>The Anchovy Secret:</strong> The anchovies will melt completely into the warm butterfat, disappearing visually. Don't worry about 'fishy' flavor—the fishiness vanishes completely, leaving behind a rich, deeply savory guanosine/inosine backbone.</div>
+                        </div>
+                    </li>
+
+                    <!-- Step 3 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step3_title">Gentle Soffritto Sweat & Sweet Garlic Bloom</div>
+                        <div class="step-body">
+                            <p data-i18n="step3_p1">Add the 500g diced onions into the melted anchovy butter with a small pinch of salt to begin the aromatic soffritto base. Turn heat to medium-low.</p>
+                            <p data-i18n-html="step3_p2">Sweat gently for <strong>6–8 minutes</strong>, stirring occasionally, until soft, translucent, and sweet. Do not let them brown.</p>
+                            <p data-i18n-html="step3_p3">Clear a small well in the center of the pan, add the 25g minced garlic, and sizzle for exactly <strong>60 seconds</strong> until intensely fragrant. Stir into the onions.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 4 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step4_title">Pepper Sear & Au-Sec Tuna Brine Reduction</div>
+                        <div class="step-body">
+                            <p data-i18n-html="step4_p1">Turn the burner up to medium-high. Add the 320g bell pepper batons and sauté for <strong>3 minutes</strong> until just pliable while maintaining fresh crunch.</p>
+                            <p data-i18n-html="step4_p2">Dump all <strong>6 cans of tuna together with all their canning brine</strong> directly into the pan. Break large chunks into bite-sized flakes with your spoon.</p>
+                            <p data-i18n-html="step4_p3">Bring to a vigorous rolling boil and cook for <strong>4–6 minutes</strong>. Steam will pour off as the water evaporates. Continue cooking until all free liquid is completely gone (<em>au sec</em>) and you hear a gentle sizzle as the tuna begins to lightly toast in the butterfat.</p>
+                            <div class="callout-box" data-i18n-html="step4_cue">⚡ <strong>Thermodynamic Milestone:</strong> Once the water evaporates, pan temperature breaks past the 100°C latent heat ceiling into the 120–140°C Maillard zone, caramelizing the concentrated savory nucleotides.</div>
+                        </div>
+                    </li>
+
+                    <!-- Step 5 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step5_title">Deglaze, Umami Bomb & Herb Blooming</div>
+                        <div class="step-body">
+                            <p data-i18n="step5_p1">Pour in 30 ml (2 tbsp) mirin or Shaoxing wine, scraping up any golden fond from the pan floor with your spatula.</p>
+                            <p data-i18n="step5_p2">Stir in 35g (2 tbsp) oyster sauce, 2.5g (~½ tsp) MSG ("Fuiyoh!"), 3g (2 tsp) Herbes de Provence, and 2g cracked black/white pepper.</p>
+                            <p data-i18n-html="step5_p3">Simmer for <strong>60 seconds</strong> until the mixture turns glossy, dark, and aromatic. Turn the heat down to the absolute lowest setting.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 6 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step6_title">Pasta Par-Boil (Al Dente Minus 1 Minute)</div>
+                        <div class="step-body">
+                            <p data-i18n="step6_p1">Drop the 500g pasta into the rolling salted water. Stir well to prevent sticking.</p>
+                            <p data-i18n-html="step6_p2">Cook for <strong>1 minute less</strong> than the box directions for 'al dente' (e.g., 8 minutes if package says 9). The pasta will finish cooking inside the sauce.</p>
+                            <p data-i18n-html="step6_p3">Dip a measuring cup or ladle into the pot and reserve <strong>150 ml of starchy cooking water</strong> before straining.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 7 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step7_title">The Spinach Steam Collapse</div>
+                        <div class="step-body">
+                            <p data-i18n="step7_p1">Exactly 60 seconds before the pasta is done, scatter 150g fresh baby spinach over the warm tuna mixture in the sauté pan.</p>
+                            <p data-i18n-html="step7_p2">Fold gently through the mixture. The residual steam will collapse the delicate spinach leaves in just <strong>30–45 seconds</strong> without discoloring them.</p>
+                            <div class="callout-box" data-i18n-html="step7_cue">🌿 <strong>Vibrant Greens:</strong> Never boil spinach in water; gentle pan steam preserves bright chlorophyll, crisp structure, and vitamin C.</div>
+                        </div>
+                    </li>
+
+                    <!-- Step 8 -->
+                    <li class="step-item">
+                        <div class="step-title" data-i18n="step8_title">Mantecatura: Toss It All In! (A gdyby tak wszystko razem? 🤔)</div>
+                        <div class="step-body">
+                            <p data-i18n-html="step8_p1"><strong>CRITICAL THERMAL BRAKE:</strong> Turn off the flame completely (or slide the pan to an unheated burner).</p>
+                            <p data-i18n="step8_p2">Transfer the hot, dripping pasta directly from the water into the tuna pan using a spider or tongs. Pour in 100–120 ml of the reserved starchy cooking water.</p>
+                            <p data-i18n-html="step8_p3">Dollop 350g of 18% sour cream (*śmietana*) over the pasta. Immediately begin tossing, swirling, and stirring vigorously with sweeping circular motions for <strong>60–90 seconds</strong>.</p>
+                            <div class="callout-box" data-i18n-html="step8_cue">🤌🏼 <strong>The Magic Mantecatura Glaze:</strong> As you toss off the flame, the starch from the pasta water, the butterfat, and the cultured cream fuse into a shimmering, unctuous starch-lipid emulsion that clings to every noodle. If too thick, splash in the remaining 30 ml pasta water. Buon appetito!</div>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Food Science Deep Dives -->
+            <section class="section-card">
+                <h2 data-i18n="sec_science_title">🧪 Culinary Physics & Flavor Chemistry</h2>
+                
+                <!-- Science 1 -->
+                <div class="science-card">
+                    <div class="science-title" data-i18n="sci_nucleotide_title">🧬 The Nucleotide Umami Lock (IMP + Glutamate Synergy)</div>
+                    <div class="science-body" data-i18n-html="sci_nucleotide_body">
+                        • <strong>The Sarcoplasmic Goldmine:</strong> Industrial pressure canning (121°C) ruptures tuna muscle cells, leaching massive concentrations of inosine 5'-monophosphate (IMP) and amino acids into the brine. Draining that water throws away up to 35% of the dish's savory potential.<br>• <strong>Yamaguchi Receptor Multiplication:</strong> The human T1R1/T1R3 umami receptor binds L-glutamate (from MSG, onions, oyster sauce, and anchovies). When purine nucleotides (IMP from tuna and anchovy) bind simultaneously, the receptor undergoes an allosteric lock—amplifying perceived savoriness by <strong>8× to 15×</strong>:<br><div style="text-align:center; margin: 0.6rem 0; font-family: monospace; font-weight: 700; color: var(--amber-warm);">Perceived Umami ∝ [Glutamate] × (1 + γ · [IMP])</div>• <strong>Latent Heat Barrier (ΔH_vap ≈ 2260 kJ/kg):</strong> Water pins the pan temperature at ≤100°C. By boiling the brine <em>au sec</em> (dry), the surface suddenly surges into the 120–140°C Maillard zone, toasting the tuna flakes in butter.
+                    </div>
+                </div>
+
+                <!-- Science 2 -->
+                <div class="science-card">
+                    <div class="science-title" data-i18n="sci_mantecatura_title">🥛 Mantecatura Mechanics & Casein Curdling Prevention</div>
+                    <div class="science-body" data-i18n-html="sci_mantecatura_body">
+                        • <strong>The Acidic Isoelectric Trap:</strong> Polish 18% sour cream (*śmietana*) has an acidic pH of 4.4–4.6, sitting right at the <strong>isoelectric point of casein (pI ≈ 4.6)</strong> where protein repulsive charges drop to zero.<br>• <strong>Preventing Thermal Curdling:</strong> If dumped into a bubbling pan (&gt;85°C), whey proteins instantly denature and casein micelles clump into grainy curds (syneresis). By killing the flame (T &lt; 70°C) and adding starchy pasta water, the amylose polymers act as a steric spacer, keeping casein micelles apart.<br>• <strong>Stokes' Law Emulsion Stability:</strong> Creaminess depends on droplet separation velocity:<br><div style="text-align:center; margin: 0.6rem 0; font-family: monospace; font-weight: 700; color: var(--amber-warm);">v ∝ (r² · Δρ · g) / η</div>Vigorous tossing shatters butter and dairy fat into micro-droplets (r → 0) while gelatinized amylose starch boosts viscosity (η), locking the sauce into an unctuous, non-separating starch-lipid emulsion.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Storage & Reheating Matrix -->
+            <section class="section-card">
+                <h2 data-i18n="sec_reheat_title">♨️ Storage & Reheating Matrix</h2>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="reheat_table_method">Reheating Method</th>
+                            <th data-i18n="reheat_table_fridge">From Fridge (Chilled, 2–4°C)</th>
+                            <th data-i18n="reheat_table_notes">Flavor & Emulsion Behavior</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;" data-i18n="row1_method">Stovetop Splash Reheat (Gold Standard)</td>
+                            <td data-i18n="row1_fridge">Skillet on medium-low + 2 tbsp water or milk; cover 2 min to steam, then toss 60s</td>
+                            <td data-i18n="row1_notes">Steam relaxes pasta starches; vigorous tossing re-emulsifies the dairy fats into a glossy, fresh-cooked coat.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;" data-i18n="row2_method">Microwave (Weeknight Express)</td>
+                            <td data-i18n="row2_fridge">Covered bowl + 1 tbsp water; Medium-High (70–80% power) for 2–2.5 min; stir halfway</td>
+                            <td data-i18n="row2_notes">Gentle 70% power prevents boiling the sour cream; splash of water restores lost moisture.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;" data-i18n="row3_method">Chilled Pasta Salad (Next-Day Lunch)</td>
+                            <td data-i18n="row3_fridge">Eat straight from the fridge cold; optional squeeze of fresh lemon juice</td>
+                            <td data-i18n="row3_notes">Surpassingly delicious cold! The melted anchovy and concentrated tuna umami punch through cleanly like a Mediterranean pasta fredda.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout-box" style="margin-top: 1.25rem;">
+                    <strong data-i18n="storage_box_title">🧊 Refrigeration & Deep-Freeze Advisory:</strong>
+                    <div style="margin-top: 0.4rem; font-size: 0.88rem;" data-i18n-html="storage_box_body">
+                        • <strong>Refrigerator Shelf Life:</strong> Keeps beautifully in airtight glass containers at 2–4°C for <strong>3 to 4 days</strong>.<br>• <strong>⚠️ Not Recommended for Deep Freezing:</strong> Unlike potato/carrot purees or burritos, sour cream emulsions suffer ice crystal growth during freezing. Upon thawing, the casein network contracts, weeping whey and separating the butterfat into a watery puddle, while cooked pasta turns soggy. Enjoy fresh or refrigerated!
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p data-i18n="footer_text">Open-Source Culinary Engineering • High-Protein Weeknight Comfort with Zero Compromises</p>
+        <p style="margin-top: 0.4rem;"><a href="about.html" data-i18n="footer_about">Read the Food Science & Emulsion Principles →</a></p>
+    </footer>
+</div>
+
+<script>
+    const translations = {
+        en: {
+            "meta_title": "The High-Umami Tuna & Spinach Comfort Pasta (Mantecatura Classic)",
+            "meta_desc": "Hearty weeknight tuna & spinach comfort pasta delivering ~49g protein per serving. Features au-sec tuna brine reduction, melted anchovies, and mantecatura sour cream emulsion.",
+            "nav_back": "← Back to Recipes",
+            "nav_link_cottage": "Cottage Pie",
+            "nav_link_burritos": "Freezer Burritos",
+            "nav_link_curry": "Japanese Curry",
+            "nav_link_tuna": "Tuna Pasta",
+            "nav_link_about": "About",
+            "badge_protein": "⚡ 49g Protein / Serving",
+            "badge_comfort": "🍝 Weeknight Comfort Classic",
+            "badge_time": "⏱️ 25m Total Prep",
+            "hero_title": "The High-Umami Tuna & Spinach Comfort Pasta",
+            "hero_subtitle": "Makaron z Tuńczykiem i Szpinakiem • Mantecatura Glaze & Sarcoplasmic Umami Reduction",
+            "hero_desc": "A cherished comfort classic from Simon's kitchen, elevated with kitchen physics. This is <strong>not</strong> a sad calorie-restricted diet plate—it is an authentic, soul-warming weeknight pasta delivering <strong>nearly 50g of natural protein</strong> per generous bowl. Instead of discarding the canned tuna brine, we reduce it <em>au sec</em> to concentrate savory inosine monophosphate (IMP), dissolve anchovies invisibly into golden butter, and toss the hot al dente pasta directly into the pan to emulsify 18% Polish sour cream into a clingy, restaurant-grade glaze.",
+            "stat_portions_val": "6",
+            "stat_portions_lbl": "Generous Bowls",
+            "stat_cals_val": "~676",
+            "stat_cals_lbl": "Calories / Bowl",
+            "stat_protein_val": "49.4 g",
+            "stat_protein_lbl": "Protein / Serving",
+            "stat_mass_val": "~480 g",
+            "stat_mass_lbl": "Plated Bowl Mass",
+            "stat_fats_val": "17.7 g",
+            "stat_fats_lbl": "Rich Dairy Lipids",
+            "sec_ingredients_title": "🛒 Ingredients Checklist",
+            "sec_ingredients_sub": "Scaled for 6 generous comfort bowls (~480g plated mass each). Click any ingredient to check it off as you prep.",
+            "layer1_title": "Layer 1: Durum Pasta Foundation & Starch Donor",
+            "ing_pasta_amt": "500 g",
+            "ing_pasta_name": "Durum Wheat Pasta (Fusilli, Penne, or Tagliatelle)",
+            "ing_pasta_note": "1 standard box; ridged or spiral shapes trap the glossy emulsion in every crevice",
+            "ing_salt_amt": "25 g",
+            "ing_salt_name": "Coarse Sea Salt (for Pasta Water)",
+            "ing_salt_note": "~1 heaping tbsp per 3.5–4L water; establishes baseline 0.6–0.7% salinity",
+            "ing_water_amt": "150 ml",
+            "ing_water_name": "Starchy Pasta Cooking Water",
+            "ing_water_note": "~1 to 1.5 ladles reserved right before draining; crucial amylose hydrocolloid donor for the starchy mantecatura emulsion",
+            "layer2_title": "Layer 2: Aromatic Lipid Base & Anchovy Melt",
+            "ing_butter_amt": "30 g",
+            "ing_butter_name": "Butter (82% Fat) or Extra Virgin Olive Oil",
+            "ing_butter_note": "2 full tablespoons; fat solvent to melt anchovies and extract fat-soluble carotenoids",
+            "ing_anchovy_amt": "20 g",
+            "ing_anchovy_name": "Canned Anchovy Fillets in Oil",
+            "ing_anchovy_note": "5–6 fillets; dissolves completely into warm butter, unlocking secret inosinate & glutamate",
+            "ing_onions_amt": "500 g",
+            "ing_onions_name": "Yellow / Brown Onions",
+            "ing_onions_note": "4–5 medium onions, finely diced (~3–4 mm); provides sweet soluble sugar foundation",
+            "ing_garlic_amt": "25 g",
+            "ing_garlic_name": "Fresh Garlic Cloves",
+            "ing_garlic_note": "5–6 plump cloves, finely minced or microplaned; sweet allicin, added after onion sweat",
+            "ing_peppers_amt": "320 g",
+            "ing_peppers_name": "Sweet Bell Peppers (Red and/or Yellow)",
+            "ing_peppers_note": "2 medium peppers, cut into thin batons; brings crisp sweetness, color & vitamin C",
+            "layer3_title": "Layer 3: Protein Payload & Umami Deglaze",
+            "ing_tuna_amt": "6 cans",
+            "ing_tuna_name": "Canned Tuna in Brine (Undrained!)",
+            "ing_tuna_note": "~1,110g gross / ~810g drained tuna + ~300ml brine; do NOT drain the savory canning juices!",
+            "ing_mirin_amt": "30 ml",
+            "ing_mirin_name": "Mirin or Shaoxing Rice Wine",
+            "ing_mirin_note": "2 tbsp; deglazes pan fond, adds subtle non-crystallizing sweetness and aroma",
+            "ing_oyster_amt": "35 g",
+            "ing_oyster_name": "Premium Oyster Sauce",
+            "ing_oyster_note": "2 tbsp; concentrated marine glutamate, natural oyster glycogen & unctuous body",
+            "ing_msg_amt": "2.5 g",
+            "ing_msg_name": "Monosodium Glutamate (MSG)",
+            "ing_msg_note": "~½ tsp Uncle Roger-approved dose (\"Fuiyoh!\"); triggers the T1R1/T1R3 receptor lock",
+            "ing_herbs_amt": "3 g",
+            "ing_herbs_name": "Dried Herbes de Provence",
+            "ing_herbs_note": "2 tsp; thyme, rosemary, savory, basil, marjoram bloomed directly in the warm lipid phase",
+            "ing_pepper_amt": "2 g",
+            "ing_pepper_name": "Coarsely Cracked Black / White Pepper",
+            "ing_pepper_note": "~1 tsp; pungent piperine heat to cut through the rich dairy fats",
+            "layer4_title": "Layer 4: Dairy Emulsion & Fresh Finish",
+            "ing_spinach_amt": "150 g",
+            "ing_spinach_name": "Fresh Baby Spinach Leaves",
+            "ing_spinach_note": "4–5 generous handfuls; folded at residual steam turn; retains bright emerald crunch",
+            "ing_sourcream_amt": "350 g",
+            "ing_sourcream_name": "Polish Sour Cream 18% (Śmietana 18%)",
+            "ing_sourcream_note": "~1 large tub (or crème fraîche 18–30%); tempered off-flame to prevent casein curdling",
+            "btn_reset": "↺ Reset Checks",
+            "btn_print": "🖨️ Print Recipe",
+            "sec_hardware_title": "📐 Hardware Setup & Cooking Geometry",
+            "hardware_intro": "Yields <strong>6 generous comfort portions (~480g plated mass each)</strong>, totaling ~2.8 kg cooked feast.",
+            "hardware_box_title": "Critical Pan & Hardware Requirements:",
+            "hardware_box_body": "• <strong>Wide Sauté Pan / Rondeau (Essential):</strong> Use a large, deep skillet or sauté pan (min. 30–32 cm diameter / 4.5+ L capacity). Wide surface area is mandatory so the tuna brine evaporates rapidly instead of boiling your onions into mush.<br>• <strong>Pasta Stockpot:</strong> 4–5 liter pot with 3.5–4L rapidly boiling water. Generous water volume prevents temperature drops when adding 500g dry pasta.<br>• <strong>Spider Strainer or Tongs:</strong> For lifting pasta dripping wet directly into the sauce skillet—retaining precious surface starch.",
+            "sec_nutrition_title": "📊 Macro Ledger & Energy Breakdown",
+            "nutrition_intro": "Honest comfort-food nutritional accounting (no artificial trimming or fake low-calorie hacks).",
+            "macro_lbl_cals": "Calories / Serving",
+            "macro_val_cals": "676 kcal",
+            "macro_lbl_protein": "Protein",
+            "macro_val_protein": "49.4 g (29.3% cal)",
+            "macro_lbl_fats": "Fats (8.8g sat)",
+            "macro_val_fats": "17.7 g (23.5% cal)",
+            "macro_lbl_carbs": "Carbohydrates",
+            "macro_val_carbs": "79.7 g (47.2% cal)",
+            "macro_lbl_fiber": "Dietary Fiber",
+            "macro_val_fiber": "5.8 g (Net: 73.9g)",
+            "macro_lbl_sodium": "Sodium (approx.)",
+            "macro_val_sodium": "~1,350 mg",
+            "nutrition_note": "💡 High natural protein payload (~49g) delivered entirely through wild tuna sarcoplasm, dairy casein, and durum wheat gluten.",
+            "sec_method_title": "🔥 Step-by-Step Chronological Execution",
+            "step1_title": "Mise en Place & Salted Rolling Boil",
+            "step1_p1": "Finely dice 500g yellow onions (~3–4 mm). Core 320g bell peppers and slice into thin 4–5 cm batons. Mince 25g garlic. Finely mince 20g anchovies into a paste. Pop the lids off all 6 cans of tuna, but <strong>do not drain</strong>.",
+            "step1_p2": "Fill a large pot with 3.5–4.0 liters of water, stir in 25g coarse sea salt (0.6% salinity), and bring to a rolling boil over high heat.",
+            "step1_cue": "💡 <strong>Kitchen Efficiency:</strong> Have all ingredients prepped before turning on the heat. Once the brine reduces, the steps move fast!",
+            "step2_title": "Fat Foundation & The Melting Anchovy Secret",
+            "step2_p1": "Set a large, deep sauté pan (30–32 cm) over medium heat. Melt 30g butter (or heat 2 tbsp EVOO).",
+            "step2_p2": "Add the 20g minced anchovies. Stir continuously with a wooden spatula for <strong>60–90 seconds</strong> over gentle heat.",
+            "step2_cue": "✨ <strong>The Anchovy Secret:</strong> The anchovies will melt completely into the warm butterfat, disappearing visually. Don't worry about 'fishy' flavor—the fishiness vanishes completely, leaving behind a rich, deeply savory guanosine/inosine backbone.",
+            "step3_title": "Gentle Soffritto Sweat & Sweet Garlic Bloom",
+            "step3_p1": "Add the 500g diced onions into the melted anchovy butter with a small pinch of salt to begin the aromatic soffritto base. Turn heat to medium-low.",
+            "step3_p2": "Sweat gently for <strong>6–8 minutes</strong>, stirring occasionally, until soft, translucent, and sweet. Do not let them brown.",
+            "step3_p3": "Clear a small well in the center of the pan, add the 25g minced garlic, and sizzle for exactly <strong>60 seconds</strong> until intensely fragrant. Stir into the onions.",
+            "step4_title": "Pepper Sear & Au-Sec Tuna Brine Reduction",
+            "step4_p1": "Turn the burner up to medium-high. Add the 320g bell pepper batons and sauté for <strong>3 minutes</strong> until just pliable while maintaining fresh crunch.",
+            "step4_p2": "Dump all <strong>6 cans of tuna together with all their canning brine</strong> directly into the pan. Break large chunks into bite-sized flakes with your spoon.",
+            "step4_p3": "Bring to a vigorous rolling boil and cook for <strong>4–6 minutes</strong>. Steam will pour off as the water evaporates. Continue cooking until all free liquid is completely gone (<em>au sec</em>) and you hear a gentle sizzle as the tuna begins to lightly toast in the butterfat.",
+            "step4_cue": "⚡ <strong>Thermodynamic Milestone:</strong> Once the water evaporates, pan temperature breaks past the 100°C latent heat ceiling into the 120–140°C Maillard zone, caramelizing the concentrated savory nucleotides.",
+            "step5_title": "Deglaze, Umami Bomb & Herb Blooming",
+            "step5_p1": "Pour in 30 ml (2 tbsp) mirin or Shaoxing wine, scraping up any golden fond from the pan floor with your spatula.",
+            "step5_p2": "Stir in 35g (2 tbsp) oyster sauce, 2.5g (~½ tsp) MSG (\"Fuiyoh!\"), 3g (2 tsp) Herbes de Provence, and 2g cracked black/white pepper.",
+            "step5_p3": "Simmer for <strong>60 seconds</strong> until the mixture turns glossy, dark, and aromatic. Turn the heat down to the absolute lowest setting.",
+            "step6_title": "Pasta Par-Boil (Al Dente Minus 1 Minute)",
+            "step6_p1": "Drop the 500g pasta into the rolling salted water. Stir well to prevent sticking.",
+            "step6_p2": "Cook for <strong>1 minute less</strong> than the box directions for 'al dente' (e.g., 8 minutes if package says 9). The pasta will finish cooking inside the sauce.",
+            "step6_p3": "Dip a measuring cup or ladle into the pot and reserve <strong>150 ml of starchy cooking water</strong> before straining.",
+            "step7_title": "The Spinach Steam Collapse",
+            "step7_p1": "Exactly 60 seconds before the pasta is done, scatter 150g fresh baby spinach over the warm tuna mixture in the sauté pan.",
+            "step7_p2": "Fold gently through the mixture. The residual steam will collapse the delicate spinach leaves in just <strong>30–45 seconds</strong> without discoloring them.",
+            "step7_cue": "🌿 <strong>Vibrant Greens:</strong> Never boil spinach in water; gentle pan steam preserves bright chlorophyll, crisp structure, and vitamin C.",
+            "step8_title": "Mantecatura: Toss It All In! (A gdyby tak wszystko razem? 🤔)",
+            "step8_p1": "<strong>CRITICAL THERMAL BRAKE:</strong> Turn off the flame completely (or slide the pan to an unheated burner).",
+            "step8_p2": "Transfer the hot, dripping pasta directly from the water into the tuna pan using a spider or tongs. Pour in 100–120 ml of the reserved starchy cooking water.",
+            "step8_p3": "Dollop 350g of 18% sour cream (*śmietana*) over the pasta. Immediately begin tossing, swirling, and stirring vigorously with sweeping circular motions for <strong>60–90 seconds</strong>.",
+            "step8_cue": "🤌🏼 <strong>The Magic Mantecatura Glaze:</strong> As you toss off the flame, the starch from the pasta water, the butterfat, and the cultured cream fuse into a shimmering, unctuous starch-lipid emulsion that clings to every noodle. If too thick, splash in the remaining 30 ml pasta water. Buon appetito!",
+            "sec_science_title": "🧪 Culinary Physics & Flavor Chemistry",
+            "sci_nucleotide_title": "🧬 The Nucleotide Umami Lock (IMP + Glutamate Synergy)",
+            "sci_nucleotide_body": "• <strong>The Sarcoplasmic Goldmine:</strong> Industrial pressure canning (121°C) ruptures tuna muscle cells, leaching massive concentrations of inosine 5'-monophosphate (IMP) and amino acids into the brine. Draining that water throws away up to 35% of the dish's savory potential.<br>• <strong>Yamaguchi Receptor Multiplication:</strong> The human T1R1/T1R3 umami receptor binds L-glutamate (from MSG, onions, oyster sauce, and anchovies). When purine nucleotides (IMP from tuna and anchovy) bind simultaneously, the receptor undergoes an allosteric lock—amplifying perceived savoriness by <strong>8× to 15×</strong>:<br><div style=\"text-align:center; margin: 0.6rem 0; font-family: monospace; font-weight: 700; color: var(--amber-warm);\">Perceived Umami ∝ [Glutamate] × (1 + γ · [IMP])</div>• <strong>Latent Heat Barrier (ΔH_vap ≈ 2260 kJ/kg):</strong> Water pins the pan temperature at ≤100°C. By boiling the brine <em>au sec</em> (dry), the surface suddenly surges into the 120–140°C Maillard zone, toasting the tuna flakes in butter.",
+            "sci_mantecatura_title": "🥛 Mantecatura Mechanics & Casein Curdling Prevention",
+            "sci_mantecatura_body": "• <strong>The Acidic Isoelectric Trap:</strong> Polish 18% sour cream (*śmietana*) has an acidic pH of 4.4–4.6, sitting right at the <strong>isoelectric point of casein (pI ≈ 4.6)</strong> where protein repulsive charges drop to zero.<br>• <strong>Preventing Thermal Curdling:</strong> If dumped into a bubbling pan (&gt;85°C), whey proteins instantly denature and casein micelles clump into grainy curds (syneresis). By killing the flame (T &lt; 70°C) and adding starchy pasta water, the amylose polymers act as a steric spacer, keeping casein micelles apart.<br>• <strong>Stokes' Law Emulsion Stability:</strong> Creaminess depends on droplet separation velocity:<br><div style=\"text-align:center; margin: 0.6rem 0; font-family: monospace; font-weight: 700; color: var(--amber-warm);\">v ∝ (r² · Δρ · g) / η</div>Vigorous tossing shatters butter and dairy fat into micro-droplets (r → 0) while gelatinized amylose starch boosts viscosity (η), locking the sauce into an unctuous, non-separating starch-lipid emulsion.",
+            "sec_reheat_title": "♨️ Storage & Reheating Matrix",
+            "reheat_table_method": "Reheating Method",
+            "reheat_table_fridge": "From Fridge (Chilled, 2–4°C)",
+            "reheat_table_notes": "Flavor & Emulsion Behavior",
+            "row1_method": "Stovetop Splash Reheat (Gold Standard)",
+            "row1_fridge": "Skillet on medium-low + 2 tbsp water or milk; cover 2 min to steam, then toss 60s",
+            "row1_notes": "Steam relaxes pasta starches; vigorous tossing re-emulsifies the dairy fats into a glossy, fresh-cooked coat.",
+            "row2_method": "Microwave (Weeknight Express)",
+            "row2_fridge": "Covered bowl + 1 tbsp water; Medium-High (70–80% power) for 2–2.5 min; stir halfway",
+            "row2_notes": "Gentle 70% power prevents boiling the sour cream; splash of water restores lost moisture.",
+            "row3_method": "Chilled Pasta Salad (Next-Day Lunch)",
+            "row3_fridge": "Eat straight from the fridge cold; optional squeeze of fresh lemon juice",
+            "row3_notes": "Surpassingly delicious cold! The melted anchovy and concentrated tuna umami punch through cleanly like a Mediterranean pasta fredda.",
+            "storage_box_title": "🧊 Refrigeration & Deep-Freeze Advisory:",
+            "storage_box_body": "• <strong>Refrigerator Shelf Life:</strong> Keeps beautifully in airtight glass containers at 2–4°C for <strong>3 to 4 days</strong>.<br>• <strong>⚠️ Not Recommended for Deep Freezing:</strong> Unlike potato/carrot purees or burritos, sour cream emulsions suffer ice crystal growth during freezing. Upon thawing, the casein network contracts, weeping whey and separating the butterfat into a watery puddle, while cooked pasta turns soggy. Enjoy fresh or refrigerated!",
+            "footer_text": "Open-Source Culinary Engineering • High-Protein Weeknight Comfort with Zero Compromises",
+            "footer_about": "Read the Food Science & Emulsion Principles →"
+},
+        pl: {
+            "meta_title": "Makaron z Tuńczykiem i Szpinakiem • Klasyczna Mantecatura & Umami",
+            "meta_desc": "Domowy, kremowy makaron z tuńczykiem i szpinakiem dostarczający niemal 50 g białka na porcję. Redukcja solanki au sec, rozpuszczone anchois i maślana emulsja ze śmietaną 18%.",
+            "nav_back": "← Wróć do przepisów",
+            "nav_link_cottage": "Cottage Pie",
+            "nav_link_burritos": "Freezer Burritos",
+            "nav_link_curry": "Japanese Curry",
+            "nav_link_tuna": "Makaron z tuńczykiem",
+            "nav_link_about": "O projekcie",
+            "badge_protein": "⚡ 49g Białka / Porcja",
+            "badge_comfort": "🍝 Klasyk Domowego Komfortu",
+            "badge_time": "⏱️ 25 min Przygotowania",
+            "hero_title": "Makaron z Tuńczykiem i Szpinakiem",
+            "hero_subtitle": "The High-Umami Tuna & Spinach Comfort Pasta • Klasyczna Mantecatura & Bomba Umami",
+            "hero_desc": "Ukochany klasyk z domowego Notiona Simona, wzbogacony o precyzyjną fizykochemię kulinarną. To <strong>nie jest</strong> nudne danie redukcyjne—to pełen głębi, rozgrzewający comfort food, który zupełnie naturalnie dostarcza <strong>blisko 50 g pełnowartościowego białka</strong> w każdej obfitej misce. Zamiast wylewać solankę z tuńczyka do zlewu, redukujemy ją <em>au sec</em>, aby skoncentrować zbawienny inozynomonofosforan (IMP), roztapiamy fileciki anchois w maśle dla niewidzialnej bazy umami i wrzucamy gorący makaron prosto na patelnię, tworząc ze śmietany 18% lśniącą, aksamitną emulsję.",
+            "stat_portions_val": "6",
+            "stat_portions_lbl": "Solidnych Porcji",
+            "stat_cals_val": "~676",
+            "stat_cals_lbl": "kcal / Porcja",
+            "stat_protein_val": "49,4 g",
+            "stat_protein_lbl": "Białka / Porcja",
+            "stat_mass_val": "~480 g",
+            "stat_mass_lbl": "Masa Porcji na Talerzu",
+            "stat_fats_val": "17,7 g",
+            "stat_fats_lbl": "Aksamitne Tłuszcze",
+            "sec_ingredients_title": "🛒 Lista Składników",
+            "sec_ingredients_sub": "Skalowane na 6 solidnych porcji comfort-food (~480 g gotowej potrawy na miskę). Kliknij składnik, aby go odhaczyć.",
+            "layer1_title": "Warstwa 1: Makaron z pszenicy durum & Baza skrobiowa",
+            "ing_pasta_amt": "500 g",
+            "ing_pasta_name": "Makaron z pszenicy durum (fusilli, penne lub tagliatelle)",
+            "ing_pasta_note": "1 standardowa paczka; świderki lub rurki idealnie chwytają aksamitny sos w swoich zakamarkach",
+            "ing_salt_amt": "25 g",
+            "ing_salt_name": "Gruba sól morska (do wody na makaron)",
+            "ing_salt_note": "~1 czubata łyżka na 3,5–4 litry wrzątku; zapewnia bazowe zasolenie 0,6–0,7%",
+            "ing_water_amt": "150 ml",
+            "ing_water_name": "Gorąca woda z gotowania makaronu",
+            "ing_water_note": "~1 do 1,5 chochli odlane tuż przed odcedzeniem; kluczowy donor amylozy tworzący trwałą emulsję skrobiową (mantecatura)",
+            "layer2_title": "Warstwa 2: Baza tłuszczowa & Rozpuszczone anchois",
+            "ing_butter_amt": "30 g",
+            "ing_butter_name": "Masło ekstra 82% lub oliwa z oliwek",
+            "ing_butter_note": "2 pełne łyżki; rozpuszczalnik lipidowy do stopienia anchois i uwolnienia aromatów",
+            "ing_anchovy_amt": "20 g",
+            "ing_anchovy_name": "Fileciki anchois w oliwie ze słoiczka",
+            "ing_anchovy_note": "5–6 małych filetów; roztapiają się całkowicie w maśle, dając potężną dawkę inozynianu i glutaminianu",
+            "ing_onions_amt": "500 g",
+            "ing_onions_name": "Cebula żółta",
+            "ing_onions_note": "4–5 średnich cebul, drobno posiekanych (~3–4 mm); fundament ze słodkich cukrów cebulowych",
+            "ing_garlic_amt": "25 g",
+            "ing_garlic_name": "Świeży czosnek",
+            "ing_garlic_note": "5–6 ząbków, drobno posiekanych lub startych na mikrotarce; dodawany po zeszklaniu cebuli",
+            "ing_peppers_amt": "320 g",
+            "ing_peppers_name": "Słodka papryka (czerwona i/lub żółta)",
+            "ing_peppers_note": "2 średnie papryki, pokrojone w cienkie paseczki; chrupkość, słodycz i witamina C",
+            "layer3_title": "Warstwa 3: Ładunek białka & Redukcja umami",
+            "ing_tuna_amt": "6 puszek",
+            "ing_tuna_name": "Tuńczyk w kawałkach w solance (nieodcedzony!)",
+            "ing_tuna_note": "~1110 g brutto / ~810 g ryby + ~300 ml solanki; pod żadnym pozorem nie wylewaj zalewy!",
+            "ing_mirin_amt": "30 ml",
+            "ing_mirin_name": "Mirin lub wino Shaoxing (ewentualnie sake)",
+            "ing_mirin_note": "2 łyżki; deglasuje dno patelni, wnosi niekrystalizującą słodycz i balans kwasowy",
+            "ing_oyster_amt": "35 g",
+            "ing_oyster_name": "Sos ostrygowy (oyster sauce)",
+            "ing_oyster_note": "2 łyżki; skoncentrowany glutaminian, naturalny glikogen ostrygowy i głęboki połysk",
+            "ing_msg_amt": "2,5 g",
+            "ing_msg_name": "Glutaminian sodu (MSG)",
+            "ing_msg_note": "~½ łyżeczki; dawka zatwierdzona przez Uncle Rogera („Fuiyoh!”); aktywuje receptory T1R1/T1R3",
+            "ing_herbs_amt": "3 g",
+            "ing_herbs_name": "Zioła prowansalskie",
+            "ing_herbs_note": "2 łyżeczki; tymianek, rozmaryn, cząber, bazylia i majeranek obudzone w ciepłym tłuszczu",
+            "ing_pepper_amt": "2 g",
+            "ing_pepper_name": "Świeżo mielony czarny i biały pieprz",
+            "ing_pepper_note": "~1 łyżeczka; wyrazista piperyna przełamująca kremowość nabiału",
+            "layer4_title": "Warstwa 4: Śmietanowa emulsja & Świeży finisz",
+            "ing_spinach_amt": "150 g",
+            "ing_spinach_name": "Świeży szpinak baby",
+            "ing_spinach_note": "4–5 solidnych garści; dodawany na samym końcu; mięknie w parze zachowując soczystą zieleń",
+            "ing_sourcream_amt": "350 g",
+            "ing_sourcream_name": "Polska śmietana 18% (kwaśna)",
+            "ing_sourcream_note": "~1 duży kubek (lub crème fraîche 18–30%); emulgowana poza ogniem, by uniknąć zwarzenia kazeiny",
+            "btn_reset": "↺ Resetuj zaznaczenia",
+            "btn_print": "🖨️ Drukuj przepis",
+            "sec_hardware_title": "📐 Naczynia & Geometria Gotowania",
+            "hardware_intro": "Z przepisu uzyskasz <strong>6 obfitych porcji (~480 g na miskę)</strong>, czyli łącznie ~2,8 kg gotowego dania.",
+            "hardware_box_title": "Kluczowe wymagania sprzętowe:",
+            "hardware_box_body": "• <strong>Szeroka patelnia głęboka / sauteuse (kluczowe):</strong> Użyj dużej patelni lub rondla (średnica min. 30–32 cm / pojemność 4,5+ L). Duża powierzchnia parowania jest niezbędna, aby solanka z tuńczyka odparowała błyskawicznie, zamiast ugotować cebulę na papkę.<br>• <strong>Duży garnek na makaron:</strong> Garnek 4–5 L z 3,5–4 litrami wrzącej wody. Odpowiednia objętość wody zapobiega drastycznemu spadkowi temperatury po wsypaniu 500 g suchego makaronu.<br>• <strong>Łyżka cedzakowa lub szczypce:</strong> Do wyławiania ociekającego makaronu bezpośrednio na patelnię z sosem—wraz z cenną skrobią powierzchniową.",
+            "sec_nutrition_title": "📊 Bilans Makroskładników & Wartości Odżywcze",
+            "nutrition_intro": "Rzetelny bilans kaloryczny prawdziwego comfort foodu (bez sztucznego ucinania tłuszczu i kompromisów).",
+            "macro_lbl_cals": "Kalorie / Porcja",
+            "macro_val_cals": "676 kcal",
+            "macro_lbl_protein": "Białko",
+            "macro_val_protein": "49,4 g (29,3% kcal)",
+            "macro_lbl_fats": "Tłuszcze (8,8g nasycone)",
+            "macro_val_fats": "17,7 g (23,5% kcal)",
+            "macro_lbl_carbs": "Węglowodany",
+            "macro_val_carbs": "79,7 g (47,2% kcal)",
+            "macro_lbl_fiber": "Błonnik",
+            "macro_val_fiber": "5,8 g (Netto: 73,9g)",
+            "macro_lbl_sodium": "Sód (szacunkowo)",
+            "macro_val_sodium": "~1350 mg",
+            "nutrition_note": "💡 Potężny ładunek ~49 g białka pochodzi całkowicie z naturalnego tuńczyka, nabiału oraz glutenu z pszenicy durum.",
+            "sec_method_title": "🔥 Przygotowanie Krok po Kroku",
+            "step1_title": "Mise en place & Gotowanie osolonej wody",
+            "step1_p1": "Pokrój 500 g cebuli w drobną kostkę (~3–4 mm). Oczyść 320 g papryki i pokrój w zgrabne paseczki 4–5 cm. Posiekaj drobno 25 g czosnku. Posiekaj 20 g anchois na niemal gładką pastę. Otwórz 6 puszek tuńczyka, ale <strong>nie odcedzaj solanki</strong>.",
+            "step1_p2": "Wlej do dużego garnka 3,5–4,0 litry wody, wsyp 25 g grubej soli morskiej (stężenie ~0,6%) i doprowadź do mocnego wrzenia na dużym ogniu.",
+            "step1_cue": "💡 <strong>Organizacja pracy:</strong> Przygotuj wszystkie składniki przed włączeniem palnika. Gdy solanka zacznie odparowywać, akcja toczy się bardzo szybko!",
+            "step2_title": "Baza tłuszczowa & Magia rozpuszczonych anchois",
+            "step2_p1": "Rozgrzej szeroką patelnię (30–32 cm) na średnim ogniu. Rozpuść 30 g masła (lub rozgrzej 2 łyżki oliwy).",
+            "step2_p2": "Dodaj 20 g posiekanych anchois. Mieszaj nieustannie drewnianą łopatką przez <strong>60–90 sekund</strong> na łagodnym ogniu.",
+            "step2_cue": "✨ <strong>Sekret anchois:</strong> Fileciki całkowicie stopią się w gorącym maśle i znikną z oczu. Nie bój się rybnego posmaku—znika on bez śladu, zostawiając za to potężny, głęboki fundament umami.",
+            "step3_title": "Aromatyczne Soffritto: Zeszklenie cebuli & Aromat czosnku",
+            "step3_p1": "Wsyp 500 g posiekanej cebuli na maślane anchois ze szczyptą soli, tworząc słodką bazę aromatyczną (klasyczne soffritto). Zmniejsz ogień na średnio-mały.",
+            "step3_p2": "Smaż powoli przez <strong>6–8 minut</strong>, aż cebula zmięknie, stanie się szklista i słodka. Nie pozwól jej się przypalić ani zrumienić.",
+            "step3_p3": "Zrób małe wgłębienie na środku patelni, wrzuć 25 g posiekanego czosnku i smaż przez dokładnie <strong>60 sekund</strong>, aż uwolni intensywny zapach. Wymieszaj z cebulą.",
+            "step4_title": "Podsmażenie papryki & Redukcja solanki au sec",
+            "step4_p1": "Zwiększ ogień na średnio-wysoki. Wrzuć 320 g paseczków papryki i podsmażaj przez <strong>3 minuty</strong>, aż lekko zmięknie, ale zachowa przyjemną chrupkość.",
+            "step4_p2": "Wlej całą zawartość <strong>wszystkich 6 puszek tuńczyka wraz z solanką</strong> bezpośrednio na patelnię. Rozdrobnij większe kawałki ryby łopatką.",
+            "step4_p3": "Gotuj na dużym ogniu przez <strong>4–6 minut</strong>. Z patelni będą buchać kłęby pary. Gotuj tak długo, aż cały wolny płyn całkowicie odparuje (<em>au sec</em>), a ryba zacznie cicho skwierczeć w maśle na dnie naczynia.",
+            "step4_cue": "⚡ <strong>Przełom termodynamiczny:</strong> Dopiero po całkowitym odparowaniu wody temperatura przekracza barierę 100°C i wkracza w strefę reakcji Maillarda (120–140°C), karmelizując skoncentrowane nukleotydy.",
+            "step5_title": "Deglasowanie, Bomba umami & Zioła prowansalskie",
+            "step5_p1": "Wlej 30 ml (2 łyżki) mirinu lub wina Shaoxing, zeskrobując drewnianą łopatką z dna patelni wszystkie zapieczone smaki.",
+            "step5_p2": "Dodaj 35 g (2 łyżki) sosu ostrygowego, 2,5 g (~½ łyżeczki) glutaminianu sodu MSG („Fuiyoh!”), 3 g (2 łyżeczki) ziół prowansalskich oraz 2 g świeżo mielonego pieprzu.",
+            "step5_p3": "Gotuj przez <strong>60 sekund</strong>, aż sos stanie się lśniący, ciemny i gęsty. Zmniejsz ogień pod patelnią do absolutnego minimum.",
+            "step6_title": "Gotowanie makaronu: Al dente minus 1 minuta",
+            "step6_p1": "Wrzuć 500 g makaronu do mocno wrzącej, osolonej wody. Zamieszaj dokładnie, by makaron się nie posklejał.",
+            "step6_p2": "Gotuj o <strong>1 minutę krócej</strong> niż sugeruje instrukcja al dente na opakowaniu (np. 8 minut zamiast 9). Makaron dokończy gotowanie w sosie.",
+            "step6_p3": "Przed odlaniem makaronu zaczerpnij chochlą <strong>150 ml skrobiowej wody</strong> i odstaw na bok.",
+            "step7_title": "Szpinak na końcu: Zmiękczenie w parze",
+            "step7_p1": "Dokładnie na 60 sekund przed końcem gotowania makaronu rozsyp 150 g świeżego szpinaku baby na wierzch ciepłego sosu na patelni.",
+            "step7_p2": "Wymieszaj delikatnie łopatką. Resztkowa para sprawi, że liście szpinaku zwiędną w zaledwie <strong>30–45 sekund</strong>, zachowując soczysty zielony kolor i świeżość.",
+            "step7_cue": "🌿 <strong>Świeża zieleń:</strong> Nigdy nie gotuj szpinaku w wodzie—łagodna para na patelni chroni chlorofil, strukturę komórkową i witaminę C.",
+            "step8_title": "Mantecatura: A gdyby tak wszystko razem? 🤔",
+            "step8_p1": "<strong>BŁYSKAWICZNY HAMULEC TERMICZNY:</strong> Całkowicie wyłącz palnik pod patelnią (lub przesuń ją z gorącej płyty).",
+            "step8_p2": "Przełóż gorący, ociekający wodą makaron prosto z garnka na patelnię za pomocą łyżki cedzakowej. Wlej 100–120 ml odlanej gorącej wody skrobiowej.",
+            "step8_p3": "Wyłóż na makaron 350 g śmietany 18%. Natychmiast zacznij energicznie mieszać, podrzucać i zawijać makaron kolistymi ruchami przez <strong>60–90 sekund</strong>.",
+            "step8_cue": "🤌🏼 <strong>Aksamitna emulsja skrobiowa:</strong> Mieszany poza ogniem makaron uwalnia skrobię, która wraz z masłem i śmietaną tworzy lśniącą, stabilną emulsję oblepiającą każdy świderek. Jeśli sos jest zbyt gęsty, dolej resztę wody. Buon appetito!",
+            "sec_science_title": "🧪 Fizykochemia Kulinarna & Synergia Smaku",
+            "sci_nucleotide_title": "🧬 Synergia Nukleotydów & Odparowanie Solanki (IMP + Glutaminian)",
+            "sci_nucleotide_body": "• <strong>Sarkoplazmatyczny skarb:</strong> Przemysłowa sterylizacja tuńczyka w puszkach (121°C) rozrywa błony komórkowe mięśni ryby, wypłukując do solanki ogromne ilości 5'-inozynomonofosforanu (IMP) i wolnych aminokwasów. Wylanie tej wody do zlewu to utrata aż 35% naturalnego smaku potrawy!<br>• <strong>Mnożnik Yamaguchiego:</strong> Ludzki receptor umami T1R1/T1R3 reaguje umiarkowanie na sam kwas L-glutaminowy (z MSG, cebuli, sosu ostrygowego i anchois). Kiedy jednak równocześnie w jego kieszeni allosterycznej znajdzie się nukleotyd purynowy (IMP z solanki i anchois), receptor ulega zablokowaniu konformacyjnemu, wzmacniając odczucie smaku umami aż <strong>8- do 15-krotnie</strong>:<br><div style=\"text-align:center; margin: 0.6rem 0; font-family: monospace; font-weight: 700; color: var(--amber-warm);\">Odczuwane Umami ∝ [Glutaminian] × (1 + γ · [IMP])</div>• <strong>Przełamanie ciepła parowania (ΔH_vap ≈ 2260 kJ/kg):</strong> Woda więzi temperaturę patelni na poziomie ≤100°C. Dopiero odparowanie solanki <em>au sec</em> (do sucha) pozwala patelni wejść w zakres 120–140°C reakcji Maillarda, gdzie cząstki tuńczyka lekko prażą się w tłuszczu.",
+            "sci_mantecatura_title": "🥛 Fizyka Mantecatury & Ochrona Kazeiny przed Ścięciem",
+            "sci_mantecatura_body": "• <strong>Pułapka punktu izoelektrycznego:</strong> Polska śmietana 18% ma kwasowość pH 4,4–4,6, co odpowiada <strong>punktowi izoelektrycznemu kazeiny (pI ≈ 4,6)</strong>. Przy tym pH ładunek elektrostatyczny miceli kazeinowych spada do zera—tracą one wzajemne odpychanie.<br>• <strong>Ochrona przed synerozą (zwarzeniem):</strong> Wrzucenie śmietany do wrzącego sosu (&gt;85°C) powoduje błyskawiczną denaturację białek serwatkowych i zbicie kazeiny w grudki (zwarzenie). Wyłączenie palnika (T &lt; 70°C) oraz dodanie skrobiowej wody z makaronu tworzy barierę steryczną z łańcuchów amylozy, uniemożliwiając micelom zlepianie się.<br>• <strong>Stabilność emulsji wg Prawa Stokesa:</strong> Kremowość zależy od prędkości rozwarstwiania kropel tłuszczu:<br><div style=\"text-align:center; margin: 0.6rem 0; font-family: monospace; font-weight: 700; color: var(--amber-warm);\">v ∝ (r² · Δρ · g) / η</div>Energiczne mieszanie rozbija tłuszcz na mikrokropelki (r → 0), a skrobia z wody zwiększa lepkość fazy ciągłej (η), tworząc trwałą, lśniącą emulsję skrobiowo-tłuszczową.",
+            "sec_reheat_title": "♨️ Przechowywanie i Protokół Odgrzewania",
+            "reheat_table_method": "Metoda odgrzewania",
+            "reheat_table_fridge": "Z lodówki (schłodzone, 2–4°C)",
+            "reheat_table_notes": "Zachowanie sosu i emulsji",
+            "row1_method": "Patelnia z odrobiną wody (Złoty Standard)",
+            "row1_fridge": "Patelnia na małym ogniu + 2 łyżki wody lub mleka; 2 min pod przykryciem, potem 60s mieszania",
+            "row1_notes": "Para rozluźnia skrobię w makaronie, a energiczne zamieszanie ponownie emulguje tłuszcz w lśniący, świeży sos.",
+            "row2_method": "Kuchenka mikrofalowa (Szybki obiad)",
+            "row2_fridge": "Miska pod przykryciem + 1 łyżka wody; średnia moc (70–80%) przez 2–2,5 min; zamieszać w połowie",
+            "row2_notes": "Moc 70% chroni śmietanę przed zagotowaniem i zwarzeniem; łyżka wody przywraca idealną kremowość.",
+            "row3_method": "Sałatka makaronowa na zimno (Do lunchboxa)",
+            "row3_fridge": "Jedz bezpośrednio na zimno z lodówki; opcjonalnie z kilkoma kroplami soku z cytryny",
+            "row3_notes": "Zaskakująco wybitne na zimno! Rozpuszczone anchois i skoncentrowany tuńczyk smakują jak w śródziemnomorskiej sałatce.",
+            "storage_box_title": "🧊 Lodówka & Ostrzeżenie przed Zamrażalnikiem:",
+            "storage_box_body": "• <strong>Trwałość w lodówce:</strong> W szczelnym szklanym pojemniku w temp. 2–4°C zachowuje doskonałą jakość przez <strong>3 do 4 dni</strong>.<br>• <strong>⚠️ Dlaczego nie mrozimy tego dania:</strong> W przeciwieństwie do zapiekanek czy gulaszów z purée, emulsje z kwaśnej śmietany nie znoszą powolnego mrożenia. Kryształki lodu niszczą strukturę kazeiny, a po rozmrożeniu sos rozwarstwia się na wodnistą serwatkę i tłuszcz, podczas gdy makaron staje się gąbczasty. Jedz na świeżo lub z lodówki!",
+            "footer_text": "Zaawansowana inżynieria kulinarna • Prawdziwy domowy comfort food z maksimum białka",
+            "footer_about": "Poznaj tajniki fizykochemii kulinarnej i mechaniki emulsji →"
+}
+    };
+
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+        
+        document.documentElement.lang = lang;
+        try {
+            localStorage.setItem('tuna_pasta_lang', lang);
+        } catch (e) {}
+        
+        const btnEn = document.getElementById('btn-en');
+        const btnPl = document.getElementById('btn-pl');
+        if (btnEn && btnPl) {
+            btnEn.classList.toggle('active', lang === 'en');
+            btnEn.setAttribute('aria-pressed', lang === 'en');
+            btnPl.classList.toggle('active', lang === 'pl');
+            btnPl.setAttribute('aria-pressed', lang === 'pl');
+        }
+        
+        if (translations[lang].meta_title) {
+            document.title = translations[lang].meta_title;
+        }
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && translations[lang].meta_desc) {
+            metaDesc.setAttribute('content', translations[lang].meta_desc);
+        }
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key] !== undefined) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (translations[lang][key] !== undefined) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    function toggleCheck(el) {
+        const checkbox = el.querySelector('input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+        el.classList.toggle('checked', checkbox.checked);
+    }
+
+    function clearChecks() {
+        document.querySelectorAll('.ingredient-item').forEach(item => {
+            item.classList.remove('checked');
+            item.querySelector('input[type="checkbox"]').checked = false;
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let savedLang = null;
+        try {
+            savedLang = localStorage.getItem('tuna_pasta_lang');
+            if (!savedLang) {
+                savedLang = localStorage.getItem('cottage_pie_lang');
+            }
+        } catch (e) {}
+
+        const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';
+        setLanguage(savedLang || browserLang);
+    });
+</script>
+
+</body>
+</html>
