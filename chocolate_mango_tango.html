@@ -520,6 +520,32 @@
             border-bottom: none;
         }
 
+        /* Nutrition Table */
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .nutrition-table th, .nutrition-table td {
+            padding: 0.55rem 0.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nutrition-table th {
+            background: var(--bg-inset);
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .nutrition-table tr:last-child td {
+            border-bottom: none;
+        }
+
         /* Actions */
         .action-btn {
             background: var(--bg-inset);
@@ -633,6 +659,10 @@
             <div class="stat-card">
                 <div class="stat-val" data-i18n="stat_texture_val">Nappe</div>
                 <div class="stat-lbl" data-i18n="stat_texture_lbl">Pillowy Texture</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_cals_val">~13 kcal</div>
+                <div class="stat-lbl" data-i18n="stat_cals_lbl">Per 1 Tbsp (15g)</div>
             </div>
         </div>
     </header>
@@ -774,6 +804,71 @@
                         </div>
                     </li>
                 </ul>
+            </section>
+
+            <!-- NUTRITION & MACRO LEDGER -->
+            <section class="section-card">
+                <h2 data-i18n="sec_nutrition_title">📊 Macro Ledger & Energy Breakdown</h2>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n="nutrition_intro">
+                    Precision nutritional accounting for tracking logs. Concentrated artisanal flavor with negligible caloric load.
+                </p>
+                <table class="nutrition-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="nutr_metric">Metric</th>
+                            <th data-i18n="nutr_1tbsp" style="text-align: right;">1 Tbsp (15g)</th>
+                            <th data-i18n="nutr_100g" style="text-align: right;">Per 100g</th>
+                            <th data-i18n="nutr_jar" style="text-align: right;">Jar (~230g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="macro_lbl_cals">Calories</td>
+                            <td style="text-align: right; font-weight: 700; color: var(--amber-warm);">~13 kcal</td>
+                            <td style="text-align: right;">86 kcal</td>
+                            <td style="text-align: right;">~198 kcal</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_protein">Protein</td>
+                            <td style="text-align: right;">0.2 g</td>
+                            <td style="text-align: right;">1.1 g</td>
+                            <td style="text-align: right;">2.6 g</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_fats">Fats (0.3g sat)</td>
+                            <td style="text-align: right;">0.3 g</td>
+                            <td style="text-align: right;">1.9 g</td>
+                            <td style="text-align: right;">4.3 g</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_carbs">Carbohydrates</td>
+                            <td style="text-align: right;">2.5 g</td>
+                            <td style="text-align: right;">16.7 g</td>
+                            <td style="text-align: right;">38.3 g</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_sugars">— of which Sugars</td>
+                            <td style="text-align: right;">1.9 g</td>
+                            <td style="text-align: right;">12.6 g</td>
+                            <td style="text-align: right;">29.1 g</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_fiber">— Dietary Fiber</td>
+                            <td style="text-align: right;">0.3 g</td>
+                            <td style="text-align: right;">1.8 g</td>
+                            <td style="text-align: right;">4.2 g</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="macro_lbl_salt">Salt (Sodium)</td>
+                            <td style="text-align: right;">0.13 g (53 mg)</td>
+                            <td style="text-align: right;">0.88 g (352 mg)</td>
+                            <td style="text-align: right;">2.0 g (810 mg)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-muted);" data-i18n="nutrition_note">
+                    💡 <strong>Deficit-Friendly:</strong> At just ~13 kcal and 0.3g fat per tablespoon, you can dose this generously on daily chicken, eggs, and rice bowls without making a dent in your weekly caloric budget.
+                </div>
             </section>
         </div>
 
@@ -929,6 +1024,8 @@
             stat_shelf_lbl: 'Unopened Shelf Life',
             stat_texture_val: 'Nappe',
             stat_texture_lbl: 'Pillowy Texture',
+            stat_cals_val: '~13 kcal',
+            stat_cals_lbl: 'Per 1 Tbsp (15g)',
             sec_ingredients_title: '🛒 Ingredients Checklist',
             btn_clear_checks: 'Reset',
             sec_ingredients_sub: 'Scaled for ~900 ml finished sauce (3–4 preserve jars). Click any item to check it off.',
@@ -975,6 +1072,20 @@
             ing_salt_amt: '1/2 tsp',
             ing_salt_name: 'Fine Sea Salt (to taste)',
             ing_salt_note: 'Suppresses sourness; rounds off tongue astringency',
+            sec_nutrition_title: '📊 Macro Ledger & Energy Breakdown',
+            nutrition_intro: 'Precision nutritional accounting for tracking logs. Concentrated artisanal flavor with negligible caloric load.',
+            nutr_metric: 'Metric',
+            nutr_1tbsp: '1 Tbsp (15g)',
+            nutr_100g: 'Per 100g',
+            nutr_jar: 'Jar (~230g)',
+            macro_lbl_cals: 'Calories',
+            macro_lbl_protein: 'Protein',
+            macro_lbl_fats: 'Fats (0.3g sat)',
+            macro_lbl_carbs: 'Carbohydrates',
+            macro_lbl_sugars: '— of which Sugars',
+            macro_lbl_fiber: '— Dietary Fiber',
+            macro_lbl_salt: 'Salt (Sodium)',
+            nutrition_note: '💡 <strong>Deficit-Friendly:</strong> At just ~13 kcal and 0.3g fat per tablespoon, you can dose this generously on daily chicken, eggs, and rice bowls without making a dent in your weekly caloric budget.',
             sec_method_title: '🔥 Step-by-Step Cooking Protocol',
             step1_title: 'Decant & Sweat the Lipophilic Foundation',
             step1_text: 'Strain the 2-year fermented chillies over a bowl, separating the solids from the brine. In a wide pot, heat 1 tbsp peanut oil over medium-low heat. Add the minced garlic and grated ginger with a small pinch of salt. Sweat gently for 2–3 minutes until fragrant and translucent. Do not allow them to brown.',
@@ -1038,6 +1149,8 @@
             stat_shelf_lbl: 'Trwałość (zamknięte)',
             stat_texture_val: 'Nappe',
             stat_texture_lbl: 'Aksamitna Tekstura',
+            stat_cals_val: '~13 kcal',
+            stat_cals_lbl: 'W 1 Łyżce (15g)',
             sec_ingredients_title: '🛒 Lista Składników',
             btn_clear_checks: 'Zresetuj',
             sec_ingredients_sub: 'Partia na ~900 ml gotowej salsy (3–4 słoiki). Kliknij dowolny składnik, aby go odhaczyć.',
@@ -1084,6 +1197,20 @@
             ing_salt_amt: '1/2 łyżeczki',
             ing_salt_name: 'Drobna Sól Morska (do smaku)',
             ing_salt_note: 'Tłumi cierpkość i zaokrągla profil smakowy na języku',
+            sec_nutrition_title: '📊 Bilans Makroskładników i Wartości Odżywcze',
+            nutrition_intro: 'Precyzyjne rozliczenie makroskładników do dziennika żywieniowego. Potężny ładunek smaku przy znikomym bilansie kalorii.',
+            nutr_metric: 'Wskaźnik',
+            nutr_1tbsp: '1 Łyżka (15g)',
+            nutr_100g: 'Na 100g',
+            nutr_jar: 'Słoik (~230g)',
+            macro_lbl_cals: 'Kalorie',
+            macro_lbl_protein: 'Białko',
+            macro_lbl_fats: 'Tłuszcze (w tym 0,3g nasycone)',
+            macro_lbl_carbs: 'Węglowodany',
+            macro_lbl_sugars: '— w tym Cukry',
+            macro_lbl_fiber: '— Błonnik pokarmowy',
+            macro_lbl_salt: 'Sól (Sód)',
+            nutrition_note: '💡 <strong>Przyjazny w Redukcji:</strong> Zaledwie ~13 kcal i 0,3 g tłuszczu w łyżce stołowej pozwala na obfite polewanie drobiu, jajecznicy czy ryżu bez naruszania tygodniowego budżetu kalorycznego.',
             sec_method_title: '🔥 Przygotowanie Krok po Kroku',
             step1_title: 'Odcedzenie i Zeszkolenie Tarczy Lipidowej',
             step1_text: 'Odcedź 2-letnie kiszone chili na sicie nad miską, oddzielając warzywa od solanki. W szerokim rondlu rozgrzej 1 łyżkę oleju arachidowego na średnio-niskim ogniu. Dodaj posiekany czosnek i starty imbir ze szczyptą soli. Duś delikatnie przez 2–3 minuty, aż zmiękną i uwolnią aromat. Nie pozwól im się przypiec ani zbrązowieć.',
