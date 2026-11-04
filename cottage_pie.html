@@ -1207,10 +1207,9 @@
         
         document.documentElement.lang = lang;
         try {
+            localStorage.setItem('cookbook_lang', lang);
             localStorage.setItem('cottage_pie_lang', lang);
-        } catch (e) {
-            // Guard against disabled localStorage / private browsing
-        }
+        } catch (e) {}
         
         const btnEn = document.getElementById('btn-en');
         const btnPl = document.getElementById('btn-pl');
@@ -1260,7 +1259,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         let savedLang = null;
         try {
-            savedLang = localStorage.getItem('cottage_pie_lang');
+            savedLang = localStorage.getItem('cookbook_lang') || localStorage.getItem('cottage_pie_lang') || localStorage.getItem('cottage_pie_lang');
         } catch (e) {}
 
         const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';

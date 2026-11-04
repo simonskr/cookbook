@@ -615,7 +615,7 @@
                                 <div class="macro-lbl" data-i18n="macro_batch">Batch Yield</div>
                             </div>
                             <div>
-                                <div class="macro-val">~5.5k</div>
+                                <div class="macro-val">5–8k</div>
                                 <div class="macro-lbl" data-i18n="macro_shu">Scoville (SHU)</div>
                             </div>
                             <div>
@@ -777,6 +777,7 @@
         
         document.documentElement.lang = lang;
         try {
+            localStorage.setItem('cookbook_lang', lang);
             localStorage.setItem('cottage_pie_lang', lang);
         } catch (e) {}
         
@@ -800,7 +801,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         let savedLang = null;
         try {
-            savedLang = localStorage.getItem('cottage_pie_lang');
+            savedLang = localStorage.getItem('cookbook_lang') || localStorage.getItem('cottage_pie_lang') || localStorage.getItem('cottage_pie_lang');
         } catch (e) {}
 
         const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';

@@ -488,13 +488,14 @@
             line-height: 1.5;
         }
 
-        .reheat-table, .nutrition-table {
+        .storage-table, .reheat-table, .nutrition-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.85rem;
             margin-top: 0.5rem;
         }
 
+        .storage-table th, .storage-table td,
         .reheat-table th, .reheat-table td,
         .nutrition-table th, .nutrition-table td {
             padding: 0.55rem 0.5rem;
@@ -502,7 +503,7 @@
             text-align: left;
         }
 
-        .reheat-table th, .nutrition-table th {
+        .storage-table th, .reheat-table th, .nutrition-table th {
             background: var(--bg-inset);
             font-weight: 700;
             color: var(--text-main);
@@ -511,6 +512,7 @@
             letter-spacing: 0.03em;
         }
 
+        .storage-table tr:last-child td,
         .reheat-table tr:last-child td,
         .nutrition-table tr:last-child td {
             border-bottom: none;
@@ -923,7 +925,7 @@
             <!-- STORAGE & SHELF LIFE -->
             <section class="section-card">
                 <h2 data-i18n="sec_storage_title">📦 Storage & Shelf Life</h2>
-                <table class="reheat-table">
+                <table class="storage-table">
                     <thead>
                         <tr>
                             <th data-i18n="th_state">State</th>
@@ -1222,6 +1224,7 @@
         
         document.documentElement.lang = lang;
         try {
+            localStorage.setItem('cookbook_lang', lang);
             localStorage.setItem('chocolate_mango_tango_lang', lang);
         } catch (e) {}
         
@@ -1265,7 +1268,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         let savedLang = null;
         try {
-            savedLang = localStorage.getItem('chocolate_mango_tango_lang');
+            savedLang = localStorage.getItem('cookbook_lang') || localStorage.getItem('chocolate_mango_tango_lang') || localStorage.getItem('cottage_pie_lang');
         } catch (e) {}
 
         const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';
