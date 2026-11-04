@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The "Chocolate Mango Tango" 🍫 🥭 💃🏻 Fermented Chilli Sauce</title>
-    <meta name="description" content="The Chocolate Mango Tango 🍫 🥭 💃🏻 — Artisanal hot sauce combining 2-year lacto-fermented red chillies, fresh chocolate habanero, ripe Palmer mango, and a Dutch cocoa mole finish. Deep radiant heat, zero sting.">
+    <meta name="description" content="Chocolate Mango Tango 🍫 🥭 💃🏻 — 2-year fermented red cayennes, fresh garden chocolate habanero, ripe Palmer mango, and a Dutch cocoa mole finish. Deep radiant heat, zero sting.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -53,7 +53,6 @@
             margin: 0 auto;
         }
 
-        /* Recipe Navigation */
         .recipe-nav {
             display: flex;
             justify-content: space-between;
@@ -115,7 +114,6 @@
             outline-offset: 2px;
         }
 
-        /* Hero Header */
         .hero {
             background: linear-gradient(145deg, #ffffff 0%, var(--bg-inset) 100%);
             border: 1px solid var(--border-color);
@@ -178,7 +176,6 @@
             color: #92400e;
         }
 
-        /* Language Switcher */
         .lang-switch {
             display: inline-flex;
             background: var(--bg-card);
@@ -245,7 +242,6 @@
             margin-bottom: 1.75rem;
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -265,7 +261,7 @@
 
         .stat-val {
             font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: var(--amber-warm);
             line-height: 1.2;
@@ -280,7 +276,6 @@
             margin-top: 0.25rem;
         }
 
-        /* Two Column Layout */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -313,7 +308,6 @@
             gap: 0.5rem;
         }
 
-        /* Ingredients Checklist */
         .layer-title {
             font-size: 0.85rem;
             font-weight: 700;
@@ -386,7 +380,6 @@
             margin-top: 0.1rem;
         }
 
-        /* Method Timeline Steps */
         .step-list {
             list-style: none;
             counter-reset: step-counter;
@@ -445,7 +438,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Science & Clinical Callouts */
         .callout-box {
             background: var(--bg-inset);
             border: 1px solid var(--border-color);
@@ -496,44 +488,21 @@
             line-height: 1.5;
         }
 
-        /* Storage Table */
-        .reheat-table {
+        .reheat-table, .nutrition-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.85rem;
             margin-top: 0.5rem;
         }
 
-        .reheat-table th, .reheat-table td {
-            padding: 0.65rem 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .reheat-table th {
-            background: var(--bg-inset);
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .reheat-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Nutrition Table */
-        .nutrition-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
+        .reheat-table th, .reheat-table td,
         .nutrition-table th, .nutrition-table td {
             padding: 0.55rem 0.5rem;
             border-bottom: 1px solid var(--border-subtle);
+            text-align: left;
         }
 
-        .nutrition-table th {
+        .reheat-table th, .nutrition-table th {
             background: var(--bg-inset);
             font-weight: 700;
             color: var(--text-main);
@@ -542,11 +511,11 @@
             letter-spacing: 0.03em;
         }
 
+        .reheat-table tr:last-child td,
         .nutrition-table tr:last-child td {
             border-bottom: none;
         }
 
-        /* Actions */
         .action-btn {
             background: var(--bg-inset);
             border: 1px solid var(--border-color);
@@ -564,7 +533,6 @@
             border-color: var(--amber-warm);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 2.5rem 0 1rem;
@@ -621,8 +589,8 @@
         <div class="header-top-row">
             <div class="badges-row">
                 <span class="badge badge-amber" data-i18n="badge_heat">🔥 Slow-Blooming Heat (Zero Sting)</span>
-                <span class="badge badge-gold" data-i18n="badge_mole">🍫 5th Taste: Mole Bittersweet Depth</span>
-                <span class="badge badge-green" data-i18n="badge_canning">🏺 100% Shelf-Stable Vacuum Canning</span>
+                <span class="badge badge-gold" data-i18n="badge_mole">🍫 Mexican Mole Depth</span>
+                <span class="badge badge-green" data-i18n="badge_canning">🏺 12+ Months Shelf-Stable</span>
             </div>
             <div class="lang-switch" role="group" aria-label="Language selection">
                 <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')" aria-pressed="true">EN</button>
@@ -631,22 +599,25 @@
         </div>
 
         <h1 data-i18n="hero_title">The "Chocolate Mango Tango" 🍫 🥭 💃🏻</h1>
-        <span class="polish-subtitle" data-i18n="hero_subtitle">Salsa „Chocolate Mango Tango” — 2-Year Aged Ferment & The Napoli Epiphany</span>
+        <span class="polish-subtitle" data-i18n="hero_subtitle">2-Year Fermented Cayenne, Fresh Chocolate Habanero & The Cacao Epiphany</span>
 
         <p class="hero-desc" data-i18n-html="hero_desc">
-            Most commercial hot sauces sting like needle-pricks because unbound capsaicin rides on sharp, watery acetic acid.
-            This artisan formula pairs a <strong>2-year aged red chilli ferment</strong> and fresh garden <strong>chocolate habanero</strong> with sweet <strong>Palmer mango pectin</strong> and an unrefined lipid shield. The secret revelation: a whisper of <strong>Dutch dark cocoa</strong> unlocks deep Mexican mole pyrazines and magically multiplies perceived sweetness. <em>"See Naples and die"</em>—the ultimate universal condiment.
+            A slow-blooming table sauce engineered for broad, mouth-coating warmth with zero throat sting. Combines <strong>2-year aged red cayennes</strong>, fresh <strong>chocolate habanero</strong>, and sweet <strong>Palmer mango</strong>, finished with cocoa powder to unlock rich Mexican mole depth and bring out natural fruit sweetness.
         </p>
 
         <!-- Stats Grid -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-val" data-i18n="stat_yield_val">~900 ml</div>
-                <div class="stat-lbl" data-i18n="stat_yield_lbl">Total Batch Yield</div>
+                <div class="stat-lbl" data-i18n="stat_yield_lbl">Batch Yield</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val" data-i18n="stat_heat_val">4.5–6.5k</div>
-                <div class="stat-lbl" data-i18n="stat_heat_lbl">Est. Scoville (Radiant)</div>
+                <div class="stat-val" data-i18n="stat_heat_val">5–8k</div>
+                <div class="stat-lbl" data-i18n="stat_heat_lbl">Scoville (Warm Glow)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="stat_texture_val">Sweet-Chilli</div>
+                <div class="stat-lbl" data-i18n="stat_texture_lbl">Glossy Body</div>
             </div>
             <div class="stat-card">
                 <div class="stat-val" data-i18n="stat_ph_val">&lt; 3.4</div>
@@ -654,11 +625,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-val" data-i18n="stat_shelf_val">12+ Mo</div>
-                <div class="stat-lbl" data-i18n="stat_shelf_lbl">Unopened Shelf Life</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="stat_texture_val">Nappe</div>
-                <div class="stat-lbl" data-i18n="stat_texture_lbl">Pillowy Texture</div>
+                <div class="stat-lbl" data-i18n="stat_shelf_lbl">Pantry Jars</div>
             </div>
             <div class="stat-card">
                 <div class="stat-val" data-i18n="stat_cals_val">~13 kcal</div>
@@ -678,7 +645,7 @@
                     <button type="button" class="action-btn" onclick="clearChecks()" data-i18n="btn_clear_checks">Reset</button>
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n="sec_ingredients_sub">
-                    Scaled for ~900 ml finished sauce (3–4 preserve jars). Click any item to check it off.
+                    Scaled for ~900 ml sauce (~4 medium preserve jars). Click any item to check it off.
                 </p>
 
                 <!-- LAYER 1: FERMENT & HEAT -->
@@ -688,16 +655,16 @@
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_chillies_amt">500–600 ml jar</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_chillies_name">2-Year Lacto-Fermented Red Chillies</span>
-                            <span class="ing-note" data-i18n="ing_chillies_note">Strained; all natural sugars converted to aged lactic acid & pepper esters</span>
+                            <span class="ing-title" data-i18n="ing_chillies_name">2-Year Fermented Red Cayennes</span>
+                            <span class="ing-note" data-i18n="ing_chillies_note">Strained; natural sugars fully fermented into aged lactic tang</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_brine_amt">100–120 ml</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_brine_name">Reserved Fermented Pepper Brine</span>
-                            <span class="ing-note" data-i18n="ing_brine_note">Packed with umami, salinity, and smooth lactic acidity</span>
+                            <span class="ing-title" data-i18n="ing_brine_name">Reserved Pepper Brine</span>
+                            <span class="ing-note" data-i18n="ing_brine_note">Savoury, salty, smooth lactic acid base</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -705,41 +672,41 @@
                         <span class="ing-amount" data-i18n="ing_habanero_amt">1 whole pod</span>
                         <div class="ing-name">
                             <span class="ing-title" data-i18n="ing_habanero_name">Fresh Garden Chocolate Habanero</span>
-                            <span class="ing-note" data-i18n="ing_habanero_note">Capsicum chinense — smoky dark-fruit aroma and delayed blooming heat</span>
+                            <span class="ing-note" data-i18n="ing_habanero_note">Finely diced; smoky aroma with a slow creeper burn</span>
                         </div>
                     </li>
                 </ul>
 
                 <!-- LAYER 2: FRUIT & LIPID SHIELD -->
-                <div class="layer-title" data-i18n="layer2_title">2. Fruit, Pectin & Lipid Shield</div>
+                <div class="layer-title" data-i18n="layer2_title">2. Fruit, Pectin & Carrier Fat</div>
                 <ul class="ingredient-list">
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_mango_amt">2 large</span>
                         <div class="ing-name">
                             <span class="ing-title" data-i18n="ing_mango_name">Ripe Palmer Mangoes (~380–400g flesh)</span>
-                            <span class="ing-note" data-i18n="ing_mango_note">Low-fiber, slender-seed variety; supplies velvety soluble pectin</span>
+                            <span class="ing-note" data-i18n="ing_mango_note">Low-fiber variety; provides a thick, glossy body</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_oil_amt">1 tbsp (15 ml)</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_oil_name">Peanut Oil (or Extra Virgin Olive Oil)</span>
-                            <span class="ing-note" data-i18n="ing_oil_note">Forms lipophilic emulsion to trap capsaicin and eliminate throat sting</span>
+                            <span class="ing-title" data-i18n="ing_oil_name">Peanut Oil (or EVOO)</span>
+                            <span class="ing-note" data-i18n="ing_oil_note">Carrier fat; coats the palate to eliminate capsaicin sting</span>
                         </div>
                     </li>
                 </ul>
 
                 <!-- LAYER 3: AROMATICS & ACID BRIDGE -->
-                <div class="layer-title" data-i18n="layer3_title">3. Aromatics & Multi-Acid Bridge</div>
+                <div class="layer-title" data-i18n="layer3_title">3. Aromatics & Acid Bridge</div>
                 <ul class="ingredient-list">
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_garlic_amt">5–6 cloves</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_garlic_name">Fresh Garlic (finely minced)</span>
-                            <span class="ing-note" data-i18n="ing_garlic_note">Sweated translucent without browning for savory allium depth</span>
+                            <span class="ing-title" data-i18n="ing_garlic_name">Fresh Garlic (minced)</span>
+                            <span class="ing-note" data-i18n="ing_garlic_note">Sweated translucent without browning for sweet savoury depth</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -747,36 +714,36 @@
                         <span class="ing-amount" data-i18n="ing_ginger_amt">25–30 g</span>
                         <div class="ing-name">
                             <span class="ing-title" data-i18n="ing_ginger_name">Fresh Ginger (finely grated)</span>
-                            <span class="ing-note" data-i18n="ing_ginger_note">Gingerols & shogaols pre-warm the palate in synergy with capsaicin</span>
+                            <span class="ing-note" data-i18n="ing_ginger_note">Diffuses warmth evenly across the whole mouth</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_limes_amt">2 whole</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_limes_name">Fresh Juicy Limes (juiced, ~35–40 ml)</span>
-                            <span class="ing-note" data-i18n="ing_limes_note">Citric & malic acid top-note brightness</span>
+                            <span class="ing-title" data-i18n="ing_limes_name">Fresh Limes (juiced, ~35–40 ml)</span>
+                            <span class="ing-note" data-i18n="ing_limes_note">Crisp citrus brightness</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_acv_amt">~100 ml + splash</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_acv_name">Raw Apple Cider Vinegar (5% Acidity)</span>
-                            <span class="ing-note" data-i18n="ing_acv_note">Soft, fruity acetic acid backbone; ensures shelf-stability</span>
+                            <span class="ing-title" data-i18n="ing_acv_name">Apple Cider Vinegar (5% Acidity)</span>
+                            <span class="ing-note" data-i18n="ing_acv_note">Soft fruity acid base for long-term shelf stability</span>
                         </div>
                     </li>
                 </ul>
 
                 <!-- LAYER 4: MOLE FINISH & SWEETNESS -->
-                <div class="layer-title" data-i18n="layer4_title">4. Dynamic Sweetness & Mole Finisher</div>
+                <div class="layer-title" data-i18n="layer4_title">4. Sweetness & The Cacao Finisher</div>
                 <ul class="ingredient-list">
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
                         <span class="ing-amount" data-i18n="ing_demerara_amt">4 heaping tsp</span>
                         <div class="ing-name">
                             <span class="ing-title" data-i18n="ing_demerara_name">Demerara Cane Sugar (~22 g)</span>
-                            <span class="ing-note" data-i18n="ing_demerara_note">Caramelized molasses undertones to buffer initial acid spike</span>
+                            <span class="ing-note" data-i18n="ing_demerara_note">Rounds off the initial sharp acid spike</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -784,15 +751,15 @@
                         <span class="ing-amount" data-i18n="ing_maple_amt">3 generous tbsp</span>
                         <div class="ing-name">
                             <span class="ing-title" data-i18n="ing_maple_name">Pure Dark Maple Syrup (~45–50 ml)</span>
-                            <span class="ing-note" data-i18n="ing_maple_note">Bioavailable dissolved sweetness; bridges habanero smokiness</span>
+                            <span class="ing-note" data-i18n="ing_maple_note">Dissolved sweetness; bridges into smoky habanero</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
                         <input type="checkbox">
-                        <span class="ing-amount" data-i18n="ing_cacao_amt">1 level tsp</span>
+                        <span class="ing-amount" data-i18n="ing_cacao_amt">1 regular tsp</span>
                         <div class="ing-name">
-                            <span class="ing-title" data-i18n="ing_cacao_name">Dutch-Processed Dark Cocoa Powder</span>
-                            <span class="ing-note" data-i18n="ing_cacao_note">The Mole Epiphany: alkalized pyrazines & bitter theobromine unlock HDR sweetness</span>
+                            <span class="ing-title" data-i18n="ing_cacao_name">Dutch Dark Cocoa Powder (~4–5 g)</span>
+                            <span class="ing-note" data-i18n="ing_cacao_note">The secret weapon: cuts harsh acid, unlocks fruit sweetness</span>
                         </div>
                     </li>
                     <li class="ingredient-item" onclick="toggleCheck(this)">
@@ -800,7 +767,7 @@
                         <span class="ing-amount" data-i18n="ing_salt_amt">1/2 tsp</span>
                         <div class="ing-name">
                             <span class="ing-title" data-i18n="ing_salt_name">Fine Sea Salt (to taste)</span>
-                            <span class="ing-note" data-i18n="ing_salt_note">Suppresses sourness; rounds off tongue astringency</span>
+                            <span class="ing-note" data-i18n="ing_salt_note">Suppresses sourness and ties the flavours together</span>
                         </div>
                     </li>
                 </ul>
@@ -810,7 +777,7 @@
             <section class="section-card">
                 <h2 data-i18n="sec_nutrition_title">📊 Macro Ledger & Energy Breakdown</h2>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;" data-i18n="nutrition_intro">
-                    Precision nutritional accounting for tracking logs. Concentrated artisanal flavor with negligible caloric load.
+                    Precision nutritional accounting for tracking logs. High flavor impact with negligible calories.
                 </p>
                 <table class="nutrition-table">
                     <thead>
@@ -867,7 +834,7 @@
                     </tbody>
                 </table>
                 <div style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-muted);" data-i18n="nutrition_note">
-                    💡 <strong>Deficit-Friendly:</strong> At just ~13 kcal and 0.3g fat per tablespoon, you can dose this generously on daily chicken, eggs, and rice bowls without making a dent in your weekly caloric budget.
+                    💡 <strong>Deficit-Friendly:</strong> At ~13 kcal and 0.3g fat per tablespoon, dose this generously on daily chicken, eggs, and rice bowls without impacting your weekly cut budget.
                 </div>
             </section>
         </div>
@@ -880,48 +847,48 @@
                 <h2 data-i18n="sec_method_title">🔥 Step-by-Step Cooking Protocol</h2>
                 <ol class="step-list">
                     <li class="step-item">
-                        <div class="step-title" data-i18n="step1_title">Decant & Sweat the Lipophilic Foundation</div>
+                        <div class="step-title" data-i18n="step1_title">Sweat Garlic & Ginger in Oil</div>
                         <div class="step-text" data-i18n="step1_text">
-                            Strain the 2-year fermented chillies over a bowl, separating the solids from the brine. In a wide pot, heat 1 tbsp peanut oil over medium-low heat. Add the minced garlic and grated ginger with a small pinch of salt. Sweat gently for 2–3 minutes until fragrant and translucent. <em>Do not allow them to brown.</em>
+                            Strain the 2-year fermented cayennes, keeping the brine. Heat 1 tbsp peanut oil in a wide pot over medium-low heat. Sweat the minced garlic and grated ginger with a pinch of salt for 2–3 minutes until soft and fragrant. Do not brown.
                         </div>
                         <div class="cue-box" data-i18n-html="step1_cue">
-                            💡 <strong>Visual Cue:</strong> Garlic should look soft and glossy; sizzling should be gentle with zero browning.
+                            💡 <strong>Visual Cue:</strong> Garlic should look soft and glossy; keep sizzling very gentle.
                         </div>
                     </li>
                     <li class="step-item">
-                        <div class="step-title" data-i18n="step2_title">The Fruit, Pepper & Multi-Acid Simmer</div>
+                        <div class="step-title" data-i18n="step2_title">Simmer Cayennes, Mango & Vinegar</div>
                         <div class="step-text" data-i18n="step2_text">
-                            Toss in the strained fermented red chillies, diced fresh chocolate habanero, and diced Palmer mango. Pour in 100 ml apple cider vinegar, 100 ml reserved brine, juice of both limes, and 4 heaping tsp demerara sugar. Bring to a gentle boil, then simmer on low covered for 10–12 minutes until the mango and habanero are completely tender.
+                            Add the strained cayennes, diced chocolate habanero, and diced mango. Pour in 100 ml apple cider vinegar, 100 ml brine, lime juice, and 4 heaping tsp demerara sugar. Bring to a gentle boil, cover partially, and simmer on low for 10–12 minutes until the mango and habanero are completely tender.
                         </div>
                         <div class="cue-box" data-i18n-html="step2_cue">
-                            💡 <strong>Thermal Cue:</strong> Temperature must pass &gt;85°C to pasteurise wild yeasts and fully dissolve mango protopectin.
+                            💡 <strong>Thermal Target:</strong> Heat past 85°C to pasteurise wild yeasts and soften the mango pectin.
                         </div>
                     </li>
                     <li class="step-item">
-                        <div class="step-title" data-i18n="step3_title">The Rustic In-Pot Immersion Pulse</div>
+                        <div class="step-title" data-i18n="step3_title">Stick-Blend to Sweet-Chilli Consistency</div>
                         <div class="step-text" data-i18n="step3_text">
-                            Submerge your immersion blender to the bottom of the pot. Pulse in short 3-second bursts, moving the wand around until the mango and peppers coalesce into a thick, glossy, velvety sauce with visible ruby chilli flecks. Test texture: it should coat a spatula like a classic French sauce (<em>nappe</em>) and self-level without ribboning.
+                            Submerge an immersion blender to the bottom of the pot. Pulse in short 3-second bursts until you get a glossy, cohesive sauce with visible red chilli flecks. It should coat a spatula and flow like a good store-bought sweet & sour chilli sauce. Do not dilute—it thickens further as it cools.
                         </div>
                         <div class="cue-box" data-i18n-html="step3_cue">
-                            🛑 <strong>Rheology Check:</strong> Do not over-reduce or dilute. The sauce will thicken by another 20–30% upon cooling.
+                            🛑 <strong>Consistency Check:</strong> If droplets melt smoothly back into the sauce without leaving mounds, kill the heat.
                         </div>
                     </li>
                     <li class="step-item">
-                        <div class="step-title" data-i18n="step4_title">The Maple & Cocoa Mole Climax</div>
+                        <div class="step-title" data-i18n="step4_title">Whisk in Maple & Cocoa Slurry</div>
                         <div class="step-text" data-i18n="step4_text">
-                            Stir in 3 generous tablespoons of pure dark maple syrup. Next, scoop 2–3 tablespoons of hot sauce into a small ramekin, whisk in 1 level teaspoon of Dutch cocoa powder until silky smooth, and pour the dark slurry back into the pot. Simmer gently for 2 minutes to homogenize.
+                            Stir in 3 tbsp pure dark maple syrup. Scoop 2–3 tbsp of hot sauce into a small cup, whisk in 1 regular tsp of Dutch cocoa powder until smooth, then pour it back into the pot. Simmer on low for 60 seconds while stirring. Taste test on a cooled spoon.
                         </div>
                         <div class="cue-box" data-i18n-html="step4_cue">
-                            ✨ <strong>The Epiphany Moment:</strong> The bitter cocoa acts as a dark contrast floor, retro-nasally unlocking hidden sweetness and banishing any lingering sting.
+                            ✨ <strong>The Taste Shift:</strong> The bitter cocoa creates a dark contrast floor, cutting the sharp acid and instantly unleashing hidden fruit sweetness.
                         </div>
                     </li>
                     <li class="step-item">
-                        <div class="step-title" data-i18n="step5_title">Plastisol Vacuum Canning (Wide-Mouth Jars)</div>
+                        <div class="step-title" data-i18n="step5_title">Jar Hot & Seal</div>
                         <div class="step-text" data-i18n="step5_text">
-                            Ladle the simmering sauce (&gt;80°C) into clean, pre-warmed glass preserve jars using a funnel, leaving 1 cm headspace. Wipe the rims spotless with a paper towel. Screw metal lids fingertip-tight and invert jars upside down for 60 seconds to pasteurise the lid gaskets. Flip upright and allow to cool undisturbed.
+                            Ladle hot sauce (&gt;80°C) into clean, warm glass jars, leaving 1 cm headspace. Wipe the rims spotless with a paper towel. Screw metal lids on tight and invert jars for 60 seconds to pasteurise the seal. Flip upright to cool.
                         </div>
                         <div class="cue-box" data-i18n-html="step5_cue">
-                            🔊 <strong>Auditory Check:</strong> Listen for the metallic "pop/ping" as the vacuum draws the lid button down tight.
+                            🔊 <strong>Auditory Check:</strong> Listen for the metallic "pop" as the cooling vacuum pulls the lid button down tight.
                         </div>
                     </li>
                 </ol>
@@ -929,35 +896,33 @@
 
             <!-- CULINARY SCIENCE & BIOCHEMISTRY -->
             <section class="section-card">
-                <h2 data-i18n="sec_science_title">🧪 Culinary Physics & Neurobiology</h2>
+                <h2 data-i18n="sec_science_title">🧪 The Food Science (Why It Works)</h2>
 
                 <div class="callout-box amber">
-                    <div class="callout-title" data-i18n="sci1_title">🛡️ The Lipophilic Shield & TRPV1 Pain-Gating</div>
+                    <div class="callout-title" data-i18n="sci1_title">🛡️ 1. Why It Doesn't Sting (The Lipid Shield)</div>
                     <div class="callout-text" data-i18n-html="sci1_body">
-                        Capsaicin is strongly hydrophobic and lipophilic (\(\log K_{\text{ow}} \approx 4.0\)). Water-thin hot sauces allow free capsaicin to bind immediately to lingual mucosal TRPV1 receptors, firing acute needle-prick pain signals. Emulsifying 1 tbsp of peanut oil with Palmer mango pectin forms microscopic lipid droplets that enrobe capsaicin molecules. Combined with gingerols, this creates a slow oral transit time that radiates warmth across the entire palate instead of stinging the throat.
+                        Capsaicin is fat-soluble. In watery vinegar sauces, free capsaicin hits tongue pain receptors immediately like needle pricks. Sweating aromatics in 1 tbsp oil and stick-blending with mango pectin creates microscopic droplets that coat the tongue, turning a sharp sting into a broad, slow-blooming warmth.
                     </div>
                 </div>
 
                 <div class="callout-box chocolate">
-                    <div class="callout-title" data-i18n="sci2_title">🍫 The "Napoli" Cacao Paradox (Why Bitter Made It Sweeter)</div>
+                    <div class="callout-title" data-i18n="sci2_title">🍫 2. The Cacao Trick (Why Bitter Made It Sweeter)</div>
                     <div class="callout-text" data-i18n-html="sci2_body">
-                        • <strong>Odor-Induced Sweetness Enhancement (OISE):</strong> Roasted cacao volatiles (alkylpyrazines, phenethyl alcohol) retro-nasally stimulate brain circuits hardwired to chocolate, releasing dopamine-coupled sweetness perception without sugar.<br>
-                        • <strong>High Dynamic Range (HDR) Floor:</strong> Bitter theobromine and tannins create a deep acoustic "bass floor", allowing the floral sugars of mango and maple to project with high contrast.<br>
-                        • <strong>Alkaline De-masking:</strong> Dutch cocoa is alkalized (\(\text{pH } 7.2\text{--}8.0\)). It neutralizes harsh free \(H^+\) ions and masks shrill acid peaks, liberating TAS1R2/TAS1R3 sweet receptors from acid suppression.
+                        Bitter alkalized cocoa does two things: it neutralizes sharp acid spikes that numb your sweet taste buds, and it gives your palate a dark contrast floor. Against that dark base, your brain immediately notices the fruit sugars that were already there, making the sauce taste instantly sweeter without added sugar.
                     </div>
                 </div>
 
                 <div class="callout-box green">
-                    <div class="callout-title" data-i18n="sci3_title">🏺 Preservation Thermodynamics & Multi-Acid Floor</div>
+                    <div class="callout-title" data-i18n="sci3_title">🏺 3. Shelf-Stability Guarantee (pH &lt; 3.4)</div>
                     <div class="callout-text" data-i18n-html="sci3_body">
-                        Combining 2-year lactic acid, apple cider vinegar (acetic), and fresh limes (citric/malic) establishes a stable equilibrium \(\text{pH} < 3.4\)—far below the 4.6 botulinum threshold and 3.8 spoilage limit. Hot-packing at \(\ge 82^\circ\text{C}\) achieves complete thermal destruction of vegetative yeasts and molds within seconds. Headspace steam contraction creates a commercial-grade hermetic vacuum seal inside metal plastisol lids.
+                        Lactic acid from the 2-year ferment, acetic acid from vinegar, and citric acid from limes drop the pH well below 3.4 (the safe preservation ceiling is 4.6). Bottled hot into jars with metal plastisol lids, the cooling steam pulls a commercial vacuum seal, keeping unopened jars fresh in the cupboard for over a year.
                     </div>
                 </div>
             </section>
 
             <!-- STORAGE & SHELF LIFE -->
             <section class="section-card">
-                <h2 data-i18n="sec_storage_title">📦 Storage & Shelf-Life Matrix</h2>
+                <h2 data-i18n="sec_storage_title">📦 Storage & Shelf Life</h2>
                 <table class="reheat-table">
                     <thead>
                         <tr>
@@ -974,13 +939,13 @@
                         </tr>
                         <tr>
                             <td data-i18n="row2_state"><strong>Opened Jar</strong></td>
-                            <td data-i18n="row2_cond">Refrigerated (&le;4°C)</td>
-                            <td data-i18n="row2_life"><strong>4–6 Months</strong> (Use clean spoon every time)</td>
+                            <td data-i18n="row2_cond">Refrigerated (≤4°C)</td>
+                            <td data-i18n="row2_life"><strong>4–6 Months</strong> (Use a clean spoon each time)</td>
                         </tr>
                         <tr>
                             <td data-i18n="row3_state"><strong>Frozen Backup</strong></td>
-                            <td data-i18n="row3_cond">Freezer-safe container (-18°C)</td>
-                            <td data-i18n="row3_life"><strong>2+ Years</strong> (Pectin matrix preserves emulsion)</td>
+                            <td data-i18n="row3_cond">Freezer container (-18°C)</td>
+                            <td data-i18n="row3_life"><strong>2+ Years</strong> (Pectin prevents water separation)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1009,71 +974,71 @@
             nav_link_napoli: '🍫 Mango Tango',
             nav_link_about: 'About',
             badge_heat: '🔥 Slow-Blooming Heat (Zero Sting)',
-            badge_mole: '🍫 5th Taste: Mole Bittersweet Depth',
-            badge_canning: '🏺 100% Shelf-Stable Vacuum Canning',
+            badge_mole: '🍫 Mexican Mole Depth',
+            badge_canning: '🏺 12+ Months Shelf-Stable',
             hero_title: 'The "Chocolate Mango Tango" 🍫 🥭 💃🏻',
-            hero_subtitle: 'Salsa „Chocolate Mango Tango” — 2-Year Aged Ferment, Smoky Habanero & The Napoli Epiphany',
-            hero_desc: 'Most commercial hot sauces sting like needle-pricks because unbound capsaicin rides on sharp, watery acetic acid. This artisan formula pairs a <strong>2-year aged red chilli ferment</strong> and fresh garden <strong>chocolate habanero</strong> with sweet <strong>Palmer mango pectin</strong> and an unrefined lipid shield. The secret revelation: a whisper of <strong>Dutch dark cocoa</strong> unlocks deep Mexican mole pyrazines and magically multiplies perceived sweetness. <em>"See Naples and die"</em>—the ultimate universal condiment.',
+            hero_subtitle: '2-Year Fermented Cayenne, Fresh Chocolate Habanero & The Cacao Epiphany',
+            hero_desc: 'A slow-blooming table sauce engineered for broad, mouth-coating warmth with zero throat sting. Combines <strong>2-year aged red cayennes</strong>, fresh <strong>chocolate habanero</strong>, and sweet <strong>Palmer mango</strong>, finished with cocoa powder to unlock rich Mexican mole depth and bring out natural fruit sweetness.',
             stat_yield_val: '~900 ml',
-            stat_yield_lbl: 'Total Batch Yield',
-            stat_heat_val: '4.5–6.5k',
-            stat_heat_lbl: 'Est. Scoville (Radiant)',
+            stat_yield_lbl: 'Batch Yield',
+            stat_heat_val: '5–8k',
+            stat_heat_lbl: 'Scoville (Warm Glow)',
+            stat_texture_val: 'Sweet-Chilli',
+            stat_texture_lbl: 'Glossy Body',
             stat_ph_val: '< 3.4',
             stat_ph_lbl: 'Preservation pH',
             stat_shelf_val: '12+ Mo',
-            stat_shelf_lbl: 'Unopened Shelf Life',
-            stat_texture_val: 'Nappe',
-            stat_texture_lbl: 'Pillowy Texture',
+            stat_shelf_lbl: 'Pantry Jars',
             stat_cals_val: '~13 kcal',
             stat_cals_lbl: 'Per 1 Tbsp (15g)',
             sec_ingredients_title: '🛒 Ingredients Checklist',
             btn_clear_checks: 'Reset',
-            sec_ingredients_sub: 'Scaled for ~900 ml finished sauce (3–4 preserve jars). Click any item to check it off.',
+            sec_ingredients_sub: 'Scaled for ~900 ml sauce (~4 medium preserve jars). Click any item to check it off.',
             layer1_title: '1. The Ferment & Garden Heat',
             ing_chillies_amt: '500–600 ml jar',
-            ing_chillies_name: '2-Year Lacto-Fermented Red Chillies',
-            ing_chillies_note: 'Strained; all natural sugars converted to aged lactic acid & pepper esters',
+            ing_chillies_name: '2-Year Fermented Red Cayennes',
+            ing_chillies_note: 'Strained; natural sugars fully fermented into aged lactic tang',
             ing_brine_amt: '100–120 ml',
-            ing_brine_name: 'Reserved Fermented Pepper Brine',
-            ing_brine_note: 'Packed with umami, salinity, and smooth lactic acidity',
+            ing_brine_name: 'Reserved Pepper Brine',
+            ing_brine_note: 'Savoury, salty, smooth lactic acid base',
             ing_habanero_amt: '1 whole pod',
             ing_habanero_name: 'Fresh Garden Chocolate Habanero',
-            ing_habanero_note: 'Capsicum chinense — smoky dark-fruit aroma and delayed blooming heat',
-            layer2_title: '2. Fruit, Pectin & Lipid Shield',
+            ing_habanero_note: 'Finely diced; smoky aroma with a slow creeper burn',
+            layer2_title: '2. Fruit, Pectin & Carrier Fat',
             ing_mango_amt: '2 large',
             ing_mango_name: 'Ripe Palmer Mangoes (~380–400g flesh)',
-            ing_mango_note: 'Low-fiber, slender-seed variety; supplies velvety soluble pectin',
+            ing_mango_note: 'Low-fiber variety; provides a thick, glossy body',
             ing_oil_amt: '1 tbsp (15 ml)',
-            ing_oil_name: 'Peanut Oil (or Extra Virgin Olive Oil)',
-            ing_oil_note: 'Forms lipophilic emulsion to trap capsaicin and eliminate throat sting',
-            layer3_title: '3. Aromatics & Multi-Acid Bridge',
+            ing_oil_name: 'Peanut Oil (or EVOO)',
+            ing_oil_note: 'Carrier fat; coats the palate to eliminate capsaicin sting',
+            layer3_title: '3. Aromatics & Acid Bridge',
             ing_garlic_amt: '5–6 cloves',
-            ing_garlic_name: 'Fresh Garlic (finely minced)',
-            ing_garlic_note: 'Sweated translucent without browning for savory allium depth',
+            ing_garlic_name: 'Fresh Garlic (minced)',
+            ing_garlic_note: 'Sweated translucent without browning for sweet savoury depth',
             ing_ginger_amt: '25–30 g',
             ing_ginger_name: 'Fresh Ginger (finely grated)',
-            ing_ginger_note: 'Gingerols & shogaols pre-warm the palate in synergy with capsaicin',
+            ing_ginger_note: 'Diffuses warmth evenly across the whole mouth',
             ing_limes_amt: '2 whole',
-            ing_limes_name: 'Fresh Juicy Limes (juiced, ~35–40 ml)',
-            ing_limes_note: 'Citric & malic acid top-note brightness',
+            ing_limes_name: 'Fresh Limes (juiced, ~35–40 ml)',
+            ing_limes_note: 'Crisp citrus brightness',
             ing_acv_amt: '~100 ml + splash',
-            ing_acv_name: 'Raw Apple Cider Vinegar (5% Acidity)',
-            ing_acv_note: 'Soft, fruity acetic acid backbone; ensures shelf-stability',
-            layer4_title: '4. Dynamic Sweetness & Mole Finisher',
+            ing_acv_name: 'Apple Cider Vinegar (5% Acidity)',
+            ing_acv_note: 'Soft fruity acid base for long-term shelf stability',
+            layer4_title: '4. Sweetness & The Cacao Finisher',
             ing_demerara_amt: '4 heaping tsp',
             ing_demerara_name: 'Demerara Cane Sugar (~22 g)',
-            ing_demerara_note: 'Caramelized molasses undertones to buffer initial acid spike',
+            ing_demerara_note: 'Rounds off the initial sharp acid spike',
             ing_maple_amt: '3 generous tbsp',
             ing_maple_name: 'Pure Dark Maple Syrup (~45–50 ml)',
-            ing_maple_note: 'Bioavailable dissolved sweetness; bridges habanero smokiness',
-            ing_cacao_amt: '1 level tsp',
-            ing_cacao_name: 'Dutch-Processed Dark Cocoa Powder',
-            ing_cacao_note: 'The Mole Epiphany: alkalized pyrazines & bitter theobromine unlock HDR sweetness',
+            ing_maple_note: 'Dissolved sweetness; bridges into smoky habanero',
+            ing_cacao_amt: '1 regular tsp',
+            ing_cacao_name: 'Dutch Dark Cocoa Powder (~4–5 g)',
+            ing_cacao_note: 'The secret weapon: cuts harsh acid, unlocks fruit sweetness',
             ing_salt_amt: '1/2 tsp',
             ing_salt_name: 'Fine Sea Salt (to taste)',
-            ing_salt_note: 'Suppresses sourness; rounds off tongue astringency',
+            ing_salt_note: 'Suppresses sourness and ties the flavours together',
             sec_nutrition_title: '📊 Macro Ledger & Energy Breakdown',
-            nutrition_intro: 'Precision nutritional accounting for tracking logs. Concentrated artisanal flavor with negligible caloric load.',
+            nutrition_intro: 'Precision nutritional accounting for tracking logs. High flavor impact with negligible calories.',
             nutr_metric: 'Metric',
             nutr_1tbsp: '1 Tbsp (15g)',
             nutr_100g: 'Per 100g',
@@ -1085,31 +1050,31 @@
             macro_lbl_sugars: '— of which Sugars',
             macro_lbl_fiber: '— Dietary Fiber',
             macro_lbl_salt: 'Salt (Sodium)',
-            nutrition_note: '💡 <strong>Deficit-Friendly:</strong> At just ~13 kcal and 0.3g fat per tablespoon, you can dose this generously on daily chicken, eggs, and rice bowls without making a dent in your weekly caloric budget.',
+            nutrition_note: '💡 <strong>Deficit-Friendly:</strong> At ~13 kcal and 0.3g fat per tablespoon, dose this generously on daily chicken, eggs, and rice bowls without impacting your weekly cut budget.',
             sec_method_title: '🔥 Step-by-Step Cooking Protocol',
-            step1_title: 'Decant & Sweat the Lipophilic Foundation',
-            step1_text: 'Strain the 2-year fermented chillies over a bowl, separating the solids from the brine. In a wide pot, heat 1 tbsp peanut oil over medium-low heat. Add the minced garlic and grated ginger with a small pinch of salt. Sweat gently for 2–3 minutes until fragrant and translucent. Do not allow them to brown.',
-            step1_cue: '💡 <strong>Visual Cue:</strong> Garlic should look soft and glossy; sizzling should be gentle with zero browning.',
-            step2_title: 'The Fruit, Pepper & Multi-Acid Simmer',
-            step2_text: 'Toss in the strained fermented red chillies, diced fresh chocolate habanero, and diced Palmer mango. Pour in 100 ml apple cider vinegar, 100 ml reserved brine, juice of both limes, and 4 heaping tsp demerara sugar. Bring to a gentle boil, then simmer on low covered for 10–12 minutes until the mango and habanero are completely tender.',
-            step2_cue: '💡 <strong>Thermal Cue:</strong> Temperature must pass &gt;85°C to pasteurise wild yeasts and fully dissolve mango protopectin.',
-            step3_title: 'The Rustic In-Pot Immersion Pulse',
-            step3_text: 'Submerge your immersion blender to the bottom of the pot. Pulse in short 3-second bursts, moving the wand around until the mango and peppers coalesce into a thick, glossy, velvety sauce with visible ruby chilli flecks. Test texture: it should coat a spatula like a classic French sauce (<em>nappe</em>) and self-level without ribboning.',
-            step3_cue: '🛑 <strong>Rheology Check:</strong> Do not over-reduce or dilute. The sauce will thicken by another 20–30% upon cooling.',
-            step4_title: 'The Maple & Cocoa Mole Climax',
-            step4_text: 'Stir in 3 generous tablespoons of pure dark maple syrup. Next, scoop 2–3 tablespoons of hot sauce into a small ramekin, whisk in 1 level teaspoon of Dutch cocoa powder until silky smooth, and pour the dark slurry back into the pot. Simmer gently for 2 minutes to homogenize.',
-            step4_cue: '✨ <strong>The Epiphany Moment:</strong> The bitter cocoa acts as a dark contrast floor, retro-nasally unlocking hidden sweetness and banishing any lingering sting.',
-            step5_title: 'Plastisol Vacuum Canning (Wide-Mouth Jars)',
-            step5_text: 'Ladle the simmering sauce (&gt;80°C) into clean, pre-warmed glass preserve jars using a funnel, leaving 1 cm headspace. Wipe the rims spotless with a paper towel. Screw metal lids fingertip-tight and invert jars upside down for 60 seconds to pasteurise the lid gaskets. Flip upright and allow to cool undisturbed.',
-            step5_cue: '🔊 <strong>Auditory Check:</strong> Listen for the metallic "pop/ping" as the vacuum draws the lid button down tight.',
-            sec_science_title: '🧪 Culinary Physics & Neurobiology',
-            sci1_title: '🛡️ The Lipophilic Shield & TRPV1 Pain-Gating',
-            sci1_body: 'Capsaicin is strongly hydrophobic and lipophilic (log Kow ≈ 4.0). Water-thin hot sauces allow free capsaicin to bind immediately to lingual mucosal TRPV1 receptors, firing acute needle-prick pain signals. Emulsifying 1 tbsp of peanut oil with Palmer mango pectin forms microscopic lipid droplets that enrobe capsaicin molecules. Combined with gingerols, this creates a slow oral transit time that radiates warmth across the entire palate instead of stinging the throat.',
-            sci2_title: '🍫 The "Napoli" Cacao Paradox (Why Bitter Made It Sweeter)',
-            sci2_body: '• <strong>Odor-Induced Sweetness Enhancement (OISE):</strong> Roasted cacao volatiles (alkylpyrazines, phenethyl alcohol) retro-nasally stimulate brain circuits hardwired to chocolate, releasing dopamine-coupled sweetness perception without sugar.<br>• <strong>High Dynamic Range (HDR) Floor:</strong> Bitter theobromine and tannins create a deep acoustic "bass floor", allowing the floral sugars of mango and maple to project with high contrast.<br>• <strong>Alkaline De-masking:</strong> Dutch cocoa is alkalized (pH 7.2–8.0). It neutralizes harsh free H+ ions and masks shrill acid peaks, liberating TAS1R2/TAS1R3 sweet receptors from acid suppression.',
-            sci3_title: '🏺 Preservation Thermodynamics & Multi-Acid Floor',
-            sci3_body: 'Combining 2-year lactic acid, apple cider vinegar (acetic), and fresh limes (citric/malic) establishes a stable equilibrium pH < 3.4—far below the 4.6 botulinum threshold and 3.8 spoilage limit. Hot-packing at ≥82°C achieves complete thermal destruction of vegetative yeasts and molds within seconds. Headspace steam contraction creates a commercial-grade hermetic vacuum seal inside metal plastisol lids.',
-            sec_storage_title: '📦 Storage & Shelf-Life Matrix',
+            step1_title: 'Sweat Garlic & Ginger in Oil',
+            step1_text: 'Strain the 2-year fermented cayennes, keeping the brine. Heat 1 tbsp peanut oil in a wide pot over medium-low heat. Sweat the minced garlic and grated ginger with a pinch of salt for 2–3 minutes until soft and fragrant. Do not brown.',
+            step1_cue: '💡 <strong>Visual Cue:</strong> Garlic should look soft and glossy; keep sizzling very gentle.',
+            step2_title: 'Simmer Cayennes, Mango & Vinegar',
+            step2_text: 'Add the strained cayennes, diced chocolate habanero, and diced mango. Pour in 100 ml apple cider vinegar, 100 ml brine, lime juice, and 4 heaping tsp demerara sugar. Bring to a gentle boil, cover partially, and simmer on low for 10–12 minutes until the mango and habanero are completely tender.',
+            step2_cue: '💡 <strong>Thermal Target:</strong> Heat past 85°C to pasteurise wild yeasts and soften the mango pectin.',
+            step3_title: 'Stick-Blend to Sweet-Chilli Consistency',
+            step3_text: 'Submerge an immersion blender to the bottom of the pot. Pulse in short 3-second bursts until you get a glossy, cohesive sauce with visible red chilli flecks. It should coat a spatula and flow like a good store-bought sweet & sour chilli sauce. Do not dilute—it thickens further as it cools.',
+            step3_cue: '🛑 <strong>Consistency Check:</strong> If droplets melt smoothly back into the sauce without leaving mounds, kill the heat.',
+            step4_title: 'Whisk in Maple & Cocoa Slurry',
+            step4_text: 'Stir in 3 tbsp pure dark maple syrup. Scoop 2–3 tbsp of hot sauce into a small cup, whisk in 1 regular tsp of Dutch cocoa powder until smooth, then pour it back into the pot. Simmer on low for 60 seconds while stirring. Taste test on a cooled spoon.',
+            step4_cue: '✨ <strong>The Taste Shift:</strong> The bitter cocoa creates a dark contrast floor, cutting the sharp acid and instantly unleashing hidden fruit sweetness.',
+            step5_title: 'Jar Hot & Seal',
+            step5_text: 'Ladle hot sauce (>80°C) into clean, warm glass jars, leaving 1 cm headspace. Wipe the rims spotless with a paper towel. Screw metal lids on tight and invert jars for 60 seconds to pasteurise the seal. Flip upright to cool.',
+            step5_cue: '🔊 <strong>Auditory Check:</strong> Listen for the metallic "pop" as the cooling vacuum pulls the lid button down tight.',
+            sec_science_title: '🧪 The Food Science (Why It Works)',
+            sci1_title: '🛡️ 1. Why It Doesn't Sting (The Lipid Shield)',
+            sci1_body: 'Capsaicin is fat-soluble. In watery vinegar sauces, free capsaicin hits tongue pain receptors immediately like needle pricks. Sweating aromatics in 1 tbsp oil and stick-blending with mango pectin creates microscopic droplets that coat the tongue, turning a sharp sting into a broad, slow-blooming warmth.',
+            sci2_title: '🍫 2. The Cacao Trick (Why Bitter Made It Sweeter)',
+            sci2_body: 'Bitter alkalized cocoa does two things: it neutralizes sharp acid spikes that numb your sweet taste buds, and it gives your palate a dark contrast floor. Against that dark base, your brain immediately notices the fruit sugars that were already there, making the sauce taste instantly sweeter without added sugar.',
+            sci3_title: '🏺 3. Shelf-Stability Guarantee (pH < 3.4)',
+            sci3_body: 'Lactic acid from the 2-year ferment, acetic acid from vinegar, and citric acid from limes drop the pH well below 3.4 (the safe preservation ceiling is 4.6). Bottled hot into jars with metal plastisol lids, the cooling steam pulls a commercial vacuum seal, keeping unopened jars fresh in the cupboard for over a year.',
+            sec_storage_title: '📦 Storage & Shelf Life',
             th_state: 'State',
             th_condition: 'Condition',
             th_lifespan: 'Expected Lifespan',
@@ -1118,10 +1083,10 @@
             row1_life: '<strong>12+ Months</strong> (Flavor deepens over time)',
             row2_state: '<strong>Opened Jar</strong>',
             row2_cond: 'Refrigerated (≤4°C)',
-            row2_life: '<strong>4–6 Months</strong> (Use clean spoon every time)',
+            row2_life: '<strong>4–6 Months</strong> (Use a clean spoon each time)',
             row3_state: '<strong>Frozen Backup</strong>',
-            row3_cond: 'Freezer-safe container (-18°C)',
-            row3_life: '<strong>2+ Years</strong> (Pectin matrix preserves emulsion)',
+            row3_cond: 'Freezer container (-18°C)',
+            row3_life: '<strong>2+ Years</strong> (Pectin prevents water separation)',
             footer_text: 'Open-Source Culinary Engineering • 2-Year Aged Ferments, Precision Lipids & Mole Chemistry',
             footer_back: 'Back to Cookbook Home →'
         },
@@ -1134,71 +1099,71 @@
             nav_link_napoli: '🍫 Mango Tango',
             nav_link_about: 'O projekcie',
             badge_heat: '🔥 Promieniste Ciepło (Zero Pieczenia)',
-            badge_mole: '🍫 5. Smak: Głębia Mole & Cacao',
-            badge_canning: '🏺 100% Pasteryzacja Próżniowa w Słoikach',
+            badge_mole: '🍫 Głębia Meksykańskiego Mole',
+            badge_canning: '🏺 Trwałość 12+ Miesięcy w Spiżarni',
             hero_title: 'Salsa „Chocolate Mango Tango” 🍫 🥭 💃🏻',
-            hero_subtitle: 'Salsa „Chocolate Mango Tango” — 2-letni Ferment Lakto, Dymny Chocolate Habanero i Epifania z Neapolu',
-            hero_desc: 'Większość sklepowych ostrych sosów nieprzyjemnie kłuje w gardło niczym szpilki, ponieważ wolna kapsaicyna uderza w śluzówkę w rzadkim, octowym roztworze. Ta rzemieślnicza receptura łączy <strong>2-letni ferment z czerwonych papryczek chili</strong> oraz świeży ogrodowy <strong>chocolate habanero</strong> ze słodkimi <strong>pektynami mango Palmer</strong> i lipidową tarczą ochronną. Kulinarna epifania: szczypta <strong>ciemnego holenderskiego kakao</strong> uwalnia głębokie pirazyny meksykańskiego mole i w magiczny sposób zwielokrotnia odczuwalną słodycz. <em>„Zobaczyć Neapol i umrzeć”</em> — sos absolutnie uniwersalny.',
+            hero_subtitle: '2-letnie kiszone cayenne, ogrodowy chocolate habanero i kakaowa epifania',
+            hero_desc: 'Sos stołowy o głębokim, otulającym cieple bez pieczenia w gardle. Połączenie <strong>2-letnich kiszonych papryczek cayenne</strong>, świeżego <strong>chocolate habanero</strong> z ogrodu i dojrzałego <strong>mango Palmer</strong>, wykończone kakao, które nadaje głębi meksykańskiego mole i wydobywa naturalną słodycz owoców.',
             stat_yield_val: '~900 ml',
             stat_yield_lbl: 'Objętość partii',
-            stat_heat_val: '4.5–6.5k',
-            stat_heat_lbl: 'Szacowane SHU (Ciepło)',
+            stat_heat_val: '5–8k',
+            stat_heat_lbl: 'Scoville (Ciepły Glow)',
+            stat_texture_val: 'Sweet-Chilli',
+            stat_texture_lbl: 'Błyszcząca Masa',
             stat_ph_val: '< 3.4',
             stat_ph_lbl: 'pH Konserwacji',
             stat_shelf_val: '12+ Mies.',
-            stat_shelf_lbl: 'Trwałość (zamknięte)',
-            stat_texture_val: 'Nappe',
-            stat_texture_lbl: 'Aksamitna Tekstura',
+            stat_shelf_lbl: 'Spiżarnia (zamknięte)',
             stat_cals_val: '~13 kcal',
             stat_cals_lbl: 'W 1 Łyżce (15g)',
             sec_ingredients_title: '🛒 Lista Składników',
             btn_clear_checks: 'Zresetuj',
-            sec_ingredients_sub: 'Partia na ~900 ml gotowej salsy (3–4 słoiki). Kliknij dowolny składnik, aby go odhaczyć.',
+            sec_ingredients_sub: 'Partia na ~900 ml sosu (~4 słoiki). Kliknij dowolny składnik, aby go odhaczyć.',
             layer1_title: '1. Baza Fermentacyjna i Ogrodowy Ogień',
             ing_chillies_amt: 'Słoik 500–600 ml',
-            ing_chillies_name: '2-letnie Czerwone Chili Kiszone (Lakto-ferment)',
-            ing_chillies_note: 'Odcedzone; cukry całkowicie zmetabolizowane w kwas mlekowy i dojrzałe estry',
+            ing_chillies_name: '2-letnie Kiszone Papryczki Cayenne',
+            ing_chillies_note: 'Odcedzone; cukry w pełni zmetabolizowane w kwas mlekowy',
             ing_brine_amt: '100–120 ml',
             ing_brine_name: 'Odsączona Solanka z Fermentu',
-            ing_brine_note: 'Skoncentrowane umami, naturalna słoność i łagodny kwas mlekowy',
+            ing_brine_note: 'Wytrawne umami, naturalna słoność i kwas mlekowy',
             ing_habanero_amt: '1 cała papryczka',
             ing_habanero_name: 'Świeży Ogrodowy Chocolate Habanero',
-            ing_habanero_note: 'Capsicum chinense — aromat ciemnych owoców, dymność i falujące ciepło',
-            layer2_title: '2. Owoce, Pektyny i Tarcza Lipidowa',
+            ing_habanero_note: 'Drobno posiekany; dymny aromat i narastające ciepło',
+            layer2_title: '2. Owoce, Pektyny i Nośnik Tłuszczowy',
             ing_mango_amt: '2 duże sztuki',
             ing_mango_name: 'Dojrzałe Mango odmiany Palmer (~380–400g miąższu)',
-            ing_mango_note: 'Małowłóknista odmiana o małej pestce; dostarcza aksamitne pektyny rozpuszczalne',
+            ing_mango_note: 'Małowłóknista odmiana dająca gęstą, lśniącą strukturę',
             ing_oil_amt: '1 łyżka (15 ml)',
             ing_oil_name: 'Olej z Orzeszków Ziemnych (lub Oliwa EVOO)',
-            ing_oil_note: 'Tworzy emulsję wiążącą kapsaicynę i eliminującą pieczenie w gardle',
+            ing_oil_note: 'Tłuszcz osłaniający podniebienie i gaszący ostre pieczenie',
             layer3_title: '3. Aromaty i Most Kwasowy',
             ing_garlic_amt: '5–6 ząbków',
-            ing_garlic_name: 'Świeży Czosnek (drobno posiekany)',
-            ing_garlic_note: 'Zeszkolony na oleju bez rumienienia dla słodkiego, czosnkowego umami',
+            ing_garlic_name: 'Świeży Czosnek (posiekany)',
+            ing_garlic_note: 'Zeszkolony bez rumienienia dla słodkiego, czosnkowego aromatu',
             ing_ginger_amt: '25–30 g',
-            ing_ginger_name: 'Świeży Imbir (drobno starty)',
-            ing_ginger_note: 'Gingerole i szogaole synergicznie rozpraszają ciepło po całym podniebieniu',
+            ing_ginger_name: 'Świeży Imbir (starty)',
+            ing_ginger_note: 'Rozprasza ciepło równomiernie po całej jamie ustnej',
             ing_limes_amt: '2 całe sztuki',
-            ing_limes_name: 'Świeże Soczyste Limonki (wyciśnięty sok, ~35–40 ml)',
-            ing_limes_note: 'Cytrusowa świeżość kwasu cytrynowego i jabłkowego',
+            ing_limes_name: 'Świeże Limonki (wyciśnięty sok, ~35–40 ml)',
+            ing_limes_note: 'Świeża, cytrusowa kwasowość',
             ing_acv_amt: '~100 ml + chlust',
-            ing_acv_name: 'Żywy Ocet Jabłkowy (ACV 5%)',
-            ing_acv_note: 'Łagodna baza kwasu octowego gwarantująca stabilność mikrobiologiczną',
-            layer4_title: '4. Dynamiczna Słodycz i Finał Mole',
+            ing_acv_name: 'Ocet Jabłkowy (ACV 5%)',
+            ing_acv_note: 'Łagodny ocet owocowy zapewniający trwałość w spiżarni',
+            layer4_title: '4. Słodycz i Wykończenie Cacao',
             ing_demerara_amt: '4 czubate łyżeczki',
             ing_demerara_name: 'Cukier Trzcinowy Demerara (~22 g)',
-            ing_demerara_note: 'Karmelowo-melasowe tło łagodzące początkowy pik kwasowy',
+            ing_demerara_note: 'Łagodzi początkowy pik kwasowy',
             ing_maple_amt: '3 solidne łyżki',
             ing_maple_name: 'Czysty Ciemny Syrop Klonowy (~45–50 ml)',
-            ing_maple_note: 'Płynna, biodostępna słodycz idealnie łącząca się z dymnością habanero',
-            ing_cacao_amt: '1 płaska łyżeczka',
-            ing_cacao_name: 'Ciemne Holenderskie Kakao (Alkalizowane)',
-            ing_cacao_note: 'Epifania Mole: alkalizowane pirazyny i gorzka teobromina uwalniają słodycz HDR',
+            ing_maple_note: 'Płynna słodycz idealnie łącząca się z dymnym habanero',
+            ing_cacao_amt: '1 zwykła łyżeczka',
+            ing_cacao_name: 'Ciemne Kakao Holenderskie (~4–5 g)',
+            ing_cacao_note: 'Tajny składnik: gasi kwas i uwalnia ukrytą słodycz owoców',
             ing_salt_amt: '1/2 łyżeczki',
             ing_salt_name: 'Drobna Sól Morska (do smaku)',
-            ing_salt_note: 'Tłumi cierpkość i zaokrągla profil smakowy na języku',
+            ing_salt_note: 'Tłumi cierpkość i spina wszystkie smaki w całość',
             sec_nutrition_title: '📊 Bilans Makroskładników i Wartości Odżywcze',
-            nutrition_intro: 'Precyzyjne rozliczenie makroskładników do dziennika żywieniowego. Potężny ładunek smaku przy znikomym bilansie kalorii.',
+            nutrition_intro: 'Precyzyjne rozliczenie makroskładników do dziennika. Maksimum smaku przy minimalnych kaloriach.',
             nutr_metric: 'Wskaźnik',
             nutr_1tbsp: '1 Łyżka (15g)',
             nutr_100g: 'Na 100g',
@@ -1210,43 +1175,43 @@
             macro_lbl_sugars: '— w tym Cukry',
             macro_lbl_fiber: '— Błonnik pokarmowy',
             macro_lbl_salt: 'Sól (Sód)',
-            nutrition_note: '💡 <strong>Przyjazny w Redukcji:</strong> Zaledwie ~13 kcal i 0,3 g tłuszczu w łyżce stołowej pozwala na obfite polewanie drobiu, jajecznicy czy ryżu bez naruszania tygodniowego budżetu kalorycznego.',
+            nutrition_note: '💡 <strong>Przyjazny w Redukcji:</strong> Zaledwie ~13 kcal i 0,3 g tłuszczu w łyżce pozwala na obfite polewanie dań bez naruszania bilansu kalorycznego.',
             sec_method_title: '🔥 Przygotowanie Krok po Kroku',
-            step1_title: 'Odcedzenie i Zeszkolenie Tarczy Lipidowej',
-            step1_text: 'Odcedź 2-letnie kiszone chili na sicie nad miską, oddzielając warzywa od solanki. W szerokim rondlu rozgrzej 1 łyżkę oleju arachidowego na średnio-niskim ogniu. Dodaj posiekany czosnek i starty imbir ze szczyptą soli. Duś delikatnie przez 2–3 minuty, aż zmiękną i uwolnią aromat. Nie pozwól im się przypiec ani zbrązowieć.',
-            step1_cue: '💡 <strong>Wskazówka:</strong> Czosnek ma być szklisty i miękki; smażenie musi być łagodne.',
-            step2_title: 'Dojrzewanie Owoców, Papryki i Kwasów',
-            step2_text: 'Do garnka wrzuć odcedzone chili, posiekanego świeżego chocolate habanero oraz pokrojone w kostkę mango Palmer. Wlej 100 ml octu jabłkowego, 100 ml odlanej solanki, sok z 2 limonek i dodaj 4 czubate łyżeczki cukru demerara. Doprowadź do wrzenia, zmniejsz płomień i gotuj pod uchyloną pokrywką na wolnym ogniu przez 10–12 minut.',
-            step2_cue: '💡 <strong>Temperatura:</strong> Sos musi osiągnąć &gt;85°C, aby spasteryzować dzikie drożdże i rozluźnić protopektyny mango.',
-            step3_title: 'Rustykalne Blendowanie w Garnku (Nappe)',
-            step3_text: 'Zanurz blender ręczny na samo dno garnka. Blenduj krótkimi, 3-sekundowymi pulsami, przesuwając końcówkę, aż mango i papryka połączą się w gęsty, lśniący, aksamitny sos z widocznymi rubinowymi drobinkami chili. Sprawdź konsystencję: sos powinien oblepiać łopatkę niczym francuski sos (nappe) i rozpływać się gładko bez tworzenia kopczyków.',
-            step3_cue: '🛑 <strong>Reologia:</strong> Nie rozcieńczaj ani nie odparowuj za mocno. Po schłodzeniu sos zgęstnieje o kolejne 20–30%.',
-            step4_title: 'Klonowy Finał i Epifania Cacao Mole',
-            step4_text: 'Wlej do garnka 3 solidne łyżki czystego syropu klonowego i wymieszaj. Następnie odlej 2–3 łyżki gorącego sosu do małej miseczki, wsyp 1 płaską łyżeczkę kakao holenderskiego i utrzyj widelcem na gładką, lśniącą pastę. Wlej pastę z powrotem do garnka i gotuj na małym ogniu przez 60 sekund, energicznie mieszając.',
-            step4_cue: '✨ <strong>Moment Epifanii:</strong> Gorzkie nuty kakao budują ciemne tło kontrastowe, które odblokowuje ukrytą słodycz i gasi jakiekolwiek kłucie w gardle.',
-            step5_title: 'Pasteryzacja i Zamykanie Próżniowe w Słoikach',
-            step5_text: 'Przelej gorący sos (&gt;80°C) przez lejek do czystych, wyparzonych i ciepłych słoików, zostawiając 1 cm wolnej przestrzeni od góry. Wytrzyj dokładnie ranty papierowym ręcznikiem. Zakręć mocno metalowe wieczka i postaw słoiki dnem do góry na 60 sekund, aby gorący płyn spasteryzował uszczelkę. Odwróć i zostaw do powolnego ostygnięcia.',
-            step5_cue: '🔊 <strong>Weryfikacja:</strong> Wsłuchaj się w charakterystyczny metaliczny „klik/pop” wieczka oznaczający idealne zaciągnięcie próżni.',
-            sec_science_title: '🧪 Fizyka Kulinarna i Neurobiologia Smaku',
-            sci1_title: '🛡️ Tarcza Lipidowa i Bramkowanie Bólu TRPV1',
-            sci1_body: 'Kapsaicyna jest silnie hydrofobowa i lipofilna (log Kow ≈ 4.0). W rzadkich, wodnisto-octowych sosach wolna kapsaicyna natychmiastowo wiąże się z receptorami bólowymi TRPV1 na śluzówce, wywołując kłucie niczym ukłucie igły. Zemulgowanie 1 łyżki oleju arachidowego z pektynami mango tworzy mikroskopijne micele lipidowe, które otulają cząsteczki kapsaicyny. W połączeniu z gingerolami imbiru wydłuża to czas kontaktu w ustach, dając wrażenie głębokiego, promieniującego ciepła na całym podniebieniu zamiast palenia w gardle.',
-            sci2_title: '🍫 Paradoks Kakao z Neapolu (Dlaczego Gorzkie Zrobiło się Słodsze)',
-            sci2_body: '• <strong>Wzmocnienie Słodyczy Zapachem (OISE):</strong> Lotne związki prażonego kakao (pirazyny, alkohol fenyloetylowy) pobudzają węch retronosowy, aktywując w korze mózgowej ośrodki nagrody przypisane do czekolady — mózg „dopisuje” słodycz bez dodatku cukru.<br>• <strong>Wysoki Zakres Dynamiczny Kontrastu (HDR):</strong> Gorzkie taniny i teobromina tworzą ciemną bazę sensoryczną, na tle której owocowe cukry mango i klonu stają się jaskrawe i wyraziste.<br>• <strong>Alkaliczne Odsłonięcie Receptora:</strong> Kakao holenderskie jest alkalizowane (pH 7.2–8.0). Zobojętnia ono nadmiar wolnych jonów H+ i maskuje piskliwy kwas, uwalniając receptory słodkiego smaku TAS1R2/TAS1R3 z blokady kwasowej.',
-            sci3_title: '🏺 Termodynamika Pasteryzacji i Próżnia Plastisolu',
-            sci3_body: 'Zestawienie 2-letniego kwasu mlekowego, octu jabłkowego oraz limonek ustala pH < 3.4 — znacznie poniżej progu 4.6 dla jadu kiełbasianego i 3.8 dla drobnoustrojów psujących żywność. Nalanie sosu w temp. ≥82°C gwarantuje natychmiastową śmierć wegetatywnych drożdży i pleśni. Kondensacja pary wodnej w przestrzeni nad siewem wytwarza komercyjną próżnię dociskającą wieczko plastisolowe.',
-            sec_storage_title: '📦 Warunki i Trwałość Przechowywania',
+            step1_title: 'Zeszklenie czosnku i imbiru na oleju',
+            step1_text: 'Odcedź kiszone cayenne, zachowując solankę. W szerokim garnku rozgrzej 1 łyżkę oleju arachidowego na średnio-niskim ogniu. Duś posiekany czosnek i starty imbir ze szczyptą soli przez 2–3 minuty, aż zmiękną. Nie przypalaj.',
+            step1_cue: '💡 <strong>Wskazówka:</strong> Czosnek ma być szklisty i miękki; ogień trzymaj na małym poziomie.',
+            step2_title: 'Duszenie cayenne, mango i octu',
+            step2_text: 'Do garnka wrzuć odcedzone cayenne, posiekanego habanero i pokrojone mango. Wlej 100 ml octu jabłkowego, 100 ml solanki, sok z limonek i wsyp 4 czubate łyżeczki cukru demerara. Doprowadź do wrzenia, przykryj uchyloną pokrywką i gotuj na małym ogniu przez 10–12 minut.',
+            step2_cue: '💡 <strong>Temperatura:</strong> Gotuj powyżej 85°C, aby spasteryzować sos i zmiękczyć pektyny mango.',
+            step3_title: 'Zblendowanie na konsystencję sosu słodko-kwaśnego',
+            step3_text: 'Zanurz blender na dno garnka i blenduj krótkimi pulsami po 3 sekundy. Zmiksuj na lśniący, gładki sos z widocznymi drobinkami papryczki. Konsystencja powinna przypominać gęsty, błyszczący sos słodko-kwaśny chilli ze sklepu. Nie rozcieńczaj — sos zgęstnieje po ostygnięciu.',
+            step3_cue: '🛑 <strong>Test spływania:</strong> Krople sosu spadające z łyżki powinny gładko łączyć się z powierzchnią bez tworzenia kopczyków.',
+            step4_title: 'Zahartowanie kakao z syropem klonowym',
+            step4_text: 'Wlej do garnka 3 łyżki syropu klonowego. W kubeczku wymieszaj 2–3 łyżki gorącego sosu z 1 zwykłą łyżeczką kakao na gładką pastę, po czym wlej z powrotem do garnka. Gotuj na małym ogniu przez 60 sekund, mieszając. Spróbuj na ostudzonej łyżce.',
+            step4_cue: '✨ <strong>Zmiana smaku:</strong> Gorzkie kakao neutralizuje ostry kwas i natychmiast uwalnia głęboką słodycz owoców.',
+            step5_title: 'Przepłukanie i zamknięcie słoików na gorąco',
+            step5_text: 'Gorący sos (>80°C) wlej do czystych, ciepłych słoików, zostawiając 1 cm wolnej przestrzeni. Przetrzyj brzegi ręcznikiem papierowym. Zakręć mocno wieczka i postaw słoiki dnem do góry na 60 sekund, aby spasteryzować uszczelkę. Odwróć i odstaw do ostygnięcia.',
+            step5_cue: '🔊 <strong>Kliknięcie:</strong> Wsłuchaj się w kliknięcie pokrywki oznaczające idealne zaciągnięcie próżni.',
+            sec_science_title: '🧪 Jak Działa Fizyka i Chemia Sosu',
+            sci1_title: '🛡️ 1. Dlaczego nie piecze w gardle (Tarcza tłuszczowa)',
+            sci1_body: 'Kapsaicyna rozpuszcza się w tłuszczu. W rzadkich sosach octowych uderza prosto w receptory bólu. 1 łyżka oleju połączona z pektynami mango otula cząsteczki kapsaicyny mikroskopijnymi kropelkami, zamieniając ostre kłucie w szerokie, ciepłe rozgrzanie podniebienia.',
+            sci2_title: '🍫 2. Trik z kakao (Dlaczego gorzkie zrobiło się słodsze)',
+            sci2_body: 'Alkalizowane gorzkie kakao robi dwie rzeczy: gasi piskliwy kwas, który blokuje kubki smakowe, i tworzy ciemne tło kontrastowe. Na tym ciemnym tle mózg natychmiast wyłapuje cukry z mango i syropu klonowego — sos staje się odczuwalnie słodszy bez dosypywania cukru.',
+            sci3_title: '🏺 3. Gwarancja trwałości w spiżarni (pH < 3.4)',
+            sci3_body: 'Kwas mlekowy z 2-letniego fermentu, kwas octowy i sok z limonek obniżają pH znacznie poniżej 3.4 (bezpieczny limit to 4.6). Nalanie wrzącego sosu do słoików z metalowym wieczkiem wytwarza próżnię, dzięki czemu sos stoi w szafce bez lodówki ponad rok.',
+            sec_storage_title: '📦 Przechowywanie i Trwałość',
             th_state: 'Stan',
             th_condition: 'Warunki',
             th_lifespan: 'Oczekiwana Trwałość',
-            row1_state: '<strong>Zamknięty Słoik (Próżnia)</strong>',
-            row1_cond: 'Chłodna, ciemna spiżarnia (<20°C)',
-            row1_life: '<strong>12+ Miesięcy</strong> (Smak szlachetnieje z czasem)',
-            row2_state: '<strong>Otwarty Słoik</strong>',
-            row2_cond: 'Lodówka (≤4°C)',
-            row2_life: '<strong>4–6 Miesięcy</strong> (Nakładać czystą łyżeczką)',
-            row3_state: '<strong>Zapas w Zamrażalniku</strong>',
+            row1_state: '<strong>Zamknięty słoik (próżnia)</strong>',
+            row1_cond: 'Ciemna, chłodna szafka (<20°C)',
+            row1_life: '<strong>12+ Miesięcy</strong> (Smak zyskuje z czasem)',
+            row2_state: '<strong>Otwarty słoik</strong>',
+            row2_cond: 'W lodówce (≤4°C)',
+            row2_life: '<strong>4–6 Miesięcy</strong> (Nakładać czystą łyżką)',
+            row3_state: '<strong>Zapas w zamrażalniku</strong>',
             row3_cond: 'Pojemnik mrozoodporny (-18°C)',
-            row3_life: '<strong>2+ Lata</strong> (Pektyny chronią emulsję przed rozpadem)',
+            row3_life: '<strong>2+ Lata</strong> (Pektyny chronią przed podchodzeniem wodą)',
             footer_text: 'Rzemieślnicza Inżynieria Kulinarna • 2-Letnie Fermenty, Precyzyjne Lipidy i Chemia Mole',
             footer_back: 'Powrót do Książki Kucharskiej →'
         }
@@ -1257,7 +1222,7 @@
         
         document.documentElement.lang = lang;
         try {
-            localStorage.setItem('napoli_sauce_lang', lang);
+            localStorage.setItem('chocolate_mango_tango_lang', lang);
         } catch (e) {}
         
         const btnEn = document.getElementById('btn-en');
@@ -1300,7 +1265,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         let savedLang = null;
         try {
-            savedLang = localStorage.getItem('napoli_sauce_lang');
+            savedLang = localStorage.getItem('chocolate_mango_tango_lang');
         } catch (e) {}
 
         const browserLang = (navigator.language && navigator.language.startsWith('pl')) ? 'pl' : 'en';
